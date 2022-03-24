@@ -111,12 +111,14 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
        <div id="grid" class="bg-white m-6 p-4 md:m-20 md:px-20 md:py-12">
-           <h1 class="text-2xl text-blue-700 mb-6 text-center md:text-4xl">My Favorite Free Group Online Games</h1>
-           <button
-            type="button"
-            id="dark-mode"
-            class="block mx-auto font-bold py-2 px-4 rounded border border-green-300 text-gray-800 hover:bg-gray-50 my-2"
-          >Dark Mode</button>
+        <img src="./images/fav-free-online-games2.png" alt="items used in games" class="block mx-auto w-full rounded md:w-2/3" />
+        <button
+          type="button"
+          id="dark-mode"
+         class="block mx-auto font-bold py-2 px-4 rounded border border-green-300 text-gray-800 hover:bg-gray-50 my-2"
+        >
+          Dark Mode
+        </button>
            <ul class="w-full flex flex-wrap justify-around items-stretch">
               <li class="bg-white flip-scale-up-hor border border-green-300 rounded p-4 lg:w-1/2 max-w-md m-4">
                   <a href="https://codenames.game/" target="_blank"><h2 class="text-xl text-green-500 text-center mb-2 md:text-3xl transition duration-500 ease-in-out transform hover:text-green-600 hover:-translate-y-1 hover:scale-105">Codenames</h2></a>
@@ -341,7 +343,7 @@
                 Try to guess the 5-letter word. If you guess letters correctly, you get more health and the other players get damage. The last person alive wins. </p>
               <p class="text-xs mt-2 md:text-sm">
                 Green squares show that the letter is in the right place (but there could be more of that letter in other places.) Yellow squares show that the letters are in the word, but currently in the wrong places.</p>
-                <p class="text-xs mt-2 md:text-sm">  
+                <p class="text-xs mt-2 md:text-sm">
                 Click on 'Blitz' and then 'Create Game' to get a lobby code to share with your friends.
               </p>
               <a
@@ -463,7 +465,7 @@
           el.classList.toggle('text-green-400')
         })
         gridEl.classList.toggle('bg-white')
-        gridEl.classList.toggle('bg-gray-800')
+        gridEl.classList.toggle('bg-gray-900')
         Array.from(cards).forEach(card => {
           card.classList.toggle('bg-white')
           card.classList.toggle('bg-black')
