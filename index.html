@@ -226,6 +226,38 @@
                 </a>
               </li>
 
+              <!-- JIGSAW EXPLORER -->
+              <li class="bg-white flip-scale-up-hor border border-green-300 rounded p-4 lg:w-1/2 max-w-md m-4">
+                <a href="https://www.jigsawexplorer.com/" target="_blank">
+                  <h2
+                    class="text-xl text-green-500 text-center mb-2 md:text-3xl transition duration-500 ease-in-out transform hover:text-green-600 hover:-translate-y-1 hover:scale-105">
+                    Jigsaw Explorer
+                  </h2>
+                </a>
+                <div class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4 md:items-center">
+                  <a class="flex items-center justify-center flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                    href="https://www.jigsawexplorer.com/">
+                    <img src="images/jigsaw-explorer.png" alt="taboo logo" style="max-width: 163px;" />
+                  </a>
+                  <h3 class="text-sm md:text-base">Put jigsaw puzzles together with online friends
+                  </h3>
+                </div>
+                <div class="text-xs mt-2 md:text-sm">
+                  <ol class="list-decimal list-inside">
+                    <li class="instruction-item">Click on a puzzle to choose it.</li>
+                    <li class="instruction-item">Then click on the 'Play this Puzzle' button.</li>
+                    <li class="instruction-item">Click on the 3x3 grid icon to select the number of puzzle pieces. (If you don't see the icons, click on the hamburger in the upper left and select 'modify this puzzle.')</li>
+                    <li class="instruction-item">Click on the people icon and then click on 'Create Game Link' in the left sidebar.</li>
+                    <li class="instruction-item">Copy the link and share it with your friends. Enjoy chatting over a zoom while you put the puzzle together as a team.</li>
+                  </ol>
+                </div>
+                <a class="underline text-blue-600 text-xs md:text-sm hover:text-blue-900" href="https://www.jigsawexplorer.com/"
+                  target="_blank">
+                  https://www.jigsawexplorer.com/
+                </a>
+              </li>
+
+
               <li class="bg-white flip-scale-up-hor border border-green-300 rounded p-4 lg:w-1/2 max-w-md m-4">
                 <a href="https://jstris.jezevec10.com/" target="_blank"><h2 class="text-xl text-green-500 text-center mb-2 md:text-3xl transition duration-500 ease-in-out transform hover:text-green-600 hover:-translate-y-1 hover:scale-105">Jstris</h2></a>
                 <div class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4 md:items-center">
@@ -487,6 +519,7 @@
       const gridEl = document.getElementById('grid')
       const cards = document.getElementsByTagName('li')
       const descriptions = document.getElementsByTagName('h3')
+      const instructionItems = document.getElementsByClassName('instruction-item')
       darkModeButton.addEventListener('click', () => {
         Array.from(paragraphEls).forEach(el => {
           el.classList.toggle('text-yellow-500')
@@ -508,6 +541,12 @@
         darkModeButton.classList.toggle('text-white')
         darkModeButton.classList.toggle('hover:bg-gray-50')
         darkModeButton.classList.toggle('hover:bg-gray-700')
+
+        Array.from(instructionItems).forEach(el => {
+          el.classList.toggle('bg-white')
+          el.classList.toggle('bg-black')
+          el.classList.toggle('text-yellow-500')
+        })
 
         if (darkModeButton.textContent === 'Dark Mode') {
           darkModeButton.textContent = 'Light Mode'
