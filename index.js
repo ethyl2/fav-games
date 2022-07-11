@@ -43,6 +43,34 @@ darkModeButton.addEventListener('click', () => {
     }
 })
 
+// Share using JS native web share API
+// https://dev.to/dailydevtips1/using-the-native-web-share-javascript-api-23ei
+
+const shareButton = document.getElementById('share-button')
+
+if ('share' in navigator) {
+    // native share is available!
+    shareButton.classList.remove('hidden')
+    shareButton.classList.add('block')
+} else {
+    // native share is not available :(
+    shareButton.classList.remove('block')
+    shareButton.classList.add('hidden')
+}
+
+shareButton.addEventListener('click', (event) => {
+    if ('share' in navigator) {
+      navigator
+        .share({
+          title: 'Favorite Free Online Group Games',
+          url: 'https://ethyl2.github.io/fav-games/',
+        })
+        .then(() => {
+          shareButton.classList.add('bg-purple-800', 'hover:bg-purple-700')
+        })
+        .catch(console.error);
+    } 
+});
 
 const games = [
     {
