@@ -95,16 +95,22 @@ const games = [
     }
 ]
 
-// const testEl = document.getElementById('test')
-// games.forEach(game => {
-//     const gameLi = document.createElement('li')
-//     gameLi.classList.add('bg-white','flip-scale-up-hor', 'border', 'border-green-300', 'rounded', 'p-4', 'lg:w-1/2', 'max-w-xs', 'w-full', 'md:w-auto', 'md:max-w-md', 'm-4')
-//     const h2El = document.createElement('h2')
-//     h2El.textContent = game.title
-//     h2El.classList.add('text-xl', 'text-green-500', 'text-center', 'mb-2', 'md:text-3xl', 'transition', 'duration-500', 'ease-in-out', 'transform', 'hover:text-green-600', 'hover:-translate-y-1', 'hover:scale-105')
-//     gameLi.append(h2El)
-//     testEl.append(gameLi)
-// })
+const testEl = document.getElementById('test')
+games.forEach(game => {
+    const gameLi = document.createElement('li')
+    gameLi.classList.add('bg-white','flip-scale-up-hor', 'border', 'border-green-300', 'rounded', 'p-4', 'lg:w-1/2', 'max-w-xs', 'w-full', 'md:w-auto', 'md:max-w-md', 'm-4')
+    // const h2El = document.createElement('h2')
+    // h2El.textContent = game.title
+    // h2El.classList.add('text-xl', 'text-green-500', 'text-center', 'mb-2', 'md:text-3xl', 'transition', 'duration-500', 'ease-in-out', 'transform', 'hover:text-green-600', 'hover:-translate-y-1', 'hover:scale-105')
+    const link = document.createElement('a')
+    link.href = game.url
+    link.target = '_blank'
+    link.rel = 'noopener nofollow noreferrer'
+    link.textContent = game.title
+    link.classList.add('font-bold', 'text-xl', 'text-green-500', 'text-center', 'mb-2', 'md:text-3xl', 'transition', 'duration-500', 'ease-in-out', 'transform', 'hover:text-green-600', 'hover:-translate-y-1', 'hover:scale-105')
+    gameLi.append(link)
+    testEl.append(gameLi)
+})
 
 /**
  * <!-- SKRIBBL.IO -->
