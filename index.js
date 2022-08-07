@@ -91,7 +91,7 @@ function loadGames() {
 
       // Middle section
       const middleDiv = document.createElement('div')
-      middleDiv.classList.add('flex', 'flex-col', 'space-y-3', 'md:space-y-0', 'md:flex-row', 'md:space-x-4', 'md:items-center')
+      middleDiv.classList.add('flex', 'flex-col', 'items-center', 'justify-center', 'space-y-3', 'md:space-y-0', 'md:flex-row', 'md:space-x-4', 'md:items-center')
 
       // Game image
       const imageLink = document.createElement('a')
