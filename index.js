@@ -79,7 +79,7 @@ function loadGames() {
   games.forEach(game => {
       // Parent Element
       const gameLi = document.createElement('li')
-      gameLi.classList.add('flex', 'flex-col', 'items-center', 'justify-center', 'bg-white','flip-scale-up-hor', 'border', 'border-green-300', 'rounded', 'p-4', 'lg:w-1/2', 'max-w-xs', 'w-full', 'md:w-auto', 'md:max-w-md', 'm-4')
+      gameLi.classList.add('flex', 'flex-col', 'items-center', 'justify-start', 'bg-white','flip-scale-up-hor', 'border', 'border-green-300', 'rounded', 'p-4', 'lg:w-1/2', 'max-w-xs', 'w-full', 'md:w-auto', 'md:max-w-md', 'm-4')
 
       // Game title @top
       const link = document.createElement('a')
@@ -91,7 +91,7 @@ function loadGames() {
 
       // Middle section
       const middleDiv = document.createElement('div')
-      middleDiv.classList.add('flex', 'flex-col', 'space-y-3', 'md:space-y-0', 'md:flex-row', 'md:space-x-4', 'md:items-center')
+      middleDiv.classList.add('flex', 'flex-col', 'items-center', 'justify-center', 'space-y-3', 'md:space-y-0', 'md:flex-row', 'md:space-x-4', 'md:items-center')
 
       // Game image
       const imageLink = document.createElement('a')
