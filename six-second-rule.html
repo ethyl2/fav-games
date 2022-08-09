@@ -37,6 +37,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      progress {
+        border-radius: 7px;
+        width: 80%;
+        height: 22px;
+        margin: 0px auto;
+      }
+      progress::-webkit-progress-bar {
+        background-color: #01F98A;
+        border-radius: 7px;
+      }
+      progress::-webkit-progress-value {
+        background-color: #1562C0;
+        border-radius: 7px;
+        box-shadow: 1px 1px 5px 3px rgb(21,98,192, 0.8 );
+      }
+
+    </style>
   </head>
     <body>
         <!--[if lt IE 7]>
@@ -49,7 +67,7 @@
           <h2 class="text-xl pt-4">How to play:</h2>
           <ol class="text-base font-bold list-decimal list-inside md:text-lg">
             <li>Determine a playing order -- who will be first, second, etc.</li>
-            <li>One person is the judge per round. The judge clicks 'get category' and reads the resulting category aloud!</li>
+            <li>One person is the judge per round. The judge clicks 'get category' and reads the resulting category aloud.</li>
             <li>Then the judge starts the timer.</li>
             <li>The person to the judge's left is in the hot seat and has to give three answers under 6 seconds.</li>
             <li>If the person can't, no points are given.</li>
@@ -60,43 +78,64 @@
             <li>The game continues until someone gets 6 points.</li>
           </ol>
         </section>
+        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Category</button>
+        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Name 3:</label>
+        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">Brands of Toilet Paper</p>
         <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
-        <progress value="0" max="6" id="progress-bar" class="bg-black"></progress>
-        <div id="countdown"></div>
+        <label for="progress-bar" class="sr-only">Timer Progress Bar</label>
+        <progress value="0" max="12" id="progress-bar"></progress>
+        <div id="countdown" class="pt-2"></div>
       </main>
     </body>
     <script>
-      const maxTime = 6
-      let timeLeft = 6
+      const maxTime = 12
+      let timeLeft = 12
       const progressBar = document.getElementById('progress-bar')
       const countdown = document.getElementById('countdown')
-      countdown.textContent = timeLeft + ' seconds remaining'
+      countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
       const timerStartButton = document.getElementById('timer-start')
+      const audio = new Audio('guitar-riff.wav')
+      const audio2 = new Audio('times-up.wav')
+      const getCategoryButton = document.getElementById('get-category')
+      const categoryEl = document.getElementById('category')
+
       timerStartButton.addEventListener('click', () => {
         timerStartButton.textContent = 'Hurry! Hurry!'
         timerStartButton.disabled = true
+        timerStartButton.classList.remove('hover:bg-blue-400')
+        timerStartButton.classList.add('cursor-not-allowed')
         progressBar.value = 0
         timeLeft = maxTime
-        countdown.textContent = timeLeft + ' seconds remaining'
+        countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
+        audio.play()
         const downloadTimer = setInterval(function(){
         if(timeLeft <= 0){
-          console.log('time to clear interval')
           clearInterval(downloadTimer);
           countdown.textContent = "Time's up!"
           timeLeft -= 1
-          progressBar.value = 6 - timeLeft
-          console.log(progressBar.value)
+          progressBar.value = maxTime - timeLeft
           timerStartButton.textContent = 'Start Timer'
           timerStartButton.disabled = false
+          timerStartButton.classList.add('hover:bg-blue-400')
+          timerStartButton.classList.remove('cursor-not-allowed')
+          audio2.play()
         }
         else {
-          // console.log(timeLeft)
           progressBar.value = maxTime - timeLeft
-          console.log(progressBar.value)
-          countdown.textContent = `${timeLeft} second${timeLeft !== 1 ? 's' : ''} remaining`
+          countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
           timeLeft -= 1
         }
-      }, 1000);
+      }, 500);
+      })
+
+      const categories = ['Brands of Toilet Paper', 'Spicy Foods', 'Superheroes', 'Reasons to Sing', 'Things You Dip in Ketchup', 'Farm Animals', 'Zoo Animals', 'Viruses', 'Breakfast Foods',
+      'Dog Breeds', 'Christmas Carols', 'Types of Birds', 'Breakfast Cereals', 'Types of Donuts', 'Countries South of the Equator', 'Animal Cartoon Characters', 'Orphans in Literature', 'Toothpaste Brands', 'Candy Bars'
+      ]
+      getCategoryButton.addEventListener('click', () => {
+        const newCategory = categories[Math.floor(Math.random() * categories.length)]
+        categoryEl.textContent = newCategory
+        categoryEl.classList.remove('invisible')
+        categoryEl.style.backgroundColor = '#ccff00'
       })
 
     </script>

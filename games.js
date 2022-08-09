@@ -220,4 +220,14 @@ const games = [
             See the <a href="https://www.hasbro.com/common/instruct/yahtzee.pdf" target="_blank" rel="noopener nofollow noreferrer" class="font-bold text-purple-500 hover:text-purple-400">rules</a> for more details about the different dice combinations.
           </p>`,
     },
+    {
+        title: 'Six Second Rule',
+        url: './six-second-rule.html',
+        gameLogoSrc: 'images/six-second-rule.png',
+        gameLogoAlt: 'dice',
+        description: 'Quickly think of 3 things!',
+        howTo: `<p class="text-xs mt-2 md:text-sm">
+            Take turns thinking of 3 things that fit in the given category before time runs out!
+          </p>`,
+    },
 ]
