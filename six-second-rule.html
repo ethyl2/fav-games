@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Favorite Group Online Games</title>
+    <meta name="description" content="a collection of favorite free group online games">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/images/wonder/fave-free-online-games.png">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/index.html">
+    <meta property="og:title" content="Favorite Group Online Games">
+    <meta property="og:description" content="a collection of favorite free group online games">
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      progress {
+        border-radius: 7px;
+        width: 80%;
+        height: 22px;
+        margin: 0px auto;
+      }
+      progress::-webkit-progress-bar {
+        background-color: #01F98A;
+        border-radius: 7px;
+      }
+      progress::-webkit-progress-value {
+        background-color: #1562C0;
+        border-radius: 7px;
+        box-shadow: 1px 1px 5px 3px rgb(21,98,192, 0.8 );
+      }
+
+    </style>
+  </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <main class="container bg-white p-6 mx-auto m-6 flex flex-col items-center justify-center">
+        <section>
+          <h1 class="text-2xl md:text-4xl">Six Second Rule Game</h1>
+          <p class="italic">Inspired by the game Five Second Rule</p>
+          <h2 class="text-xl pt-4">How to play:</h2>
+          <ol class="text-base font-bold list-decimal list-inside md:text-lg">
+            <li>Determine a playing order -- who will be first, second, etc.</li>
+            <li>One person is the judge per round. The judge clicks 'get category' and reads the resulting category aloud.</li>
+            <li>Then the judge starts the timer.</li>
+            <li>The person to the judge's left is in the hot seat and has to give three answers under 6 seconds.</li>
+            <li>If the person can't, no points are given.</li>
+            <li>However, if the person gives three answers, the judge starts the timer again and the next person tries to give three different answers from the first person.</li>
+            <li>This continues until someone makes a mistakes or has a brain fart and is stomped!</li>
+            <li>When that happens, the point is given to the LAST person who gave the last three different answers from anyone else.</li>
+            <li>Then that person becomes the next judge.</li>
+            <li>The game continues until someone gets 6 points.</li>
+          </ol>
+        </section>
+        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Category</button>
+        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Name 3:</label>
+        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">Brands of Toilet Paper</p>
+        <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
+        <label for="progress-bar" class="sr-only">Timer Progress Bar</label>
+        <progress value="0" max="12" id="progress-bar"></progress>
+        <div id="countdown" class="pt-2"></div>
+      </main>
+    </body>
+    <script>
+      const maxTime = 12
+      let timeLeft = 12
+      const progressBar = document.getElementById('progress-bar')
+      const countdown = document.getElementById('countdown')
+      countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
+      const timerStartButton = document.getElementById('timer-start')
+      const audio = new Audio('guitar-riff.wav')
+      const audio2 = new Audio('times-up.wav')
+      const getCategoryButton = document.getElementById('get-category')
+      const categoryEl = document.getElementById('category')
+
+      timerStartButton.addEventListener('click', () => {
+        timerStartButton.textContent = 'Hurry! Hurry!'
+        timerStartButton.disabled = true
+        timerStartButton.classList.remove('hover:bg-blue-400')
+        timerStartButton.classList.add('cursor-not-allowed')
+        progressBar.value = 0
+        timeLeft = maxTime
+        countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
+        audio.play()
+        const downloadTimer = setInterval(function(){
+        if(timeLeft <= 0){
+          clearInterval(downloadTimer);
+          countdown.textContent = "Time's up!"
+          timeLeft -= 1
+          progressBar.value = maxTime - timeLeft
+          timerStartButton.textContent = 'Start Timer'
+          timerStartButton.disabled = false
+          timerStartButton.classList.add('hover:bg-blue-400')
+          timerStartButton.classList.remove('cursor-not-allowed')
+          audio2.play()
+        }
+        else {
+          progressBar.value = maxTime - timeLeft
+          countdown.textContent = `${(timeLeft/2).toFixed(1)} seconds remaining`
+          timeLeft -= 1
+        }
+      }, 500);
+      })
+
+      const categories = ['Brands of Toilet Paper', 'Spicy Foods', 'Superheroes', 'Reasons to Sing', 'Things You Dip in Ketchup', 'Farm Animals', 'Zoo Animals', 'Viruses', 'Breakfast Foods',
+      'Dog Breeds', 'Christmas Carols', 'Types of Birds', 'Breakfast Cereals', 'Types of Donuts', 'Countries South of the Equator', 'Animal Cartoon Characters', 'Orphans in Literature', 'Toothpaste Brands', 'Candy Bars'
+      ]
+      getCategoryButton.addEventListener('click', () => {
+        const newCategory = categories[Math.floor(Math.random() * categories.length)]
+        categoryEl.textContent = newCategory
+        categoryEl.classList.remove('invisible')
+        categoryEl.style.backgroundColor = '#ccff00'
+      })
+
+    </script>
+  </html>

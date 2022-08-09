@@ -7,3 +7,10 @@ I thought it might be handy to make page listing my favorite free games to play 
 Uses a bit of css animation, and tailwind, too.
 
 🫶 Contributions are greatly welcomed! If you know of another fun group online game, either add it via a pull request or contact me via email or social media and tell me all about it. Thanks!
+
+
+-----
+
+Freesound.org sounds used:
+https://freesound.org/s/639420/
+https://freesound.org/s/371581/
