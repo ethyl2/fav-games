@@ -110,6 +110,8 @@
       const timerStartButton = document.getElementById('timer-start')
       const audio = new Audio('guitar-riff.wav')
       const audio2 = new Audio('times-up.wav')
+      const audio3 = new Audio('tada.wav')
+      const audio4 = new Audio('finger-cymbal.wav')
       const getCategoryButton = document.getElementById('get-category')
       const categoryEl = document.getElementById('category')
       const pointsButton = document.getElementById('increment-points')
@@ -172,11 +174,13 @@
         categoryEl.textContent = newCategory
         categoryEl.classList.remove('invisible')
         categoryEl.style.backgroundColor = '#ccff00'
+        audio3.play()
       })
 
       pointsButton.addEventListener('click', () => {
         points++
         pointsEl.textContent = points
+        audio4.play()
       })
 
       pointsResetButton.addEventListener('click', () => {
