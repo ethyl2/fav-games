@@ -14,3 +14,5 @@ Uses a bit of css animation, and tailwind, too.
 Freesound.org sounds used:
 https://freesound.org/s/639420/
 https://freesound.org/s/371581/
+https://freesound.org/s/371086/
+https://freesound.org/s/175932/
