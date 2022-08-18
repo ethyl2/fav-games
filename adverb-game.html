@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adverb Game 🎭 | Favorite Group Online Games</title>
+    <meta name="description" content="how to play the game Adverb">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/images/six-second-rule.png">
+    <meta property="og:image:alt" content="Adverb logo">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/six-second-rule.html">
+    <meta property="og:title" content="Adverb Game 🎭 | Favorite Group Online Games ">
+    <meta property="og:description" content="How to play the game Adverb">
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      progress {
+        border-radius: 7px;
+        width: 80%;
+        height: 22px;
+        margin: 0px auto;
+      }
+      progress::-webkit-progress-bar {
+        background-color: #01F98A;
+        border-radius: 7px;
+      }
+      progress::-webkit-progress-value {
+        background-color: #1562C0;
+        border-radius: 7px;
+        box-shadow: 1px 1px 5px 3px rgb(21,98,192, 0.8 );
+      }
+
+    </style>
+  </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <main class="container bg-white p-6 mx-auto m-6 flex flex-col items-center justify-center shadow">
+        <section>
+          <h1 class="text-2xl md:text-4xl md:pt-8">Adverb Game</h1>
+
+          <div class="flex flex-col items-center justify-start md:flex-row md:space-x-4">
+            <div>
+              <h2 class="text-xl pt-4">How to play:</h2>
+              <ol class="text-sm sm:text-base font-bold list-decimal list-inside md:text-lg">
+                <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
+                <li>Choose one person to be <em>it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
+                <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em>mysteriously</em>. Use the button below to get suggestions, if you want.</li>
+                <li>Invite <em>it</em> back, or wait until they come back!</li>
+                <li>Next, <em>it</em> gets to tell others to do something 'in the manner of the adverb.'
+                <br /> -- such as 'Phineas, go shake hands with Ferb.'</li>
+                <li>The people chosen to do the action then do the action in the manner of the adverb. (Of course, only if they are comfortable and okay with the action.) In our example, they would shake hands mysteriously, or pretend to do so as best as they can over zoom.</li>
+                <li>After the requested person or people do the action requested, <em>it</em> gets a chance to guess the adverb.</li>
+                <li>When <em>it</em> guesses correctly, they get a point, and the actors get a point.</li>
+                <li class="pb-3">Play another round by picking someone else to leave the room, and then picking a new adverb, etc.</li>
+              </ol>
+            </div>
+            <div class="border rounded p-2 md:p-3 flex flex-col items-center justify-center md:w-1/4 mb-3 md:mb-0">
+                <h3 class="text-xl">Points Tracker</h3>
+                <p class="text-center text-sm italic pb-2">Click each time you get a point.</p>
+                <button type="button" id="increment-points" class="rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow">
+                  Give Me a Point!
+                </button>
+                <p id="points" class="text-green-500 font-bold text-4xl md:pb-3">0</p>
+                <button id="points-reset" class="text-xs md:text-sm px-2 py-1 rounded-full border hover:bg-gray-100">Reset Points</button>
+            </div>
+          </div>
+        </section>
+        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Adverb Suggestion</button>
+        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Do the action this way:</label>
+        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
+      </main>
+      <script src="adverbs.js" async></script>
+    </body>
+    <script>
+
+      const audio = new Audio('guitar-riff.wav')
+      const audio2 = new Audio('times-up.wav')
+      const audio3 = new Audio('tada.wav')
+      const audio4 = new Audio('finger-cymbal.wav')
+      const getCategoryButton = document.getElementById('get-category')
+      const categoryEl = document.getElementById('category')
+      const pointsButton = document.getElementById('increment-points')
+      const pointsEl = document.getElementById('points')
+      let points = 0
+      const pointsResetButton = document.getElementById('points-reset')
+
+      const currentAdverbs = adverbs.map(adverb => {
+        return adverb.word
+      })
+
+
+      getCategoryButton.addEventListener('click', () => {
+        const newCategory = currentAdverbs[Math.floor(Math.random() * currentAdverbs.length)]
+        categoryEl.textContent = newCategory
+        categoryEl.classList.remove('invisible')
+        categoryEl.style.backgroundColor = '#ccff00'
+        audio3.play()
+      })
+
+      pointsButton.addEventListener('click', () => {
+        points++
+        pointsEl.textContent = points
+        audio4.play()
+      })
+
+      pointsResetButton.addEventListener('click', () => {
+        points = 0
+        pointsEl.textContent = points
+      })
+
+    </script>
+  </html>
