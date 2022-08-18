@@ -70,13 +70,15 @@
               <h2 class="text-xl pt-4">How to play:</h2>
               <ol class="text-sm sm:text-base font-bold list-decimal list-inside md:text-lg">
                 <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
-                <li>Choose one person to close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
-                <li>Everyone else chooses an adverb.</li>
-                <li>Invite the person back, or wait until they come back!</li>
-                <li>Next, the person gets to tell others to do something 'in the manner of the adverb.'</li>
-                <li>After the requested person or people do the action requested, the person gets a chance to guess the adverb.</li>
-                <li>When the person guesses correctly, they get a point, and the actors get a point.</li>
-                <li class="pb-3">Play another round by picking someone else to leave the room.</li>
+                <li>Choose one person to be <em>it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
+                <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em>mysteriously</em>. Use the button below to get suggestions, if you want.</li>
+                <li>Invite <em>it</em> back, or wait until they come back!</li>
+                <li>Next, <em>it</em> gets to tell others to do something 'in the manner of the adverb.'
+                <br /> -- such as 'Phineas, go shake hands with Ferb.'</li>
+                <li>The people chosen to do the action then do the action in the manner of the adverb. (Of course, only if they are comfortable and okay with the action.) In our example, they would shake hands mysteriously, or pretend to do so as best as they can over zoom.</li>
+                <li>After the requested person or people do the action requested, <em>it</em> gets a chance to guess the adverb.</li>
+                <li>When <em>it</em> guesses correctly, they get a point, and the actors get a point.</li>
+                <li class="pb-3">Play another round by picking someone else to leave the room, and then picking a new adverb, etc.</li>
               </ol>
             </div>
             <div class="border rounded p-2 md:p-3 flex flex-col items-center justify-center md:w-1/4 mb-3 md:mb-0">
@@ -90,10 +92,11 @@
             </div>
           </div>
         </section>
-        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Category</button>
-        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Name 3:</label>
-        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">Brands of Toilet Paper</p>
+        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Adverb Suggestion</button>
+        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Do the action this way:</label>
+        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
       </main>
+      <script src="adverbs.js" async></script>
     </body>
     <script>
 
@@ -108,29 +111,13 @@
       let points = 0
       const pointsResetButton = document.getElementById('points-reset')
 
-      const categories = ['Brands of Toilet Paper', 'Spicy Foods', 'Superheroes',
-      'Reasons to Sing', 'Things You Dip in Ketchup', 'Farm Animals',
-      'Zoo Animals', 'Things with Pockets', 'Things that start with Q', 'Things that Spin', 'Things with Screens', 'Emotions', 'Condiments', 'Terms of Endearment',
-      'Viruses', 'Breakfast Foods', 'Love Songs', 'Patriotic Songs', 'Homework Excuses',
-      'Twilight Books', 'Harry Potter Books', 'Pizza Toppings', 'Ice Cream Flavors', 'Programming Languages', 'Football Teams',
-      'Basketball Teams', 'Christmas Traditions', 'Easter Candies', 'Pokemon', 'Disney Princesses',
-      'Disney Villians', 'Toy Story Characters', 'Mountains', 'Rivers', 'US Capitals', 'Parts of Speech',
-      'Snow Cone Flavors', 'Board Games', 'Video Games', 'Things in a Mall', 'Novelists',
-      'US Presidents', 'Things that Have Buttons', 'Titles People Can Have', 'Reasons to Make a Phone Call',
-      'Types of Chips', 'Things You Can Buy at IKEA', 'Brands of Soda', 'Wildflowers', 'Waterfalls',
-      'Moon Phases', 'Composers', 'Fads', 'Things Worn Above the Waist', 'Woodwind Instruments',
-      'Brass Instruments', 'Percussion Instruments', 'String Instruments', 'Kitchen Appliances',
-      'Kitchen Utencils', 'Lakes', 'Ford Cars',
-      'Toyota Cars', 'Hostess Brand Products', 'Wedding Traditions', 'Harry Potter Characters',
-      'Lord of the Rings Characters', 'Books of the Bible',
-      'Dog Breeds', 'Christmas Carols', 'Types of Birds', 'Breakfast Cereals', 'Types of Donuts',
-      'Countries South of the Equator', 'Animal Cartoon Characters', 'Orphans in Literature', 'Toothpaste Brands', 'Candy Bars',
-      'Things You Get in the Mail', 'Things You Shouldn\'t Touch', 'Foreign Words Now Used in English', 'Kinds of Soup', 'Things You Throw Away',
-      'Famous Duos & Trios', 'Things You Replace', 'Words Associated With Exercise', 'Reptiles', 'Amphibians', 'Spices & Herbs', 'Magazines', 'Sticky Things',
-      'Animals in Books', 'Animals in Movies', 'Food Eaten Raw', 'Children\'s Books', 'Mobile Apps', 'Things in a Sandwich'
-      ]
+      const currentAdverbs = adverbs.map(adverb => {
+        return adverb.word
+      })
+
+
       getCategoryButton.addEventListener('click', () => {
-        const newCategory = categories[Math.floor(Math.random() * categories.length)]
+        const newCategory = currentAdverbs[Math.floor(Math.random() * currentAdverbs.length)]
         categoryEl.textContent = newCategory
         categoryEl.classList.remove('invisible')
         categoryEl.style.backgroundColor = '#ccff00'
