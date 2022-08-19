@@ -230,4 +230,14 @@ const games = [
             Take turns thinking of 3 things that fit in the given category before time runs out!
           </p>`,
     },
+    {
+        title: 'Adverb',
+        url: './adverb-game.html',
+        gameLogoSrc: 'images/adverb.png',
+        gameLogoAlt: 'acting out adverbs',
+        description: 'Take turns telling people what to do, in order to guess the secret adverb.',
+        howTo: `<p class="text-xs mt-2 md:text-sm">
+            See the page for instructions and adverb suggestions.
+          </p>`,
+    },
 ]
