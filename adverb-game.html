@@ -68,16 +68,16 @@
           <div class="flex flex-col items-center justify-start md:flex-row md:space-x-4">
             <div>
               <h2 class="text-xl pt-4">How to play:</h2>
-              <ol class="text-sm sm:text-base font-bold list-decimal list-inside md:text-lg">
+              <ol class="text-sm sm:text-base font-bold list-decimal list-inside space-y-2 md:text-lg">
                 <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
-                <li>Choose one person to be <em>it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
+                <li>Choose one person to be <em class="px-0.5 bg-green-100">it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
                 <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em>mysteriously</em>. Use the button below to get suggestions, if you want.</li>
-                <li>Invite <em>it</em> back, or wait until they come back!</li>
-                <li>Next, <em>it</em> gets to tell others to do something 'in the manner of the adverb.'
+                <li>Invite <em class="px-0.5 bg-green-100">it</em> back, or wait until they come back!</li>
+                <li>Next, <em class="px-0.5 bg-green-100">it</em> gets to tell others to do something 'in the manner of the adverb.'
                 <br /> -- such as 'Phineas, go shake hands with Ferb.'</li>
                 <li>The people chosen to do the action then do the action in the manner of the adverb. (Of course, only if they are comfortable and okay with the action.) In our example, they would shake hands mysteriously, or pretend to do so as best as they can over zoom.</li>
-                <li>After the requested person or people do the action requested, <em>it</em> gets a chance to guess the adverb.</li>
-                <li>When <em>it</em> guesses correctly, they get a point, and the actors get a point.</li>
+                <li>After the requested person or people do the action requested, <em class="px-0.5 bg-green-100">it</em> gets a chance to guess the adverb.</li>
+                <li>When <em class="px-0.5 bg-green-100">it</em> guesses correctly, they get a point, and the actors get a point.</li>
                 <li class="pb-3">Play another round by picking someone else to leave the room, and then picking a new adverb, etc.</li>
               </ol>
             </div>
@@ -92,9 +92,19 @@
             </div>
           </div>
         </section>
-        <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Adverb Suggestion</button>
-        <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Do the action this way:</label>
-        <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
+        <button id="get-adverb" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Adverb Suggestion</button>
+        <label id="adverb-label" for="adverb" class="pt-2 pb-1 font-semibold text-lg italic invisible">Do the action this way:</label>
+        <p id="adverb" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
+        <p class="text-base w-full max-w-2xl mx-auto text-center md:text-lg h-24">
+          <span id="definition-label" class="font-bold invisible">Definition:</span> <span id="definition" class="invisible italic">in a way that is difficult or impossible to understand, explain, or identify; in a deliberately enigmatic manner.</span>
+        </p>
+        <div class="w-full">
+          <img id="adverb-image"
+            src="images/adverbs/mysteriously.jpg"
+            class="w-full rounded mb-12 shadow-lg max-w-3xl mx-auto"
+            alt="mysteriously"
+          />
+        </div>
       </main>
       <script src="adverbs.js" async></script>
     </body>
@@ -104,24 +114,29 @@
       const audio2 = new Audio('times-up.wav')
       const audio3 = new Audio('tada.wav')
       const audio4 = new Audio('finger-cymbal.wav')
-      const getCategoryButton = document.getElementById('get-category')
-      const categoryEl = document.getElementById('category')
+      const getAdverbButton = document.getElementById('get-adverb')
+      const adverbEl = document.getElementById('adverb')
+      const adverbLabel = document.getElementById('adverb-label')
+      const definitionEl = document.getElementById('definition')
+      const definitionLabel = document.getElementById('definition-label')
+      const adverbImage = document.getElementById('adverb-image')
       const pointsButton = document.getElementById('increment-points')
       const pointsEl = document.getElementById('points')
       let points = 0
       const pointsResetButton = document.getElementById('points-reset')
 
-      const currentAdverbs = adverbs.map(adverb => {
-        return adverb.word
-      })
-
-
-      getCategoryButton.addEventListener('click', () => {
-        const newCategory = currentAdverbs[Math.floor(Math.random() * currentAdverbs.length)]
-        categoryEl.textContent = newCategory
-        categoryEl.classList.remove('invisible')
-        categoryEl.style.backgroundColor = '#ccff00'
-        audio3.play()
+      getAdverbButton.addEventListener('click', () => {
+        const newAdverb = adverbs[Math.floor(Math.random() * adverbs.length)]
+        adverbEl.textContent = newAdverb.word
+        definitionEl.textContent = newAdverb.definition
+        adverbLabel.classList.remove('invisible')
+        adverbEl.classList.remove('invisible')
+        definitionLabel.classList.remove('invisible')
+        definitionEl.classList.remove('invisible')
+        adverbEl.style.backgroundColor = '#ccff00'
+        adverbImage.src = `images/${newAdverb.image}`
+        adverbImage.alt = newAdverb.word
+        // audio3.play()
       })
 
       pointsButton.addEventListener('click', () => {
