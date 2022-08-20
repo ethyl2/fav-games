@@ -61,43 +61,62 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+      <header><h1 class="text-2xl text-center container md:text-4xl md:pt-8">Adverb Game</h1></header>
       <main class="container bg-white p-6 mx-auto m-6 flex flex-col items-center justify-center shadow">
-        <section>
-          <h1 class="text-2xl md:text-4xl md:pt-8">Adverb Game</h1>
-
-          <div class="flex flex-col items-center justify-start md:flex-row md:space-x-4">
-            <div>
-              <h2 class="text-xl pt-4">How to play:</h2>
-              <ol class="text-sm sm:text-base font-bold list-decimal list-inside space-y-2 md:text-lg">
-                <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
-                <li>Choose one person to be <em class="px-0.5 bg-green-100">it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
-                <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em>mysteriously</em>. Use the button below to get suggestions, if you want.</li>
-                <li>Invite <em class="px-0.5 bg-green-100">it</em> back, or wait until they come back!</li>
-                <li>Next, <em class="px-0.5 bg-green-100">it</em> gets to tell others to do something 'in the manner of the adverb.'
-                <br /> -- such as 'Phineas, go shake hands with Ferb.'</li>
-                <li>The people chosen to do the action then do the action in the manner of the adverb. (Of course, only if they are comfortable and okay with the action.) In our example, they would shake hands mysteriously, or pretend to do so as best as they can over zoom.</li>
-                <li>After the requested person or people do the action requested, <em class="px-0.5 bg-green-100">it</em> gets a chance to guess the adverb.</li>
-                <li>When <em class="px-0.5 bg-green-100">it</em> guesses correctly, they get a point, and the actors get a point.</li>
-                <li class="pb-3">Play another round by picking someone else to leave the room, and then picking a new adverb, etc.</li>
-              </ol>
-            </div>
-            <div class="border rounded p-2 md:p-3 flex flex-col items-center justify-center md:w-1/4 mb-3 md:mb-0">
-                <h3 class="text-xl">Points Tracker</h3>
-                <p class="text-center text-sm italic pb-2">Click each time you get a point.</p>
-                <button type="button" id="increment-points" class="rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow">
-                  Give Me a Point!
-                </button>
-                <p id="points" class="text-green-500 font-bold text-4xl md:pb-3">0</p>
-                <button id="points-reset" class="text-xs md:text-sm px-2 py-1 rounded-full border hover:bg-gray-100">Reset Points</button>
-            </div>
-          </div>
+        <section class="pb-4">
+          <h2 class="text-xl py-4 md:text-3xl">How to play:</h2>
+          <ol class="text-sm sm:text-base font-bold list-decimal list-inside space-y-2 md:text-lg">
+            <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
+            <li>Choose one person to be <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
+            <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em class="pl-0.5 rounded pr-1 adverb-in-instructions" style="background-color: #ccff00;">mysteriously</em>. Use the button below to get suggestions, if you want.</li>
+            <li>Invite <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> back, or wait until they come back!</li>
+            <li>Next, <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> gets to tell others to do something 'in the manner of the adverb.'
+            <br /> -- such as 'Phineas, go shake hands with Ferb.'</li>
+            <li>The people chosen to do the action then do the action in the manner of the adverb. (Of course, only if they are comfortable and okay with the action.) In our example, they would shake hands <em class="pl-0.5 rounded pr-1 adverb-in-instructions" style="background-color: #ccff00;">mysteriously</em>, or pretend to do so as best as they can over zoom.</li>
+            <li>After the requested person or people do the action requested, <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> gets a chance to guess the adverb.</li>
+            <li>When <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> guesses correctly, they get a point, and the actors get a point.</li>
+            <li class="pb-3">Play another round by picking someone else to leave the room, and then picking a new adverb, etc.</li>
+          </ol>
         </section>
-        <button id="get-adverb" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Adverb Suggestion</button>
-        <label id="adverb-label" for="adverb" class="pt-2 pb-1 font-semibold text-lg italic invisible">Do the action this way:</label>
-        <p id="adverb" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
-        <p class="text-base w-full max-w-2xl mx-auto text-center md:text-lg h-24">
-          <span id="definition-label" class="font-bold invisible">Definition:</span> <span id="definition" class="invisible italic">in a way that is difficult or impossible to understand, explain, or identify; in a deliberately enigmatic manner.</span>
-        </p>
+
+        <div class="flex flex-col-reverse md:flex-row items-stretch justify-center md:space-x-6 w-full md:mb-4">
+          <!-- ADVERB SUGGESTIONS -->
+          <section class="border rounded p-4 flex flex-col items-center justify-start mb-4 w-full md:w-1/3 md:mb-0">
+            <button id="get-adverb" type="button" class="text-sm rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center md:text-lg text-white shadow">Get Adverb Suggestion</button>
+            <label id="adverb-label" for="adverb" class="pt-2 pb-1 font-semibold text-xs md:text-lg italic invisible">
+              Do the action this way:
+            </label>
+            <p id="adverb" class="invisible text-base rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">mysteriously</p>
+            <p id="definition-label" class="text-base md:text=lg font-bold invisible">Definition:</p>
+            <p class="invisible text-base w-full max-w-2xl mx-auto text-center md:text-lg h-24 italic"
+              id="definition" >in a way that is difficult or impossible to understand, explain, or identify; in a deliberately enigmatic manner.
+            </p>
+          </section>
+
+          <!-- ACTION SUGGESTIONS -->
+          <section class="border rounded p-4 flex flex-col items-center justify-start mb-4 w-full md:w-1/3 md:mb-0">
+            <button id="get-action" type="button" class="text-sm rounded-full px-4 py-2 bg-purple-500 hover:bg-purple-400 text-center md:text-lg text-white shadow">Get Action Suggestion</button>
+            <label id="action-label" for="action" class="pt-2 pb-1 font-semibold text-xs md:text-lg italic invisible">
+              You could have the players do this:
+            </label>
+            <p id="action" class="text-center invisible text-base rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">frown</p>
+          </section>
+
+          <!-- POINTS TRACKER -->
+          <section class="border rounded p-2 md:p-3 flex flex-col items-center justify-start md:w-1/3 mb-3 md:mb-0">
+            <button
+              type="button"
+              id="increment-points"
+              class="rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
+            >
+              Give Me a Point!
+            </button>
+            <h3 class="text-base md:text-xl">Points Tracker</h3>
+            <p class="text-center text-xs md:text-sm italic pb-2">Click each time you get a point.</p>
+            <p id="points" class="text-green-500 font-bold text-4xl md:pb-3">0</p>
+            <button id="points-reset" class="text-xs md:text-sm px-2 py-1 rounded-full border hover:bg-gray-100">Reset Points</button>
+          </section>
+        </div>
         <div class="w-full">
           <img id="adverb-image"
             src="images/adverbs/mysteriously.jpg"
@@ -116,10 +135,14 @@
       const audio4 = new Audio('finger-cymbal.wav')
       const getAdverbButton = document.getElementById('get-adverb')
       const adverbEl = document.getElementById('adverb')
+      const adverbsInInstructions = document.getElementsByClassName('adverb-in-instructions')
       const adverbLabel = document.getElementById('adverb-label')
       const definitionEl = document.getElementById('definition')
       const definitionLabel = document.getElementById('definition-label')
       const adverbImage = document.getElementById('adverb-image')
+      const getActionButton = document.getElementById('get-action')
+      const actionEl = document.getElementById('action')
+      const actionLabel = document.getElementById('action-label')
       const pointsButton = document.getElementById('increment-points')
       const pointsEl = document.getElementById('points')
       let points = 0
@@ -136,6 +159,18 @@
         adverbEl.style.backgroundColor = '#ccff00'
         adverbImage.src = `images/${newAdverb.image}`
         adverbImage.alt = newAdverb.word
+        Array.from(adverbsInInstructions).forEach(adverb => {
+          adverb.textContent = newAdverb.word
+        })
+        // audio3.play()
+      })
+
+      getActionButton.addEventListener('click', () => {
+        const newAction = actions[Math.floor(Math.random() * actions.length)]
+        actionEl.textContent = newAction
+        actionLabel.classList.remove('invisible')
+        actionEl.classList.remove('invisible')
+        actionEl.style.backgroundColor = '#83EEFF'
         // audio3.play()
       })
 
