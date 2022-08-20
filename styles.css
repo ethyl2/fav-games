@@ -10,6 +10,10 @@ a {
   font-family: 'Fredoka One', cursive;
 }
 
+a.normal-button {
+  font-family: 'Baloo 2', cursive;
+}
+
 .flip-scale-up-hor {
   -webkit-animation: flip-scale-up-hor 1.25s linear both;
   animation: flip-scale-up-hor 1.25s linear both;
