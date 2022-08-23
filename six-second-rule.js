@@ -77,35 +77,16 @@ timerStartButton.addEventListener('click', () => {
 }, 500);
 })
 
-const categories = ['Brands of Toilet Paper', 'Spicy Foods', 'Superheroes',
-'Reasons to Sing', 'Things You Dip in Ketchup', 'Farm Animals',
-'Zoo Animals', 'Things with Pockets', 'Things that start with Q', 'Things that Spin', 'Things with Screens', 'Emotions', 'Condiments', 'Terms of Endearment',
-'Viruses', 'Breakfast Foods', 'Love Songs', 'Patriotic Songs', 'Homework Excuses',
-'Twilight Books', 'Harry Potter Books', 'Pizza Toppings', 'Ice Cream Flavors', 'Programming Languages', 'Football Teams',
-'Basketball Teams', 'Christmas Traditions', 'Easter Candies', 'Pokemon', 'Disney Princesses',
-'Disney Villians', 'Toy Story Characters', 'Mountains', 'Rivers', 'US Capitals', 'Parts of Speech',
-'Snow Cone Flavors', 'Board Games', 'Video Games', 'Things in a Mall', 'Novelists',
-'US Presidents', 'Things that Have Buttons', 'Titles People Can Have', 'Reasons to Make a Phone Call',
-'Types of Chips', 'Things You Can Buy at IKEA', 'Brands of Soda', 'Wildflowers', 'Waterfalls',
-'Moon Phases', 'Composers', 'Fads', 'Things Worn Above the Waist', 'Woodwind Instruments',
-'Brass Instruments', 'Percussion Instruments', 'String Instruments', 'Kitchen Appliances',
-'Kitchen Utencils', 'Lakes', 'Ford Cars',
-'Toyota Cars', 'Hostess Brand Products', 'Wedding Traditions', 'Harry Potter Characters',
-'Lord of the Rings Characters', 'Books of the Bible',
-'Dog Breeds', 'Christmas Carols', 'Types of Birds', 'Breakfast Cereals', 'Types of Donuts',
-'Countries South of the Equator', 'Animal Cartoon Characters', 'Orphans in Literature', 'Toothpaste Brands', 'Candy Bars',
-'Things You Get in the Mail', 'Things You Shouldn\'t Touch', 'Foreign Words Now Used in English', 'Kinds of Soup', 'Things You Throw Away',
-'Famous Duos & Trios', 'Things You Replace', 'Words Associated With Exercise', 'Reptiles', 'Amphibians', 'Spices & Herbs', 'Magazines', 'Sticky Things',
-'Animals in Books', 'Animals in Movies', 'Food Eaten Raw', 'Children\'s Books', 'Mobile Apps', 'Things in a Sandwich'
-]
-getCategoryButton.addEventListener('click', () => {
-  const newCategory = categories[Math.floor(Math.random() * categories.length)]
-  categoryEl.textContent = newCategory
-  categoryEl.classList.remove('invisible')
-  categoryEl.style.backgroundColor = '#ccff00'
-  if (allowAudio) {
-    audio3.play()
-  }
+window.addEventListener('load', () => {
+  getCategoryButton.addEventListener('click', () => {
+    const newCategory = categories[Math.floor(Math.random() * categories.length)]
+    categoryEl.textContent = newCategory
+    categoryEl.classList.remove('invisible')
+    categoryEl.style.backgroundColor = '#ccff00'
+    if (allowAudio) {
+      audio3.play()
+    }
+  })
 })
 
 pointsButton.addEventListener('click', () => {
