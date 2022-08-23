@@ -37,9 +37,9 @@ darkModeButton.addEventListener('click', () => {
     })
 
     if (darkModeButton.textContent === 'Dark Mode') {
-        darkModeButton.textContent = 'Light Mode'
+      darkModeButton.textContent = 'Light Mode'
     } else {
-        darkModeButton.textContent = 'Dark Mode'
+      darkModeButton.textContent = 'Dark Mode'
     }
 })
 
