@@ -63,9 +63,14 @@
         <![endif]-->
       <header><h1 class="pt-4 text-2xl text-center md:text-6xl md:pt-12">Adverb Game</h1></header>
       <main class="container bg-white p-6 mx-auto m-6 flex flex-col items-center justify-center shadow md:mb-24">
-        <section class="pb-4">
+        <section class="pb-4 relative">
+          <button
+                type="button"
+                id="audio-toggle"
+                class="absolute right-0 top-0 rounded-full px-4 py-2 bg-purple-500 hover:bg-purple-400 text-center text-lg text-white mb-4 shadow"
+              >Audio On</button>
           <h2 class="text-xl py-4 md:text-3xl">How to play:</h2>
-          <ol class="text-sm sm:text-base font-bold list-decimal list-inside space-y-2 md:text-lg">
+          <ol class="relative text-sm sm:text-base font-bold list-decimal list-inside space-y-2 md:text-lg">
             <li>If you want to play with friends online, share the link to this page with everyone playing, and start a zoom.</li>
             <li>Choose one person to be <em class="pl-0.5 bg-green-100 rounded pr-1">it</em> and close their eyes, plug their ears, and maybe even leave the room temporarily.</li>
             <li>Everyone else chooses an adverb -- a word that ends in -ly and describes an action, such as <em class="pl-0.5 rounded pr-1 adverb-in-instructions" style="background-color: #ccff00;">mysteriously</em>. Use the button below to get suggestions, if you want.</li>
@@ -263,65 +268,7 @@
         <p>Copyright <span id="current-year">2022</span> Heather Nuffer</p>
       </footer>
 
-      <script src="adverbs.js" async></script>
+      <script src="store/adverbs.js" async></script>
+      <script src="js/adverb-game.js" async></script>
     </body>
-    <script>
-
-      const audio = new Audio('guitar-riff.wav')
-      const audio2 = new Audio('times-up.wav')
-      const audio3 = new Audio('tada.wav')
-      const audio4 = new Audio('finger-cymbal.wav')
-      const getAdverbButton = document.getElementById('get-adverb')
-      const adverbEl = document.getElementById('adverb')
-      const adverbsInInstructions = document.getElementsByClassName('adverb-in-instructions')
-      const adverbLabel = document.getElementById('adverb-label')
-      const definitionEl = document.getElementById('definition')
-      const definitionLabel = document.getElementById('definition-label')
-      const adverbImage = document.getElementById('adverb-image')
-      const getActionButton = document.getElementById('get-action')
-      const actionEl = document.getElementById('action')
-      const actionLabel = document.getElementById('action-label')
-      const pointsButton = document.getElementById('increment-points')
-      const pointsEl = document.getElementById('points')
-      let points = 0
-      const pointsResetButton = document.getElementById('points-reset')
-
-      getAdverbButton.addEventListener('click', () => {
-        const newAdverb = adverbs[Math.floor(Math.random() * adverbs.length)]
-        adverbEl.textContent = newAdverb.word
-        definitionEl.textContent = newAdverb.definition
-        adverbLabel.classList.remove('invisible')
-        adverbEl.classList.remove('invisible')
-        definitionLabel.classList.remove('invisible')
-        definitionEl.classList.remove('invisible')
-        adverbEl.style.backgroundColor = '#ccff00'
-        adverbImage.src = `images/${newAdverb.image}`
-        adverbImage.alt = newAdverb.word
-        Array.from(adverbsInInstructions).forEach(adverb => {
-          adverb.textContent = newAdverb.word
-        })
-        // audio3.play()
-      })
-
-      getActionButton.addEventListener('click', () => {
-        const newAction = actions[Math.floor(Math.random() * actions.length)]
-        actionEl.textContent = newAction
-        actionLabel.classList.remove('invisible')
-        actionEl.classList.remove('invisible')
-        actionEl.style.backgroundColor = '#83EEFF'
-        // audio3.play()
-      })
-
-      pointsButton.addEventListener('click', () => {
-        points++
-        pointsEl.textContent = points
-        audio4.play()
-      })
-
-      pointsResetButton.addEventListener('click', () => {
-        points = 0
-        pointsEl.textContent = points
-      })
-
-    </script>
   </html>
