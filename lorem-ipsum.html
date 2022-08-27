@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game-Themed Lorem Ipsum</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <main class="container mx-auto bg-white mt-12 p-4 text-center">
+      <h1 class="text-xl md:text-3xl font-bold py-4">Game-Themed Lorem Ipsum</h1>
+      <p id="generated-lorem-ipsum" class="flex items-center overflow-y-auto justify-center text-lg max-w-2xl mx-auto pb-4 h-64 sm:h-32 lg:h-40 bg-green-100 rounded-lg p-3"></p>
+      <button id="update" type="button"
+        class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
+      >
+        Update Lorem Ipsum</button>
+    </main>
+    <script src="store/game-words.js" async defer></script>
+    <script>
+      window.addEventListener('load', updateLoremIpsum)
+      const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
+      const updateButton = document.getElementById('update')
+
+      updateButton.addEventListener('click', updateLoremIpsum)
+
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+      function updateLoremIpsum() {
+        generatedLoremIpsumEl.textContent = makeParagraph()
+      }
+
+      function makeSentence() {
+        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
+        const gameName = gameNames[Math.floor(Math.random() * gameNames.length)]
+        const transitiveVerb = transitiveVerbs[Math.floor(Math.random() * transitiveVerbs.length)]
+        return pronoun + ' ' + transitiveVerb + ' ' + gameName + '. '
+      }
+
+      function makeParagraph() {
+        const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
+        const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
+        const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
+        const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
+
+        return makeSentence() + makeSentence()
+        + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
+        + 'Let\'s play ' + gameName2 + '. '
+        + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
+        + 'Or let\'s play ' + gameName5 + '!'
+      }
+    </script>
+  </body>
+</html>
