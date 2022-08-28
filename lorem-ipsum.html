@@ -10,6 +10,24 @@
     <title>Game-Themed Lorem Ipsum</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
@@ -21,11 +39,21 @@
     <![endif]-->
     <main class="container mx-auto bg-white mt-12 p-4 text-center">
       <h1 class="text-xl md:text-3xl font-bold py-4">Game-Themed Lorem Ipsum</h1>
-      <p id="generated-lorem-ipsum" class="flex items-center overflow-y-auto justify-center text-lg max-w-2xl mx-auto pb-4 h-64 sm:h-32 lg:h-40 bg-green-100 rounded-lg p-3"></p>
+      <p id="generated-lorem-ipsum" class="flex items-center overflow-y-auto justify-center text-base sm:text-lg max-w-2xl mx-auto pb-4 h-80 sm:h-56 bg-green-100 rounded-lg p-3"></p>
       <button id="update" type="button"
         class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
       >
         Update Lorem Ipsum</button>
+      <div class="flex flex-wrap items-center justify-center" onclick="updateLoremIpsum()">
+        <img src="images/dice2.png" class="w-24 h-24 p-2" alt="dice" />
+        <img src="images/ghost.png" class="w-24 h-24 p-2" alt="ghost" />
+        <img src="images/pacman.png" class="w-24 h-24 p-2" alt="pacman" />
+        <img src="images/tetris2.png" class="w-24 h-24 p-2" alt="tetris" />
+        <img src="images/controller.png" class="w-24 h-24 p-2" alt="controller" />
+        <img src="images/chess-piece.png" class="w-24 h-24 p-2" alt="chess piece" />
+        <img src="images/tic-tac-toe.png" class="w-24 h-24 p-2" alt="tic-tac-toe" />
+        <img src="images/question-cube.png" class="w-24 h-24 p-2" alt="question cube" />
+      </div>
     </main>
     <script src="store/game-words.js" async defer></script>
     <script>
@@ -50,6 +78,25 @@
         return pronoun + ' ' + transitiveVerb + ' ' + gameName + '. '
       }
 
+      function makeAccusation() {
+        const murderSuspect = clueCharacters[Math.floor(Math.random() * clueCharacters.length)]
+        const murderWeapon = clueWeapons[Math.floor(Math.random() * clueWeapons.length)]
+        const location = clueRooms[Math.floor(Math.random() * clueRooms.length)]
+        return `I suspect ${murderSuspect}, in the ${location}, with the ${murderWeapon}. `
+      }
+
+      function winPit() {
+        const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
+        return `Corner on ${collectedCommodity}! `
+      }
+
+      function makeQuote() {
+        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
+        const verb = verbsForTalking[Math.floor(Math.random() * verbsForTalking.length)]
+        const saying = randomPhrases[Math.floor(Math.random() * randomPhrases.length)]
+        return `${pronoun} ${verb}, "${saying}" `
+      }
+
       function makeParagraph() {
         const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
         const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
@@ -59,8 +106,11 @@
         return makeSentence() + makeSentence()
         + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
         + 'Let\'s play ' + gameName2 + '. '
+        + winPit()
         + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
-        + 'Or let\'s play ' + gameName5 + '!'
+        + makeQuote()
+        + 'Or maybe let\'s play ' + gameName5 + ' instead! '
+        + makeAccusation()
       }
     </script>
   </body>
