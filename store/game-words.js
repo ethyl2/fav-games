@@ -343,7 +343,80 @@ const randomPhrases = [
   'There is 1 Imposter among us.',
   'Who is the Imposter?',
   'Bingo!',
-  'There\'s a puzzle piece on the floor.'
+  'There\'s a puzzle piece on the floor.',
+  'I won!',
+  'We won!',
+  'You lost!',
+  'We lost!',
+  'Winners focus on winning. Losers focus on winners.',
+  'Nobody likes a sore loser.',
+  'The bitterness of losing makes winning so much sweeter.',
+  'Yes, I really do need all these board games.',
+  'Yes, I really do need all these video games.',
+  'You can\'t buy happiness, but you can buy a board game, and that\'s pretty close.',
+  'You can\'t buy happiness, but you can buy a video game, and that\'s pretty close.',
+  'Life is more fun if you play games.',
+  'If I can\'t bring my board games, I\'m not going.',
+  'It\'s not possible to have too many board games.',
+  'It\'s not possible to have too many video games.',
+  'How you play shows some of your character; how you win or lose shows all of it.',
+
+]
+
+const quotes = [
+  {
+    quote: 'Winners never quit and quitters never win.',
+    author: 'Vince Lombardi',
+  },
+  {
+    quote: 'A winner is just a loser who tried one more time.',
+    author: 'George M. Moore, Jr.,',
+  },
+  {
+    quote: 'Without losers, where would the winners be?',
+    author: 'Casey Stengel',
+  },
+  {
+    quote: 'Losers are people who are afraid of losing.',
+    author: 'Robert Kiyosaki',
+  },
+  {
+    quote: 'There are winners, there are losers, and there are people who have not yet learned how to win.',
+    author: 'Les Brown',
+  },
+  {
+    quote: 'It\'s not life or death, it\'s a game, and at the end of the game, there is going to be a winner and a loser.',
+    author: 'Bernhard Langer',
+  },
+  {
+    quote: 'You learn how to be a gracious winner and an outstanding loser.',
+    author: 'Joe Namath',
+  },
+  {
+    quote: 'The cheerful loser is the winner.',
+    author: 'Elbert Hubbard',
+  },
+  {
+    quote: 'Sooner or later, those who win are those who think they can.',
+    author: 'Paul Tournier',
+  },
+  {
+    quote: 'I have to introduce the part of me that feels like a winner to the part of me convinced I\'m a loser, and see if they can\'t agree to exist somewhere closer to the middle.',
+    author: 'Lauren Graham',
+  },
+  {
+    quote: 'It\'s the things we play with and the people who help us play that make a great difference in our lives.',
+    author: 'Fred Rogers',
+  },
+  {
+    quote: 'Play is our brain\'s favorite way to learn.',
+    author: 'Diane Ackerman',
+  },
+  {
+    quote: 'Play to win, but enjoy the fun.',
+    author: 'David Ogilvy',
+  },
+
 ]
 
 const clueCharacters = [
