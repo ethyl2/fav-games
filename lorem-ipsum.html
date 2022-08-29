@@ -33,18 +33,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="min-h-screen relative">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <main class="container mx-auto bg-white mt-12 p-4 text-center">
-      <h1 class="text-xl md:text-3xl font-bold py-4">Game-Themed Lorem Ipsum</h1>
-      <p id="generated-lorem-ipsum" class="flex items-center overflow-y-auto justify-center text-base sm:text-lg max-w-2xl mx-auto pb-4 h-80 sm:h-56 bg-green-100 rounded-lg p-3"></p>
+    <header
+      class="relative text-center w-full py-4 md:py-12 border-b-4 border-black text-black"
+      style="background-color: rgba(0,255,136, 0.7);"
+    >
+        <div class="relative container mx-auto">
+        <a href="./index.html" class="w-12 h-12 md:w-20 md:h-20 absolute left-2 -top-2 md:left-0 md:-top-4">
+          <span class="sr-only">Favorite Games Home</span>
+          <img src="images/tic-tac-toe.png" class="w-full" />
+        </a>
+        <h1 class="tracking-wider text-xl md:text-5xl">Favorite Games</h1>
+        </div>
+      </header>
+    <main class="container mx-auto bg-white md:mt-12 p-4 text-center max-w-5xl shadow">
+      <h2 class="text-xl md:text-3xl font-bold py-4">Game-Themed Lorem Ipsum</h2>
+      <p
+        id="generated-lorem-ipsum"
+        class="flex items-center overflow-y-auto justify-center text-base sm:text-lg max-w-2xl mx-auto pb-4 h-80 sm:h-64 md:h-56 bg-green-100 rounded-lg p-3 shadow-sm"
+      ></p>
       <button id="update" type="button"
         class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
       >
         Update Lorem Ipsum</button>
-      <div class="flex flex-wrap items-center justify-center" onclick="updateLoremIpsum()">
+      <div class="flex flex-wrap items-center justify-center mb-44 sm:mb-0" onclick="updateLoremIpsum()">
         <img src="images/dice2.png" class="w-24 h-24 p-2" alt="dice" />
         <img src="images/ghost.png" class="w-24 h-24 p-2" alt="ghost" />
         <img src="images/pacman.png" class="w-24 h-24 p-2" alt="pacman" />
@@ -55,63 +70,93 @@
         <img src="images/question-cube.png" class="w-24 h-24 p-2" alt="question cube" />
       </div>
     </main>
+    <footer class="absolute bottom-0 w-full bg-blue-700 py-10 text-center text-white font-bold">
+        <nav class="flex items-center justify-center space-x-2 mb-4">
+            <a
+              href="https://github.com/ethyl2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                focusable="false"
+                width="1.73em"
+                height="1.5em"
+                style="
+                  -ms-transform: rotate(360deg);
+                  -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+                "
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 1227.825 1000"
+              >
+                <path
+                  d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                  fill="white"
+                />
+              </svg>
+              <span class="sr-only">GitHub</span>
+            </a>
+            <a
+              href="https://twitter.com/ethyl22000"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                focusable="false"
+                width="1.5em"
+                height="1.5em"
+                style="
+                  -ms-transform: rotate(360deg);
+                  -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+                "
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                  fill="white"
+                />
+              </svg>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/heather-nuffer/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                focusable="false"
+                width="1.5em"
+                height="1.5em"
+                style="
+                  -ms-transform: rotate(360deg);
+                  -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+                "
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z"
+                  fill="white"
+                />
+                <span class="sr-only">LinkedIn</span>
+              </svg>
+            </a>
+          </nav>
+        <p>Copyright <span id="current-year">2022</span> Heather Nuffer</p>
+      </footer>
     <script src="store/game-words.js" async defer></script>
-    <script>
-      window.addEventListener('load', updateLoremIpsum)
-      const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
-      const updateButton = document.getElementById('update')
-
-      updateButton.addEventListener('click', updateLoremIpsum)
-
-      function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-
-      function updateLoremIpsum() {
-        generatedLoremIpsumEl.textContent = makeParagraph()
-      }
-
-      function makeSentence() {
-        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
-        const gameName = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const transitiveVerb = transitiveVerbs[Math.floor(Math.random() * transitiveVerbs.length)]
-        return pronoun + ' ' + transitiveVerb + ' ' + gameName + '. '
-      }
-
-      function makeAccusation() {
-        const murderSuspect = clueCharacters[Math.floor(Math.random() * clueCharacters.length)]
-        const murderWeapon = clueWeapons[Math.floor(Math.random() * clueWeapons.length)]
-        const location = clueRooms[Math.floor(Math.random() * clueRooms.length)]
-        return `I suspect ${murderSuspect}, in the ${location}, with the ${murderWeapon}. `
-      }
-
-      function winPit() {
-        const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
-        return `Corner on ${collectedCommodity}! `
-      }
-
-      function makeQuote() {
-        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
-        const verb = verbsForTalking[Math.floor(Math.random() * verbsForTalking.length)]
-        const saying = randomPhrases[Math.floor(Math.random() * randomPhrases.length)]
-        return `${pronoun} ${verb}, "${saying}" `
-      }
-
-      function makeParagraph() {
-        const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
-
-        return makeSentence() + makeSentence()
-        + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
-        + 'Let\'s play ' + gameName2 + '. '
-        + winPit()
-        + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
-        + makeQuote()
-        + 'Or maybe let\'s play ' + gameName5 + ' instead! '
-        + makeAccusation()
-      }
-    </script>
+    <script src="js/lorem-ipsum.js" async defer></script>
   </body>
 </html>
