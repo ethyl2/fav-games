@@ -157,68 +157,6 @@
         <p>Copyright <span id="current-year">2022</span> Heather Nuffer</p>
       </footer>
     <script src="store/game-words.js" async defer></script>
-    <script>
-      window.addEventListener('load', updateLoremIpsum)
-      const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
-      const updateButton = document.getElementById('update')
-
-      updateButton.addEventListener('click', updateLoremIpsum)
-
-      function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-
-      function updateLoremIpsum() {
-        generatedLoremIpsumEl.textContent = makeParagraph()
-      }
-
-      function makeSentence() {
-        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
-        const gameName = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const transitiveVerb = transitiveVerbs[Math.floor(Math.random() * transitiveVerbs.length)]
-        return pronoun + ' ' + transitiveVerb + ' ' + gameName + '. '
-      }
-
-      function makeAccusation() {
-        const murderSuspect = clueCharacters[Math.floor(Math.random() * clueCharacters.length)]
-        const murderWeapon = clueWeapons[Math.floor(Math.random() * clueWeapons.length)]
-        const location = clueRooms[Math.floor(Math.random() * clueRooms.length)]
-        return `I suspect ${murderSuspect}, in the ${location}, with the ${murderWeapon}. `
-      }
-
-      function winPit() {
-        const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
-        return `Corner on ${collectedCommodity}! `
-      }
-
-      function makeSaying() {
-        const pronoun = capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
-        const verb = verbsForTalking[Math.floor(Math.random() * verbsForTalking.length)]
-        const saying = randomPhrases[Math.floor(Math.random() * randomPhrases.length)]
-        return `${pronoun} ${verb}, "${saying}" `
-      }
-
-      function makeQuote() {
-        const currentQuote = quotes[Math.floor(Math.random() * quotes.length)]
-        return `As ${currentQuote.author} said, '${currentQuote.quote}' `
-      }
-
-      function makeParagraph() {
-        const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
-        const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
-
-        return makeSentence() + makeSentence()
-        + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
-        + 'Let\'s play ' + gameName2 + '. '
-        + winPit()
-        + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
-        + makeSaying()
-        + 'Or maybe let\'s play ' + gameName5 + ' instead! '
-        + makeQuote()
-        + makeAccusation()
-      }
-    </script>
+    <script src="js/lorem-ipsum.js" async defer></script>
   </body>
 </html>
