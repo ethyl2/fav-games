@@ -23,10 +23,6 @@ function getSubject() {
   }
 }
 
-window.addEventListener('load', () => {
-  console.log(getSubject())
-})
-
 function makeSentence() {
   const subject = getSubject()
   const gameName = gameNames[Math.floor(Math.random() * gameNames.length)]
