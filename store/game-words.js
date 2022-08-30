@@ -535,3 +535,54 @@ const verbsForTalking = [
   'hissed',
   'like to scream'
 ]
+
+
+const candyLandCharacters = [
+  'King Kandy, the Imperial Head Bonbon and Grand Jujube of Candyland,',
+  'Lord Licorice',
+  'Mama Gingertree',
+  'Mr. Mint, the Peppermint Lumberjack and Keeper of the Royal Peppermint Forest,',
+  'the Duke of Swirl',
+  'Queen Frostine',
+  'Duchess E. Claire',
+  'Giggly Gumdrop',
+  'Gramma Gooey',
+  'Gramma Nutt',
+  'Princess Lolly of the Lollipop Woods',
+  'Plumpy, the Last of the PlumpaTrolls and Caretaker of the Gingerbread Plum Trees,',
+  'Bazz',
+  'Jolly, the Official Gumdrop Mountain Greeter,',
+  'Spidora',
+  'Buzzy',
+  'Crockett',
+  'Gloppy, the kindly Molasses Monster,',
+  'Gingerbread Boy Jib',
+  'Fluffypuffer',
+]
+
+const candyLandLocations = [
+  'Molasses Swamp',
+  'Chocolate Swamp',
+  'Peppermint Forest',
+  'Cupcake Commons',
+  'Ice Cream Slopes',
+  'Rainbow Trail',
+  'Peppermint Pass',
+  'Gumdrop Mountains',
+  'Gummy Hills',
+  'Gingerbread Plum Tree',
+  'Gingerbread House',
+  'Crooked Old Peanut Brittle House',
+  'Licorice Lagoon',
+  'Lollypop Woods',
+  'Ice Palace',
+  'Candy Castle',
+  'Candy Cane Forest',
+  'Peppermint Stick Forest',
+  'Ice Cream Floats',
+  'Licorice Castle',
+  'Cherry Pitfall',
+  'Cotton Candy Corner',
+  'Lemon Lime Springs',
+  'Home Sweet Home'
+]
