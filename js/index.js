@@ -8,6 +8,9 @@ const gridEl = document.getElementById('grid')
 const cards = document.getElementsByTagName('li')
 const descriptions = document.getElementsByTagName('h2')
 const instructionItems = document.getElementsByClassName('instruction-item')
+const footerEl = document.getElementsByTagName('footer')[0]
+
+
 darkModeButton.addEventListener('click', () => {
     Array.from(paragraphEls).forEach(el => {
         el.classList.toggle('text-yellow-500')
@@ -35,6 +38,9 @@ darkModeButton.addEventListener('click', () => {
         el.classList.toggle('bg-black')
         el.classList.toggle('text-yellow-500')
     })
+
+    footerEl.classList.toggle('bg-blue-700')
+    footerEl.classList.toggle('bg-black')
 
     if (darkModeButton.textContent === 'Dark Mode') {
       darkModeButton.textContent = 'Light Mode'

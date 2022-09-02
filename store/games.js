@@ -240,4 +240,20 @@ const games = [
             See the page for instructions and adverb suggestions.
           </p>`,
     },
+    {
+        title: 'Gartic.io',
+        url: 'https://gartic.io/',
+        gameLogoSrc: 'images/gartic-io.png',
+        gameLogoAlt: 'Gartic.io logo',
+        description: 'Draw, Guess, Win',
+        howTo: `<p class="text-xs mt-2 md:text-sm">
+            1. Choose your avatar, nickname, & language. Then click Rooms.
+          </p>
+          <p class="text-xs mt-2 md:text-sm">2. On the next screen, click on New Room.</p>
+          <p class="text-xs mt-2 md:text-sm">3. The next screen is about settings. Once you've selected the details for your room, click New Room.</p>
+          <p class="text-xs mt-2 md:text-sm">4. A modal will show the link to share with your friends.</p>
+          <p class="text-xs mt-2 md:text-sm">5. Once everyone has joined, start the game. The player who draws first will automatically be chosen and they get to pick between two words or phrases to draw.</p>
+          <p class="text-xs mt-2 md:text-sm"> The other players type in their guesses. The quicker you guess, the more points you receive.</p>
+          `,
+    },
 ]
