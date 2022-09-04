@@ -22,9 +22,13 @@
         font-family: sans-serif;
         box-shadow: 0 6px #777;
       }
-      button:active {
+      .moveable-button:active {
         box-shadow: 0 4px #666;
         transform: translateY(2px);
+      }
+
+      label {
+        font-family: sans-serif;
       }
     </style>
     <link rel="stylesheet" href="">
@@ -44,24 +48,103 @@
         <div class="text-white w-full bg-black mx-auto h-full grid grid-cols-3">
           <div class="border flex flex-col items-center justify-center">
             <img src="images/game-pad.png" alt="game pad" />
-
           </div>
 
 
           <div class="bg-gray-600 space-y-4 border flex flex-col items-center justify-center">
-            <button type="button"
-              class="font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
+            <button
+              id="start"
+              type="button"
+              class="moveable-button font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
             >
               Start</button>
-            <button type="button"
-              class="font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
+            <button
+              id="pause"
+              type="button"
+              class="moveable-button font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
             >
               Pause</button>
           </div>
-          <div class="border flex flex-col items-center justify-center">three</div>
+          <div
+            id="sound-buttons-box"
+            class="bg-red-700 border flex flex-wrap items-center justify-center">
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-1" class="text-xs uppercase font-semibold">
+                noob</label>
+              <button
+              id="sound-1"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound1</button>
+            </div>
+
+            <div class="flex flex-col items-center justify-center">
+              <label for="sound-2" class="text-xs uppercase font-semibold">
+                robot</label>
+              <button
+              id="sound-2"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound1</button>
+            </div>
+
+          </div>
+
         </div>
       </div>
-    </div>
+      <div class="pt-12 text-yellow-200 flex flex-col items-center justify-center container">
+        <div>noob op camper bot lag ready up salty game over head shot loot got em hacker</div>
+        <p class="text-xl">Audio Sources</p>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/336279/" rel="nofollow noopener noreferrer">noob</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/198970/" rel="nofollow noopener noreferrer">robot</a>
+      </div>
+
+      </div>
     <script src="" async defer></script>
+    <script>
+      const buttonsBox = document.getElementById('sound-buttons-box')
+      const soundButton1 = document.getElementById('sound-1')
+      const soundButton2 = document.getElementById('sound-2')
+      const soundButtons = document.getElementsByClassName('sound-button')
+
+      let allowAudio = false
+      const startButton = document.getElementById('start')
+      startButton.addEventListener('click', () => {
+        allowAudio = true
+        buttonsBox.classList.remove('bg-red-700')
+        buttonsBox.classList.add('bg-green-900')
+        Array.from(soundButtons).forEach(button => {
+          button.disabled = false
+          button.classList.remove('cursor-not-allowed')
+          button.classList.add('moveable-button', 'cursor-pointer')
+        })
+      })
+
+      const pauseButton = document.getElementById('pause')
+      pauseButton.addEventListener('click', () => {
+        allowAudio = false
+        buttonsBox.classList.remove('bg-green-900')
+        buttonsBox.classList.add('bg-red-700')
+        Array.from(soundButtons).forEach(button => {
+          button.disabled = true
+          button.classList.remove('moveable-button', 'cursor-pointer')
+          button.classList.add('cursor-not-allowed')
+        })
+      })
+
+
+      soundButton1.addEventListener('click', () => {
+        if (allowAudio) {
+          const audio1 = new Audio('static/audio/noob.wav')
+          audio1.play()
+        }
+      })
+
+      soundButton2.addEventListener('click', () => {
+        if (allowAudio) {
+          const audio2 = new Audio('static/audio/robot.mp3')
+          audio2.play()
+        }
+      })
+
+    </script>
   </body>
 </html>
