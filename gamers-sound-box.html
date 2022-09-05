@@ -10,6 +10,30 @@
     <title>Gamers' Virtual Sound Box</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/og-image.png">
+    <meta property="og:image:alt" content="Gamers Sound Box">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/index.html">
+    <meta property="og:title" content="Gamers Sound Box | Favorite Group Online Games">
+    <meta property="og:description" content="a collection of gaming-related sounds">
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -40,34 +64,47 @@
     <img
         src="images/try-me.png"
         alt="try me"
-        class="absolute right-1 top-1 w-32 h-32"
+        class="absolute right-1 top-1 w-12 h-12 pointer-events-none md:w-32 md:h-32"
       />
-    <div class="container mx-auto">
-      <h1 class="leading-10 text-yellow-300 text-4xl text-center pt-12 sm:text-6xl">GAMERS SOUND BOX</h1>
-      <div class="max-w-3xl px-2 py-8 flex items-center justify-center flex-col shadow-lg mt-12 w-11/12 mx-auto bg-gray-300 rounded h-72">
-        <div class="text-white w-full bg-black mx-auto h-full grid grid-cols-3">
-          <div class="border flex flex-col items-center justify-center">
-            <img src="images/game-pad.png" alt="game pad" />
+    <div class="container mx-auto px-12 md:px-auto">
+      <h1 class="leading-10 text-yellow-300 text-3xl text-center pt-12 sm:text-6xl">GAMERS SOUND BOX</h1>
+      <div class="max-w-3xl px-2 py-8 flex items-center justify-center flex-col shadow-lg mt-12 w-full md:w-11/12 mx-auto bg-gray-300 rounded">
+        <div class="text-white w-full bg-black mx-auto h-full grid grid-cols-1 md:grid-cols-3">
+          <div
+            id="first-box"
+            class="border flex flex-col items-center justify-center bg-black">
+            <img src="images/game-pad.png" alt="game pad" class="w-24 h-24 md:w-auto md:h-auto"/>
           </div>
 
 
-          <div class="bg-gray-600 space-y-4 border flex flex-col items-center justify-center">
+          <div class="bg-gray-600 md:space-y-4 border flex flex-row md:flex-col items-center justify-center space-x-4 md:space-x-0 py-4">
             <button
               id="start"
               type="button"
-              class="moveable-button font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
+              class="moveable-button font-bold text-base md:text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
             >
               Start</button>
             <button
               id="pause"
               type="button"
-              class="moveable-button font-bold text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase"
+              class="moveable-button font-bold text-base md:text-3xl rounded-lg px-2 py-1 bg-gray-900 hover:bg-black uppercase cursor-not-allowed"
+              disabled
             >
               Pause</button>
           </div>
           <div
             id="sound-buttons-box"
-            class="bg-red-700 border flex flex-wrap items-center justify-center">
+            class="bg-red-700 border flex flex-wrap items-end justify-center p-2">
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-0" class="text-xs uppercase font-semibold">
+                awesome</label>
+              <button
+              id="sound-0"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound0</button>
+            </div>
+
             <div class="p-2 flex flex-col items-center justify-center">
               <label for="sound-1" class="text-xs uppercase font-semibold">
                 noob</label>
@@ -77,35 +114,254 @@
               class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound1</button>
             </div>
 
-            <div class="flex flex-col items-center justify-center">
+            <div class="p-2 flex flex-col items-center justify-center">
               <label for="sound-2" class="text-xs uppercase font-semibold">
                 robot</label>
               <button
               id="sound-2"
               type="button"
-              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound1</button>
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound2</button>
             </div>
 
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-3" class="text-xs uppercase font-semibold text-center">
+                game <br />over</label>
+              <button
+              id="sound-3"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound3</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-4" class="text-xs uppercase font-semibold">
+                coin</label>
+              <button
+              id="sound-4"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound4</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-5" class="text-xs uppercase font-semibold">
+                yay</label>
+              <button
+              id="sound-5"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound5</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-6" class="text-xs uppercase font-semibold text-center">
+                you <br />lost</label>
+              <button
+              id="sound-6"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound6</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-7" class="text-xs uppercase font-semibold text-center">
+                you <br />win</label>
+              <button
+              id="sound-7"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound7</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-8" class="text-xs uppercase font-semibold text-center">
+                owned</label>
+              <button
+              id="sound-8"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound8</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-9" class="text-xs uppercase font-semibold text-center">
+                cheater</label>
+              <button
+              id="sound-9"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sound9</button>
+            </div>
+
+            <div class="p-2 flex flex-col items-center justify-center">
+              <label for="sound-10" class="text-xs uppercase font-semibold text-center">
+                level <br/> up</label>
+              <button
+              id="sound-10"
+              type="button"
+              class="sound-button rounded-lg text-xs bg-yellow-300 text-yellow-300">sounda</button>
+            </div>
           </div>
 
         </div>
       </div>
-      <div class="pt-12 text-yellow-200 flex flex-col items-center justify-center container">
-        <div>noob op camper bot lag ready up salty game over head shot loot got em hacker</div>
-        <p class="text-xl">Audio Sources</p>
-        <a class="text-sm hover:text-white" href="https://freesound.org/s/336279/" rel="nofollow noopener noreferrer">noob</a>
-        <a class="text-sm hover:text-white" href="https://freesound.org/s/198970/" rel="nofollow noopener noreferrer">robot</a>
-      </div>
 
+      <div class="pt-12 text-yellow-200 flex flex-col items-center justify-center container">
+        <p class="text-xl pb-4">Get one IRL</p>
+        <a href="https://www.amazon.com/Gift-Republic-Gamers-Sound-Box/dp/B083YZTNTQ"
+          rel="nofollow noopener noreferrer"
+          class="text-sm hover:text-white text-center"
+          target="_blank"
+        >
+          Gift Republic Gamers Sound Box
+        </a>
       </div>
+      <div class="pt-12 mb-8 text-yellow-200 flex flex-col items-center justify-center container">
+        <p class="text-xl pb-4">Audio Sources</p>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/336279/" rel="nofollow noopener noreferrer" target="_blank">noob</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/198970/" rel="nofollow noopener noreferrer" target="_blank">robot</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/365766/" rel="nofollow noopener noreferrer" target="_blank">game over</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/341695/" rel="nofollow noopener noreferrer" target="_blank">coin</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/118655/" rel="nofollow noopener noreferrer" target="_blank">yay</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/525254/" rel="nofollow noopener noreferrer" target="_blank" >you lost/you win</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/151605/" rel="nofollow noopener noreferrer" target="_blank" >awesome</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/325304/" rel="nofollow noopener noreferrer" target="_blank">commodore 64</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/336284/" rel="nofollow noopener noreferrer" target="_blank">owned</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/336276/" rel="nofollow noopener noreferrer" target="_blank">cheater</a>
+        <a class="text-sm hover:text-white" href="https://freesound.org/s/78916/" rel="nofollow noopener noreferrer" target="_blank">level up</a>
+      </div>
+    </div>
+    <footer class="relative w-full bg-gray-900 py-10 text-center text-red-500 font-bold mt-48">
+      <a class="text-sm text-yellow-200 hover:text-white pb-4 inline-flex" href="index.html">Favorite Group Online Games</a>
+      <nav class="flex items-center justify-center space-x-2 mb-4">
+          <a
+            href="https://github.com/ethyl2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.73em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 1227.825 1000"
+            >
+              <path
+                d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                fill="white"
+              />
+            </svg>
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://twitter.com/ethyl22000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.5em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                fill="white"
+              />
+            </svg>
+            <span class="sr-only">Twitter</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/heather-nuffer/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.5em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z"
+                fill="white"
+              />
+              <span class="sr-only">LinkedIn</span>
+            </svg>
+          </a>
+        </nav>
+      <p class="text-xs">Copyright <span id="current-year">2022</span> Heather Nuffer</p>
+    </footer>
     <script src="" async defer></script>
     <script>
-      const buttonsBox = document.getElementById('sound-buttons-box')
-      const soundButton1 = document.getElementById('sound-1')
-      const soundButton2 = document.getElementById('sound-2')
-      const soundButtons = document.getElementsByClassName('sound-button')
-
       let allowAudio = false
+
+      const firstBox = document.getElementById('first-box')
+      const firstBoxAudioSource = 'static/audio/commodore-64.wav'
+      const firstBoxAudio = new Audio(firstBoxAudioSource)
+      firstBox.addEventListener('click', () => {
+        if (allowAudio) {
+          firstBoxAudio.play()
+        }
+        firstBox.classList.remove('bg-black')
+        firstBox.classList.add('bg-blue-700')
+        setTimeout(() => {
+          firstBox.classList.remove('bg-blue-700')
+          firstBox.classList.add('bg-black')
+        }, 5000)
+      })
+
+      const buttonsBox = document.getElementById('sound-buttons-box')
+
+      const soundButtons = document.getElementsByClassName('sound-button')
+      const audioSourcesArray = [
+        'static/audio/awesome.wav',
+        'static/audio/noob.wav',
+        'static/audio/robot.mp3',
+        'static/audio/game-over.wav',
+        'static/audio/coin.wav',
+        'static/audio/yay.wav',
+        'static/audio/you-lost.wav',
+        'static/audio/you-win.wav',
+        'static/audio/owned.wav',
+        'static/audio/cheater.wav',
+        'static/audio/level-up.wav'
+      ]
+
+
+      const audioArray = []
+
+      Array.from(soundButtons).forEach(button => {
+          const number = button.id.split('-')[1]
+          window['audio' + number] = new Audio(audioSourcesArray[number])
+          audioArray.push(window['audio' + number])
+        button.addEventListener('click', () => {
+          if (allowAudio) {
+            window['audio' + number].play()
+          }
+        })
+      })
+
+
       const startButton = document.getElementById('start')
       startButton.addEventListener('click', () => {
         allowAudio = true
@@ -116,11 +372,21 @@
           button.classList.remove('cursor-not-allowed')
           button.classList.add('moveable-button', 'cursor-pointer')
         })
+        pauseButton.disabled = false
+        pauseButton.classList.remove('cursor-not-allowed')
+        pauseButton.classList.add('cursor-pointer')
       })
 
       const pauseButton = document.getElementById('pause')
       pauseButton.addEventListener('click', () => {
+        pauseButton.disabled = true
+        pauseButton.classList.remove('cursor-pointer')
+        pauseButton.classList.add('cursor-not-allowed')
         allowAudio = false
+        audioArray.forEach(item => {
+          item.pause()
+        })
+        firstBoxAudio.pause()
         buttonsBox.classList.remove('bg-green-900')
         buttonsBox.classList.add('bg-red-700')
         Array.from(soundButtons).forEach(button => {
@@ -129,22 +395,6 @@
           button.classList.add('cursor-not-allowed')
         })
       })
-
-
-      soundButton1.addEventListener('click', () => {
-        if (allowAudio) {
-          const audio1 = new Audio('static/audio/noob.wav')
-          audio1.play()
-        }
-      })
-
-      soundButton2.addEventListener('click', () => {
-        if (allowAudio) {
-          const audio2 = new Audio('static/audio/robot.mp3')
-          audio2.play()
-        }
-      })
-
     </script>
   </body>
 </html>
