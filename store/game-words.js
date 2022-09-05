@@ -586,3 +586,10 @@ const candyLandLocations = [
   'Lemon Lime Springs',
   'Home Sweet Home'
 ]
+
+const gameCharacters = [
+  ...clueCharacters,
+  ...candyLandCharacters,
+]
+
+console.log(gameCharacters)
