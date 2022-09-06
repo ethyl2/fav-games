@@ -13,13 +13,15 @@ function updateLoremIpsum() {
 }
 
 function getSubject() {
-  const dieRoll = Math.floor(Math.random() * 3)
+  const dieRoll = Math.floor(Math.random() * 4)
   if (dieRoll === 1) {
     return capitalizeFirstLetter(pronouns[Math.floor(Math.random() * pronouns.length)])
   } else if (dieRoll === 2) {
     return getClueCharacters()
-  } else {
+  } else  if(dieRoll === 3) {
     return capitalizeFirstLetter(getCandyLandCharacters())
+  } else {
+    return getDuo()
   }
 }
 
@@ -49,6 +51,15 @@ function makeSaying() {
   return `${subject} ${verb}, "${saying}" `
 }
 
+function doAmongUsTasks() {
+  const task1 = amongUsTasks[Math.floor(Math.random() * amongUsTasks.length)]
+  const restOfTasks = amongUsTasks.filter(task => {
+    return task !== task1
+  })
+  const task2 = restOfTasks[Math.floor(Math.random() * restOfTasks.length)]
+  return ` It's time to ${task1} and ${task2} before the Imposter finds and kills me. `
+}
+
 function makeQuote() {
   const currentQuote = quotes[Math.floor(Math.random() * quotes.length)]
   return `As ${currentQuote.author} said, '${currentQuote.quote}' `
@@ -64,6 +75,13 @@ function getCandyLandCharacters() {
 function getClueCharacters() {
   const char1 = clueCharacters[Math.floor(Math.random() * clueCharacters.length)]
   const rest = clueCharacters.filter(char => char !== char1)
+  const char2 = rest[Math.floor(Math.random() * rest.length)]
+  return `${char1} and ${char2}`
+}
+
+function getDuo() {
+  const char1 = gameCharacters[Math.floor(Math.random() * gameCharacters.length)]
+  const rest = gameCharacters.filter(char => char !== char1)
   const char2 = rest[Math.floor(Math.random() * rest.length)]
   return `${char1} and ${char2}`
 }
@@ -88,6 +106,7 @@ function makeParagraph() {
   + makeSaying()
   + 'Or maybe let\'s play ' + gameName5 + ' instead! '
   + makeQuote()
+  + doAmongUsTasks()
   + makeCandylandSentence()
   + makeAccusation()
 }
