@@ -1,4 +1,19 @@
-window.addEventListener('load', updateLoremIpsum)
+window.addEventListener('load', init)
+
+const paragraphCountInput = document.getElementById('paragraph-count')
+const paragraphCountLabel = document.getElementById('paragraph-count-label')
+let paragraphCount =  paragraphCountInput.value
+
+paragraphCountInput.addEventListener('input', () => {
+  paragraphCount = paragraphCountInput.value
+  window.sessionStorage.setItem('paragraph-count', paragraphCount)
+  if (parseInt(paragraphCountInput.value) === 1) {
+    paragraphCountLabel.textContent = 'Paragraph'
+  } else {
+    paragraphCountLabel.textContent = 'Paragraphs'
+  }
+})
+
 const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
 const updateButton = document.getElementById('update')
 
@@ -8,8 +23,26 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function init() {
+  const paragraphCountFromStorage = window.sessionStorage.getItem('paragraph-count')
+  if (paragraphCountFromStorage) {
+    paragraphCount = paragraphCountFromStorage
+    paragraphCountInput.value = paragraphCountFromStorage
+  }
+  if (parseInt(paragraphCount) === 1) {
+    paragraphCountLabel.textContent = 'Paragraph'
+  } else {
+    paragraphCountLabel.textContent = 'Paragraphs'
+  }
+  updateLoremIpsum()
+}
+
 function updateLoremIpsum() {
-  generatedLoremIpsumEl.textContent = makeParagraph()
+  let updatedContent = ''
+  for (let i=0; i < paragraphCount; i++) {
+    updatedContent += makeParagraph()
+  }
+  generatedLoremIpsumEl.innerHTML = updatedContent
 }
 
 function getSubject() {
@@ -98,15 +131,19 @@ function makeParagraph() {
   const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
   const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
 
-  return makeSentence() + makeSentence()
-  + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
-  + 'Let\'s play ' + gameName2 + '. '
-  + winPit()
-  + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
-  + makeSaying()
-  + 'Or maybe let\'s play ' + gameName5 + ' instead! '
-  + makeQuote()
-  + doAmongUsTasks()
-  + makeCandylandSentence()
-  + makeAccusation()
+  return (
+    '<p>'
+    + makeSentence() + makeSentence()
+    + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
+    + 'Let\'s play ' + gameName2 + '. '
+    + winPit()
+    + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
+    + makeSaying()
+    + 'Or maybe let\'s play ' + gameName5 + ' instead! '
+    + makeQuote()
+    + doAmongUsTasks()
+    + makeCandylandSentence()
+    + makeAccusation()
+    + '</p>'
+  )
 }
