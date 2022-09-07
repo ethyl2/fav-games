@@ -51,10 +51,20 @@
       </header>
     <main class="container mx-auto bg-white md:mt-12 p-4 text-center max-w-5xl shadow">
       <h2 class="text-xl md:text-3xl font-bold py-4">Game-Themed Lorem Ipsum</h2>
-      <p
+      <form class="pb-4">
+        <input
+          type="number"
+          name="paragraph-count"
+          id="paragraph-count"
+          class="border rounded mr-2 w-12 px-1"
+          value="1"
+        />
+        <label for="paragraph-count" id="paragraph-count-label">Paragraph</label>
+      </form>
+      <div
         id="generated-lorem-ipsum"
-        class="flex items-center overflow-y-auto justify-center text-base sm:text-lg max-w-2xl mx-auto pb-4 h-auto md:h-96 bg-green-100 rounded-lg p-3 shadow-sm"
-      ></p>
+        class="leading-relaxed flex flex-col space-y-3 items-center overflow-y-auto justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-green-100 rounded-lg p-3 shadow-sm"
+      ></div>
       <button id="update" type="button"
         class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
       >
