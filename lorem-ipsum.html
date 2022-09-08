@@ -60,15 +60,23 @@
           value="1"
         />
         <label for="paragraph-count" id="paragraph-count-label">Paragraph</label>
+        <div class="pt-2">
+          <input type="radio" id="short" name="paragraph-length" value="short" checked>
+          <label for="short" class="pr-2">short</label>
+          <input type="radio" id="long" name="paragraph-length" value="long">
+          <label for="long">long</label>
+        </div>
       </form>
-      <div
-        id="generated-lorem-ipsum"
-        class="leading-relaxed flex flex-col space-y-3 items-center overflow-y-auto justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-green-100 rounded-lg p-3 shadow-sm"
-      ></div>
       <button id="update" type="button"
         class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow"
       >
         Update Lorem Ipsum</button>
+
+      <div
+        id="generated-lorem-ipsum"
+        class="leading-relaxed flex flex-col space-y-3 items-center overflow-y-auto justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-green-100 rounded-lg p-3 shadow-sm mb-4"
+      ></div>
+
       <div class="flex flex-wrap items-center justify-center mb-44 md:mb-0" onclick="updateLoremIpsum()">
         <img src="images/dice2.png" class="w-24 h-24 p-2" alt="dice" />
         <img src="images/ghost.png" class="w-24 h-24 p-2" alt="ghost" />
