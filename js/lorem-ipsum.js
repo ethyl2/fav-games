@@ -6,7 +6,7 @@ let paragraphCount =  paragraphCountInput.value
 let paragraphLength = 'short'
 
 const paragraphLengthInputs = document.getElementsByName('paragraph-length')
-console.log(paragraphLengthInputs)
+
 Array.from(paragraphLengthInputs).forEach(input => {
   input.addEventListener('input', () => {
     if (input.checked) {
