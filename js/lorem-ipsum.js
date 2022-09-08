@@ -11,6 +11,7 @@ Array.from(paragraphLengthInputs).forEach(input => {
   input.addEventListener('input', () => {
     if (input.checked) {
       paragraphLength = input.value
+      window.sessionStorage.setItem('paragraph-length', paragraphLength)
       updateLoremIpsum()
     }
   })
@@ -46,6 +47,18 @@ function init() {
     paragraphCountLabel.textContent = 'Paragraph'
   } else {
     paragraphCountLabel.textContent = 'Paragraphs'
+  }
+
+  const paragraphLengthFromStorage = window.sessionStorage.getItem('paragraph-length')
+  if (paragraphLengthFromStorage) {
+    paragraphLength = paragraphLengthFromStorage
+    Array.from(paragraphLengthInputs).forEach(input => {
+      if (input.value === paragraphLengthFromStorage) {
+        input.checked = true
+      } else {
+        input.checked = false
+      }
+    })
   }
   updateLoremIpsum()
 }
@@ -87,7 +100,7 @@ function makeAccusation() {
 
 function winPit() {
   const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
-  return `Corner on ${collectedCommodity}! `
+  return `<span class="italic">Corner on ${collectedCommodity}!</span> `
 }
 
 function makeSaying() {
@@ -157,10 +170,9 @@ function playLife() {
 
 function makeParagraph(length='long') {
   const introSentence = introSentences[Math.floor(Math.random() * introSentences.length)]
+  const gameName1 = gameNames[Math.floor(Math.random() * gameNames.length)]
   const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
+
   const gameType = gameTypes[Math.floor(Math.random() * gameTypes.length)]
 
   let paragraph = (
@@ -168,20 +180,25 @@ function makeParagraph(length='long') {
       + introSentence
       + makeSentence()
       + capitalizeFirstLetter(gameType) + ' games are my favorite. '
-      + 'Let\'s play ' + gameName2 + ' or ' + gameName5 + '. '
+      + 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
       + makeSaying()
       + playLife()
     )
 
   if (length === 'long') {
+    const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
+    const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
+    const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
+    const gameName6 = gameNames[Math.floor(Math.random() * gameNames.length)]
+    const gameName7 = gameNames[Math.floor(Math.random() * gameNames.length)]
     paragraph += (
       makeSentence()
-      + 'Do you like ' + gameName4 +  ' or ' + gameName5 + '? '
-      + 'I want to play ' + gameName2 + '. '
+      + 'Do you like ' + gameName3 +  ' or ' + gameName4 + '? '
+      + 'I want to play ' + gameName5 + '. '
       + winPit()
-      + 'Or let\'s play ' + gameName3 + '! ' + makeSentence() + makeSentence()
+      + 'Or let\'s play ' + gameName6 + '! ' + makeSentence() + makeSentence()
       + makeSaying()
-      + 'Or maybe let\'s play ' + gameName5 + ' instead! '
+      + 'Or maybe let\'s play ' + gameName7 + ' instead! '
       + makeQuote()
       + doAmongUsTasks()
       + makeCandylandSentence()
