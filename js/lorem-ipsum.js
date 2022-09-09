@@ -1,7 +1,11 @@
 window.addEventListener('load', init)
-
+const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
+const updateButton = document.getElementById('update')
 const paragraphCountInput = document.getElementById('paragraph-count')
 const paragraphCountLabel = document.getElementById('paragraph-count-label')
+const copiedBox = document.getElementById('copied-box')
+const messageEl = document.getElementById('message')
+
 let paragraphCount =  paragraphCountInput.value
 let paragraphLength = 'short'
 
@@ -17,7 +21,6 @@ Array.from(paragraphLengthInputs).forEach(input => {
   })
 })
 
-
 paragraphCountInput.addEventListener('input', () => {
   paragraphCount = paragraphCountInput.value
   window.sessionStorage.setItem('paragraph-count', paragraphCount)
@@ -27,9 +30,6 @@ paragraphCountInput.addEventListener('input', () => {
     paragraphCountLabel.textContent = 'Paragraphs'
   }
 })
-
-const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
-const updateButton = document.getElementById('update')
 
 updateButton.addEventListener('click', updateLoremIpsum)
 
@@ -47,6 +47,31 @@ function init() {
     paragraphCountLabel.textContent = 'Paragraph'
   } else {
     paragraphCountLabel.textContent = 'Paragraphs'
+  }
+
+  const copyButton = document.getElementById('copy-button')
+  copyButton.addEventListener('click', copyToClipboard)
+
+  async function copyToClipboard() {
+    const brRegex = /<br\s*[\/]?>/gi;
+    const convertedLoremIpsum = generatedLoremIpsumEl.innerHTML.replace(brRegex, "\r\n")
+    copiedBox.value = convertedLoremIpsum
+    copiedBox.select()
+    copiedBox.setSelectionRange(0, 99999)
+    try {
+      navigator.clipboard.writeText(copiedBox.value)
+      messageEl.classList.remove('text-transparent')
+      messageEl.textContent = 'Copied to clipboard!'
+      setTimeout(() => {
+        messageEl.classList.add('text-transparent')
+      }, 2000)
+    } catch (err) {
+      messageEl.classList.remove('text-transparent')
+      messageEl.textContent = 'Sorry, there was an error while copying to the clipboard. Try again later!'
+      setTimeout(() => {
+        messageEl.classList.add('text-transparent')
+      }, 2000)
+    }
   }
 
   const paragraphLengthFromStorage = window.sessionStorage.getItem('paragraph-length')
@@ -68,7 +93,7 @@ function updateLoremIpsum() {
   for (let i=0; i < paragraphCount; i++) {
     updatedContent += makeParagraph(paragraphLength)
   }
-  generatedLoremIpsumEl.innerHTML = updatedContent
+  generatedLoremIpsumEl.innerText = updatedContent
 }
 
 function getSubject() {
@@ -100,7 +125,7 @@ function makeAccusation() {
 
 function winPit() {
   const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
-  return `<span class="italic">Corner on ${collectedCommodity}!</span> `
+  return `Corner on ${collectedCommodity}! `
 }
 
 function makeSaying() {
@@ -176,8 +201,8 @@ function makeParagraph(length='long') {
   const gameType = gameTypes[Math.floor(Math.random() * gameTypes.length)]
 
   let paragraph = (
-      '<p>'
-      + introSentence
+
+      introSentence
       + makeSentence()
       + capitalizeFirstLetter(gameType) + ' games are my favorite. '
       + 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
@@ -203,8 +228,7 @@ function makeParagraph(length='long') {
       + doAmongUsTasks()
       + makeCandylandSentence()
       + makeAccusation()
-      + '</p>'
     )
   }
-  return paragraph + '</p>'
+  return paragraph + '\n\n'
 }

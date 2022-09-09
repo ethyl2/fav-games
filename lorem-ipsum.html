@@ -74,8 +74,18 @@
 
       <div
         id="generated-lorem-ipsum"
-        class="leading-relaxed flex flex-col space-y-3 items-center overflow-y-auto justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-green-100 rounded-lg p-3 shadow-sm mb-4"
+        class="leading-relaxed flex flex-col space-y-3 text-left items-center overflow-y-auto justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-green-100 rounded-lg p-3 shadow-sm mb-4"
       ></div>
+
+      <button
+        type="button"
+        id="copy-button"
+        class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-indigo-500 hover:bg-indigo-400 text-center md:text-lg text-white md:mb-4 shadow"
+      >Copy to Clipboard</button>
+      <div>
+        <textarea hidden id="copied-box" rows="2" cols="30" class="text-transparent">This will hold the copied lorem ipsum</textarea>
+        <p id="message" class="pt-3 text-lg text-transparent md:pt-0 md:pb-3 font-bold">Message Goes Here</p>
+      </div>
 
       <div class="flex flex-wrap items-center justify-center mb-44 md:mb-0" onclick="updateLoremIpsum()">
         <img src="images/dice2.png" class="w-24 h-24 p-2" alt="dice" />
