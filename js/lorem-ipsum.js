@@ -63,7 +63,6 @@ function init() {
       messageEl.classList.remove('text-transparent')
       messageEl.textContent = 'Copied to clipboard!'
       setTimeout(() => {
-        messageEl.classList.remove('text-purple-600')
         messageEl.classList.add('text-transparent')
       }, 2000)
     } catch (err) {
