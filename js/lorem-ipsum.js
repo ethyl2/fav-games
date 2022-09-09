@@ -126,7 +126,7 @@ function makeAccusation() {
 
 function winPit() {
   const collectedCommodity = pitCommodities[Math.floor(Math.random() * pitCommodities.length)]
-  return `<span class="italic">Corner on ${collectedCommodity}!</span> `
+  return `Corner on ${collectedCommodity}! `
 }
 
 function makeSaying() {
