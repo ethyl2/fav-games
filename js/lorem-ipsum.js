@@ -193,11 +193,17 @@ function playLife() {
   return sentence
 }
 
+function playTrivia() {
+  const trivaQandA = trivia[Math.floor(Math.random() * trivia.length)]
+  return `Let's play trivia! Q: ${trivaQandA['question'] } A: ${ trivaQandA['answer'] }.`
+}
+
 function makeParagraph(length='long') {
   const introSentence = introSentences[Math.floor(Math.random() * introSentences.length)]
   const gameName1 = gameNames[Math.floor(Math.random() * gameNames.length)]
   const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
-
+  const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
+  const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
   const gameType = gameTypes[Math.floor(Math.random() * gameTypes.length)]
 
   let paragraph = (
@@ -205,26 +211,32 @@ function makeParagraph(length='long') {
       introSentence
       + makeSentence()
       + capitalizeFirstLetter(gameType) + ' games are my favorite. '
+      + 'Do you like ' + gameName3 +  ' or ' + gameName4 + '? '
       + 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
       + makeSaying()
       + playLife()
     )
 
-  if (length === 'long') {
-    const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
-    const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
+  if (length === 'long' || length === 'medium') {
+
     const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
     const gameName6 = gameNames[Math.floor(Math.random() * gameNames.length)]
     const gameName7 = gameNames[Math.floor(Math.random() * gameNames.length)]
     paragraph += (
       makeSentence()
-      + 'Do you like ' + gameName3 +  ' or ' + gameName4 + '? '
+
       + 'I want to play ' + gameName5 + '. '
       + winPit()
       + 'Or let\'s play ' + gameName6 + '! ' + makeSentence() + makeSentence()
       + makeSaying()
       + 'Or maybe let\'s play ' + gameName7 + ' instead! '
       + makeQuote()
+    )
+  }
+
+  if (length === 'long') {
+    paragraph += (
+      playTrivia()
       + doAmongUsTasks()
       + makeCandylandSentence()
       + makeAccusation()
