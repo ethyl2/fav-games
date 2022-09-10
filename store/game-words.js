@@ -336,6 +336,22 @@ const randomPhrases = [
   'Peel!',
   'Checkmate.',
   'Give me your money.',
+  'Five more minutes.',
+  'You can\'t just pause a game.',
+  'Just one more game.',
+  'Not now... I\'m saving the world.',
+  'Warning: I may randomly start talking about board games.',
+  'Warning: I may randomly start talking about video games.',
+  'Couples that play board games together, stay together.',
+  'Couples that play video games together, stay together.',
+  'Born to yell BINGO!',
+  'I speak board game.',
+  'Board games and chill?',
+  'I am either playing board games or thinking about it.',
+  'I am either playing video games or thinking about it.',
+  'Is it still your turn?',
+  'I\'m sorry for what I said when I was playing board games.',
+  'Game on!',
 ]
 
 const quotes = [
@@ -390,6 +406,55 @@ const quotes = [
   {
     quote: 'Play to win, but enjoy the fun.',
     author: 'David Ogilvy',
+  },
+  { quote: `To make an embarrassing admission, I like video games. That's what got me into software engineering when I was a kid.
+      I wanted to make money so I could buy a better computer to play better video games - nothing like saving the world.`,
+    author: 'Elon Musk',
+  },
+  {
+    quote: 'Some people say video games rot your brain, but I think they work different muscles that maybe you don\'t normally use.',
+    author: 'Ezra Koenig',
+  },
+  {
+    quote: 'Video games are meant to be just one thing: Fun! Fun for everyone.',
+    author: 'Satoru Iwata',
+  },
+  {
+    quote: `Every age has its storytelling form, and video gaming is a huge part of our culture.
+    You can ignore or embrace video games and imbue them with the best artistic quality.
+    People are enthralled with video games in the same way as other people love the cinema or theatre.`,
+    author: 'Andy Serkis',
+  },
+  {
+    quote: 'Video games foster the mindset that allows creativity to grow.',
+    author: 'Nolan Bushnell',
+  },
+  {
+    quote: 'Video games are the quintessential social texts of our present cultural moment.',
+    author: 'Steven E. Jones',
+  },
+  {
+    quote: `Video games provide an easy lead-in to computer literacy.
+    They can get you thinking like a video game designer and can even lead to designing
+    since many games come with software to modify the game or redesign it.`,
+    author: 'James Paul Gee',
+  },
+  {
+    quote: `I don't know why a computer game can't be an art form just as a puppet show or an opera is.`,
+    author: 'Fred Saberhagen',
+  },
+  {
+    quote: 'The obvious objective of video games is to entertain people by surprising them with new experiences.',
+    author: 'Shigeru Miyamoto'
+  },
+  {
+    quote: `Ideas are cheap. A dime a dozen, as they say. It's the implementation that's important!
+    The trick isn't just to have a computer game idea, but to actually create it!`,
+    author: 'Scott Adams',
+  },
+  {
+    quote: 'I am ready to face any challenges that might be foolish enough to face me.',
+    author: 'Dwight Schrute',
   },
 
 ]
@@ -684,7 +749,7 @@ const introSentences = [
   'What is your favorite game? ',
   'Don\'t you love playing games? ',
   'Is there anything better in life than playing games? ',
-  'Eat. Sleep. Play games. Repeat. ',
+  'Eat. Sleep. Play games. Restart. ',
   'Why do I love playing games? ',
   'Why do you love playing games? ',
   'Why do we love playing games? ',
