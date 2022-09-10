@@ -434,9 +434,7 @@ const quotes = [
     author: 'Steven E. Jones',
   },
   {
-    quote: `Video games provide an easy lead-in to computer literacy.
-    They can get you thinking like a video game designer and can even lead to designing
-    since many games come with software to modify the game or redesign it.`,
+    quote: `Video games provide an easy lead-in to computer literacy.They can get you thinking like a video game designer and can even lead to designing since many games come with software to modify the game or redesign it.`,
     author: 'James Paul Gee',
   },
   {
@@ -785,4 +783,87 @@ const introSentences = [
   'Do you want a new game for Christmas? ',
   'Do you want a new game for Hanukkah? ',
   'How many games do you own? ',
+]
+
+const trivia = [
+  {
+    question: `What's the biggest island in the world?`,
+    answer: 'Greenland',
+  },
+  {
+    question: `What color is a giraffe's tongue?`,
+    answer: 'Blue-black',
+  },
+  {
+    question: `What country has the most vending machines per capita?`,
+    answer: 'Japan',
+  },
+  {
+    question: `What was the 1st toy to be advertised on television?`,
+    answer: 'Mr. Potato Head',
+  },
+  {
+    question: `Which country owns every panda in the world?`,
+    answer: 'China',
+  },
+  {
+    question: `Coprastastaphobia is the fear of what?`,
+    answer: 'Constipation',
+  },
+  {
+    question: `What is the most common toilet paper color in France?`,
+    answer: 'Pink',
+  },
+  {
+    question: `What's the total number of dots on a pair of dice?`,
+    answer: '42',
+  },
+  {
+    question: `Which bird has the largest wingspan?`,
+    answer: 'Albatross',
+  },
+  {
+    question: `What color are aircraft black boxes?`,
+    answer: 'Bright orange',
+  },
+  {
+    question: `Which chess piece can only move diagonally?`,
+    answer: 'Bishop',
+  },
+  {
+    question: `What land animal species has the largest eyes?`,
+    answer: 'Ostrich',
+  },
+  {
+    question: `A snail can sleep for how many years?`,
+    answer: '3',
+  },
+  {
+    question: `Which animal has the highest blood pressure?`,
+    answer: 'Giraffe',
+  },
+  {
+    question: `How many noses do slugs have?`,
+    answer: '4',
+  },
+  {
+    question: `What flavor of Pop Tart does Buddy the Elf use in his spaghetti?`,
+    answer: 'Chocolate',
+  },
+  {
+    question: `What character do you play as in The Legend of Zelda?`,
+    answer: 'Link',
+  },
+  {
+    question: `What 2 letters are both symbols for 1000?`,
+    answer: 'K and M',
+  },
+  {
+    question: `In Minnesota, it's illegal to tease what animal?`,
+    answer: 'Skunk',
+  },
+  {
+    question: `What animal can't stick out its tongue?`,
+    answer: 'Crocodile',
+  },
 ]
