@@ -407,8 +407,7 @@ const quotes = [
     quote: 'Play to win, but enjoy the fun.',
     author: 'David Ogilvy',
   },
-  { quote: `To make an embarrassing admission, I like video games. That's what got me into software engineering when I was a kid.
-      I wanted to make money so I could buy a better computer to play better video games - nothing like saving the world.`,
+  { quote: `To make an embarrassing admission, I like video games. That's what got me into software engineering when I was a kid. I wanted to make money so I could buy a better computer to play better video games - nothing like saving the world.`,
     author: 'Elon Musk',
   },
   {
@@ -420,9 +419,7 @@ const quotes = [
     author: 'Satoru Iwata',
   },
   {
-    quote: `Every age has its storytelling form, and video gaming is a huge part of our culture.
-    You can ignore or embrace video games and imbue them with the best artistic quality.
-    People are enthralled with video games in the same way as other people love the cinema or theatre.`,
+    quote: `Every age has its storytelling form, and video gaming is a huge part of our culture. You can ignore or embrace video games and imbue them with the best artistic quality. People are enthralled with video games in the same way as other people love the cinema or theatre.`,
     author: 'Andy Serkis',
   },
   {
@@ -446,8 +443,7 @@ const quotes = [
     author: 'Shigeru Miyamoto'
   },
   {
-    quote: `Ideas are cheap. A dime a dozen, as they say. It's the implementation that's important!
-    The trick isn't just to have a computer game idea, but to actually create it!`,
+    quote: `Ideas are cheap. A dime a dozen, as they say. It's the implementation that's important! The trick isn't just to have a computer game idea, but to actually create it!`,
     author: 'Scott Adams',
   },
   {
@@ -633,8 +629,8 @@ const amongUsTasks = [
   'swipe a card',
   'enter the id code',
   'insert keys',
-  'scan boarding pass',
-  'submit scan',
+  'scan the boarding pass',
+  'submit a scan',
   'upload data',
   'clean the vent',
   'empty the garbage',
