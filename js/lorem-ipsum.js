@@ -195,52 +195,131 @@ function playLife() {
 
 function playTrivia() {
   const trivaQandA = trivia[Math.floor(Math.random() * trivia.length)]
-  return `Let's play trivia! Q: ${trivaQandA['question'] } A: ${ trivaQandA['answer'] }.`
+  const knewAnswer = Math.floor(Math.random() * 2) === 1
+  return `Let's play trivia! Question: ${trivaQandA['question'] } Ready for the answer? Here it is: ${ trivaQandA['answer'] }. Did you know that? I ${ knewAnswer ? 'did' : 'did not'}! `
 }
 
-function makeParagraph(length='long') {
-  const introSentence = introSentences[Math.floor(Math.random() * introSentences.length)]
+function getFavorite() {
+  const gameType = gameTypes[Math.floor(Math.random() * gameTypes.length)]
+  return capitalizeFirstLetter(gameType) + ' games are my favorite. '
+}
+
+function askQuestion() {
   const gameName1 = gameNames[Math.floor(Math.random() * gameNames.length)]
   const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameName3 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameName4 = gameNames[Math.floor(Math.random() * gameNames.length)]
-  const gameType = gameTypes[Math.floor(Math.random() * gameTypes.length)]
+  return 'Do you like '
+    + gameName1
+    +  ' or '
+    + gameName2
+    + (gameName2.charAt(gameName2.length-1) === '?' ? ' ' : '? ')
+}
 
-  let paragraph = (
+function makeSuggestion() {
+  const gameName1 = gameNames[Math.floor(Math.random() * gameNames.length)]
+  const gameName2 = gameNames[Math.floor(Math.random() * gameNames.length)]
+  return 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
+}
 
-      introSentence
-      + makeSentence()
-      + capitalizeFirstLetter(gameType) + ' games are my favorite. '
-      + 'Do you like ' + gameName3 +  ' or ' + gameName4 + '? '
-      + 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
-      + makeSaying()
-      + playLife()
-    )
+function listGames() {
+  let gameArray = []
+  for (let i=0; i<10; i++) {
+    gameArray.push(gameNames[Math.floor(Math.random() * gameNames.length)])
+  }
+  const distinctGames = [...new Set(gameArray)]
+  let gameList = ''
+  const endingPunctuation = ['!', '?']
+  distinctGames.forEach(game => {
+    gameList += capitalizeFirstLetter(game) + (endingPunctuation.includes(game.charAt(game.length-1)) ? ' ' : '. ')
+  })
+  return gameList
+}
 
-  if (length === 'long' || length === 'medium') {
+const sentenceTypes = [
+  {
+    type: 'trivia',
+    function: 'playTrivia',
+  },
+  {
+    type: 'pit',
+    function: 'winPit',
+  },
+  {
+    type: 'candyland',
+    function: 'makeCandylandSentence',
+  },
+  {
+    type: 'life',
+    function: 'playLife',
+  },
+  {
+    type: 'clue',
+    function: 'makeAccusation',
+  },
+  {
+    type: 'saying',
+    function: 'makeSaying'
+  },
+  {
+    type: 'among us',
+    function: 'doAmongUsTasks',
+  },
+  { type: 'quote',
+    function: 'makeQuote'
+  },
+  {
+    type: 'sentence',
+    function: 'makeSentence'
+  },
+  {
+    type: 'favorite',
+    function: 'getFavorite'
+  },
+  {
+    type: 'question',
+    function: 'askQuestion'
+  },
+  {
+    type: 'list',
+    function: 'listGames'
+  }
+]
 
-    const gameName5 = gameNames[Math.floor(Math.random() * gameNames.length)]
-    const gameName6 = gameNames[Math.floor(Math.random() * gameNames.length)]
-    const gameName7 = gameNames[Math.floor(Math.random() * gameNames.length)]
-    paragraph += (
-      makeSentence()
+function shuffle(array) {
+  // Fisher-Yates
+  let currentIndex = array.length,  randomIndex;
 
-      + 'I want to play ' + gameName5 + '. '
-      + winPit()
-      + 'Or let\'s play ' + gameName6 + '! ' + makeSentence() + makeSentence()
-      + makeSaying()
-      + 'Or maybe let\'s play ' + gameName7 + ' instead! '
-      + makeQuote()
-    )
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
   }
 
-  if (length === 'long') {
-    paragraph += (
-      playTrivia()
-      + doAmongUsTasks()
-      + makeCandylandSentence()
-      + makeAccusation()
-    )
+  return array;
+}
+
+
+function makeParagraph(length='long') {
+  let numArray = [...new Array(sentenceTypes.length).keys()]
+  shuffle(numArray)
+
+  const sentenceCounts = {
+    short: 4,
+    medium: 6,
+    long: 8,
   }
+
+  let paragraph = ''
+  const slicedNumArray = numArray.slice(0, sentenceCounts[length])
+
+  slicedNumArray.forEach(index => {
+    paragraph += Function("return " + sentenceTypes[index]['function'] + '()')()
+  })
+
   return paragraph + '\n\n'
 }
