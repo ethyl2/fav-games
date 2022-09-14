@@ -378,7 +378,6 @@
 
       Array.from(soundButtons).forEach(button => {
           const number = button.id.split('-')[1]
-          console.log(number)
           window['audio' + number] = new Audio(audioSourcesArray[number])
           audioArray.push(window['audio' + number])
         button.addEventListener('click', () => {
@@ -387,9 +386,6 @@
           }
         })
       })
-
-      console.log(audioArray)
-
 
       const startButton = document.getElementById('start')
       const beginningInstructions = document.getElementById('beginning-instructions')
