@@ -284,7 +284,10 @@ const gameNames = [
   'Happy Salmon',
   'A Game of Cat & Mouth',
   'Poetry for Neanderthals',
-  'Mantis'
+  'Mantis',
+  'Dixit',
+  'Coup',
+  'Wavelength',
 ]
 
 
