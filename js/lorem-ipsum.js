@@ -220,6 +220,16 @@ function makeSuggestion() {
   return 'Let\'s play ' + gameName1 + ' or ' + gameName2 + '. '
 }
 
+function watchGameShow() {
+  const gameShow = gameShows[Math.floor(Math.random() * gameShows.length)]
+  return `Time to watch ${gameShow}! `
+}
+
+function thinkAboutGameShow() {
+  const gameShow = gameShows[Math.floor(Math.random() * gameShows.length)]
+  return `Do you think it would have been fun to be a contestant on ${gameShow}? `
+}
+
 function listGames() {
   let gameArray = []
   for (let i=0; i<10; i++) {
@@ -281,6 +291,14 @@ const sentenceTypes = [
   {
     type: 'list',
     function: 'listGames'
+  },
+  {
+    type: 'watch game show',
+    function: 'watchGameShow'
+  },
+  {
+    type: 'think about game show',
+    function: 'thinkAboutGameShow'
   }
 ]
 

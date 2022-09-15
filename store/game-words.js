@@ -352,6 +352,7 @@ const randomPhrases = [
   'Is it still your turn?',
   'I\'m sorry for what I said when I was playing board games.',
   'Game on!',
+  'No whammies! No whammies!'
 ]
 
 const quotes = [
@@ -862,4 +863,34 @@ const trivia = [
     question: `What animal can't stick out its tongue?`,
     answer: 'Crocodile',
   },
+]
+
+const gameShows = [
+  'Jeopardy!',
+  'Wheel of Fortune',
+  'Family Feud',
+  'The Price is Right',
+  'Who Wants to Be a Millionaire',
+  'Double Dare',
+  'Press Your Luck',
+  'Let\'s Make a Deal',
+  'The Dating Game',
+  'Hollywood Squares',
+  'Love Connection',
+  'Name That Tune',
+  'The Newlywed Game',
+  'Supermarket Sweep',
+  'Remote Control',
+  'What\'s My Line?',
+  'Pyramid',
+  'The Joker\'s Wild',
+  'Deal or No Deal',
+  'Are You Smarter Than a Fifth Grader?',
+  'Weakest Link',
+  'The Chase',
+  'Brain Games',
+  'Master Minds',
+  'Cherries Wild',
+  'The Million Second Quiz',
+  'Cash Cab',
 ]
