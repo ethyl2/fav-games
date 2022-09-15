@@ -256,4 +256,26 @@ const games = [
           <p class="text-xs mt-2 md:text-sm"> The other players type in their guesses. The quicker you guess, the more points you receive.</p>
           `,
     },
+    {
+        title: 'Longwave',
+        url: 'https://longwave.web.app/',
+        gameLogoSrc: 'images/longwave.png',
+        gameLogoAlt: 'Longwave logo',
+        description: 'An online, real-time adaptation of the board game Wavelength. Best enjoyed with voice chat!',
+        howTo: `
+            <p class="text-xs mt-2 md:text-sm">1. Click 'Create Room'</p>
+            <p class="text-xs mt-2 md:text-sm">2. Choose the type of game you'd like: standard, cooperative, or free play.</p>
+            <p class="text-xs mt-2 md:text-sm">3. Share the link in your browser with your friends.</p>
+            <p class="text-xs mt-2 md:text-sm">4. For the standard game, everyone picks whether they'd like to join the left brain or right brain team.</p>
+            <p class="text-xs mt-2 md:text-sm">5. Once everyone is ready, start the game.</p>
+            <p class="text-xs mt-2 md:text-sm">6. One person from a team can pick a spectrum card, which creates a line with one word on one side and basically
+            its opposite on the other side. A circle will be somewhere along the line. The person that picked the card will then decide on a clue -- something that they
+            feel fits at that spot in the spectrum. For example, if the line had 'light' on the left and 'dark' on the right, and the circle was all the way on the right,
+            the player might give the clue 'black'.</p>
+            <p class="text-xs mt-2 md:text-sm">Everyone else can't see the true position of the circle. Someone on that player's team needs to adjust the circle
+            to where the team agrees it should go.
+            <p class="text-xs mt-2 md:text-sm">The other team then must guess whether the true position is to the left or right of where the opposing team placed the circle.</p>
+            <p class="text-xs mt-2 md:text-sm">Points are then awarded depending on how close the guess was, and the second team gets to pick the next card.</p>
+          `,
+    },
 ]
