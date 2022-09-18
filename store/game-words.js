@@ -172,7 +172,7 @@ const gameNames = [
   'War',
   'cribbage',
   'euchre',
-  'Egyptian Ratscrew',
+  'Egyptian Rat Screw',
   'Golf',
   'Scum',
   'Spoons',
@@ -288,6 +288,10 @@ const gameNames = [
   'Dixit',
   'Coup',
   'Wavelength',
+  'Seven Wonders',
+  'Reverse Charades',
+  'Wackee Six',
+  'Solitaire Frenzy',
 ]
 
 
