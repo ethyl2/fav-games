@@ -244,6 +244,11 @@ function listGames() {
   return gameList
 }
 
+function playCharades() {
+  const charadesWord = charadesWords[Math.floor(Math.random() * charadesWords.length)]
+  return `Now it's charades time! You're up first; time to act out ${charadesWord}. I hope your team can guess it! Good luck! `
+}
+
 const sentenceTypes = [
   {
     type: 'trivia',
@@ -299,6 +304,10 @@ const sentenceTypes = [
   {
     type: 'think about game show',
     function: 'thinkAboutGameShow'
+  },
+  {
+    type: 'charades',
+    function: 'playCharades'
   }
 ]
 
