@@ -293,6 +293,10 @@ const gameNames = [
   'Wackee Six',
   'Solitaire Frenzy',
   'Speed',
+  'Skyjo',
+  'Five Crowns',
+
+
 ]
 
 
