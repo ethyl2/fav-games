@@ -292,6 +292,7 @@ const gameNames = [
   'Reverse Charades',
   'Wackee Six',
   'Solitaire Frenzy',
+  'Speed',
 ]
 
 
