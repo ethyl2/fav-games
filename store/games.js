@@ -292,5 +292,22 @@ const games = [
         <p class="text-xs mt-2 md:text-sm">Enter your name, and then copy the room code.</p>
         <p class="text-xs mt-2 md:text-sm">Share <a href="https://www.chickenkoup.com/join" target="_blank" rel="noopener nofollow noreferrer" class="hover:text-blue-600">https://www.chickenkoup.com/join</a> and the room code with your friends.</p>
       `,
+    },
+    {
+    title: 'Charades',
+    url: 'https://psycatgames.com/app/charades/',
+    gameLogoSrc: 'images/psycat-games-logo.png',
+    gameLogoAlt: 'Psycat Games logo',
+    description: 'A popular word guessing game',
+    howTo: `
+      <p class="text-xs mt-2 md:text-sm">Start a zoom if you haven't already.</p>
+      <p class="text-xs mt-2 md:text-sm">Share <a href="https://psycatgames.com/app/charades/" target="_blank" rel="noopener nofollow noreferrer" class="hover:text-blue-600">https://psycatgames.com/app/charades/</a> with everybody.</p>
+      <p class="text-xs mt-2 md:text-sm">Pick someone to act out a word first.</p>
+      <p class="text-xs mt-2 md:text-sm">Have them click on either 'Easy' or 'Normal'.</p>
+      <p class="text-xs mt-2 md:text-sm">When everyone is ready, have them click 'New Word'.</p>
+      <p class="text-xs mt-2 md:text-sm">Everyone tries to guess the word within a minute, while the actor does whatever they want, besides making sounds or lip movements.</p>
+      <p class="text-xs mt-2 md:text-sm">If people guess the word in time, give the actor a point.</p>
+      <p class="text-xs mt-2 md:text-sm">Pick someone new to be the actor, and continue.</p>
+      `,
     }
   ]
