@@ -302,6 +302,8 @@ const gameNames = [
   'Kids Against Maturity',
   'Unstable Unicorns',
   'Sriracha the Game',
+  'Undertale',
+  'Hollow Knight',
 ]
 
 
