@@ -89,6 +89,24 @@ const games = [
           </p>`,
   },
   {
+      title: 'Dixit',
+      url: 'https://play-dixit.online/en/',
+      gameLogoSrc: 'images/dixit.png',
+      gameLogoAlt: 'Dixit logo',
+      description: 'Online version of Dixit: a beautiful illustrated card game where your imagination unlocks the tale',
+      howTo: `<div class="text-xs mt-2 md:text-sm">
+            <ol class="list-decimal list-inside space-y-1">
+              <li class="instruction-item">Type in a username, and then press 'Create a new private game.'</li>
+              <li class="instruction-item">Share the url with your friends.</li>
+              <li class="instruction-item">See the rules <a href="https://www.ultraboardgames.com/dixit/game-rules.php" target="_blank" rel="noopener nofollow noreferrer">here</a>.</li>
+              <li class="instruction-item">Basically, you take turns being the storyteller, who selects one of their illustrated cards and gives a clue about the illustration -- a word, phrase, sound or sentence.</li>
+              <li class="instruction-item">Then everyone one else picks the illustrated card in their hand that they think best fits the clue.</li>
+              <li class="instruction-item">Everyone but the storyteller votes on which card they think belongs to the storyteller, of the collection of cards that result.</li>
+              <li class="instruction-item">Points are awarded to the storyteller if some (but not all) guess the correct card, and the other players get points they guessed the right card and also if someone picked their card.</li>
+            </ol>
+          </div>`,
+  },
+  {
       title: 'Jigsaw Explorer',
       url: 'https://www.jigsawexplorer.com/',
       gameLogoSrc: 'images/jigsaw-explorer.png',
