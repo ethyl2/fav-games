@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="bg-black w-full px-4 py-8">
+      <h1 class="text-center text-white text-4xl md:text-6xl">Dixit Practice</h1>
+    </header>
+    <main id="card-grid" class="p-4 md:p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full min-h-screen gap-4 md:gap-8 bg-gradient-to-b from-purple-800 to-black">
+    </main>
+    <script src="" async defer></script>
+    <script>
+      window.addEventListener('load', () => {
+        const gridEl = document.getElementById('card-grid')
+        const images = [
+          'lemon-lady.jpg',
+          'vine-window.jpg',
+          'red-creature.jpg',
+          'shy-gentleman.jpg',
+          'rising-balloons.jpg',
+          'paper-mice.jpg',
+          'featured-slinky.jpg',
+          'rooty-tree.jpg',
+          'crooked-house.jpg',
+          'cool-skelehead.jpg',
+        ]
+        shuffle(images)
+        const tenImages = images.slice(0, 10)
+        tenImages.forEach(image => {
+          const cardEl = document.createElement('div')
+          cardEl.classList.add('bg-cover', 'bg-no-repeat', 'bg-center', 'rounded-xl', 'shadow-lg')
+          cardEl.style.backgroundImage = `url(static/images/dixit/${image})`
+          gridEl.appendChild(cardEl)
+        })
+      })
+
+      function shuffle(array) {
+        // Fisher-Yates
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+      }
+    </script>
+  </body>
+</html>
