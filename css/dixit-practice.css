@@ -1,0 +1,16 @@
+#focus-image {
+    height: 36rem;
+}
+
+.card {
+    min-height: 24rem;
+}
+
+@media(max-width: 500px) {
+    #focus-image {
+        height: 24rem;
+    }
+    .card {
+        min-height: 12rem;
+    }
+}
