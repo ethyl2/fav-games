@@ -23,5 +23,11 @@ const images = [
     'pinocchio.jpg',
     'unique-stairs.jpg',
     'puzzled.jpg',
-    'hungry-hippos.jpg'
+    'hungry-hippos.jpg',
+    'greenhouse.jpg',
+    'many-dolls.jpg',
+    'magic-mountains.jpg',
+    'sand-art.jpg',
+    'grand-mosque.jpg',
+    'happy-mugs.jpg',
 ]
