@@ -30,4 +30,6 @@ const images = [
     'sand-art.jpg',
     'grand-mosque.jpg',
     'happy-mugs.jpg',
+    'phone-booths.jpg',
+    'sword-tree.jpg'
 ]
