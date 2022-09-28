@@ -7,13 +7,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dixit Practice</title>
+    <title>Dixit Clue Practice</title>
     <meta name="description" content="a way to practice lookly closely at art and thinking of its story">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="https://ethyl2.github.io/fav-games/images/fav-free-online-games.png">
     <meta property="og:image:alt" content="Favorite Free Online Games logo">
-    <meta property="og:url" content="https://ethyl2.github.io/fav-games/dixit-practice.html">
-    <meta property="og:title" content="Dixit Practice">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/dixit-clue-practice.html">
+    <meta property="og:title" content="Dixit Clue Practice">
     <meta property="og:description" content="A way to practice lookly closely at art and thinking of its story">
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
@@ -43,46 +43,21 @@
     <![endif]-->
     <header class="bg-black w-full px-4 py-8">
       <h1 class="text-center text-white text-4xl md:text-6xl">Dixit Practice</h1>
-      <p
-        id="instruction"
-        class="text-center pt-2 rounded-xl text-white bg-black"
-      >Pick a card, any card.
-      </p>
     </header>
 
-    <main id="card-grid" class="p-4 lg:p-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full min-h-screen gap-4 lg:gap-8">
+    <main class="container flex flex-col items-center justify-start mx-auto">
+      <h2 class="text-white text-center pt-8 text-lg md:text-4xl">Here's your clue:</h2>
+      <p id="clue" class="text-yellow-200 text-center pt-4 text-base md:text-2xl"></p>
+      <p id="message" class="text-white text-center pt-4 text-sm md:text-xl">Which image does this clue describe?</p>
+      <div id="card-grid" class="p-4 lg:p-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full min-h-screen gap-4 lg:gap-8">
+      </div>
     </main>
-    <div
-      id="focus-image"
-      class="hidden items-center justify-center bg-black p-4 my-6 rounded-xl w-full max-w-xs md:max-w-md mx-auto bg-center bg-cover bg-no-repeat shadow-lg"
-    >
-    </div>
-
-    <form
-      id="clue-submission"
-      class="hidden mx-4"
-      action="https://formspree.io/f/xoqbdlnp"
-      method="POST"
-    >
-      <input type="text" name="clue" class="mx-auto block rounded px-2 py-1 mt-6 mb-4 bg-purple-200 font-medium w-full max-w-md md:max-w-xl" placeholder="your clue" />
-      <input type="email" name="email" class="mx-auto block rounded px-2 py-1 mb-4 bg-purple-200 font-medium w-full max-w-md md:max-w-xl" placeholder="your email">
-      <input type="hidden" name="possible-images" id="possible-images" />
-      <button type="submit" class="bg-purple-400 rounded-xl px-4 py-2 mx-auto block mb-4 font-bold hover:bg-purple-300">Send Me Your Clue</button>
-      <p id="my-form-status" class="text-white font-semibold pb-4 text-center h-12 text-xs md:text-sm"></p>
-    </form>
 
     <button
       id="new"
       type="button"
       class="bg-purple-500 rounded-xl px-4 py-2 mx-auto block mb-8 font-bold hover:bg-purple-400"
-    >Shuffle and get new cards</button>
-    <div class="flex items-center justify-center">
-      <a
-      href="./dixit-clue-practice.html"
-      class="bg-purple-900 inline-block mx-auto text-white rounded-xl px-4 py-2 mx-auto block mb-8 font-bold hover:bg-purple-700"
-    >Practice Guessing</a>
-    </div>
-
+    >Play Again</button>
 
     <footer class="bg-purple-900 py-10 text-center text-white font-semibold">
       <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
@@ -171,7 +146,69 @@
       <p>Copyright <span id="current-year">2022</span> Heather Nuffer</p>
       </footer>
 
+    <script src="store/dixit-clues.js" async defer></script>
     <script src="store/dixit-images.js" async defer></script>
-    <script src="js/dixit-practice.js" async defer></script>
+    <script>
+      const clueEl = document.getElementById('clue')
+      const focusImage = document.getElementById('focus-image')
+      const gridEl = document.getElementById('card-grid')
+      const messageEl = document.getElementById('message')
+      const newButton = document.getElementById('new')
+
+      window.addEventListener('load', () => {
+        const clue = dixitClues[Math.floor(Math.random() * dixitClues.length)]
+        clueEl.textContent = clue.clue
+        const remainingImages = images.filter(image => {
+          return image !== clue.image
+        })
+
+        shuffle(remainingImages)
+        const randomImages = remainingImages.slice(0, 7)
+        randomImages.push(clue.image)
+        shuffle(randomImages)
+
+        randomImages.forEach(image => {
+          const cardEl = document.createElement('div')
+          cardEl.classList.add('bg-cover', 'bg-no-repeat', 'bg-center', 'rounded-xl', 'shadow-lg', 'card', 'bg-gray-800')
+          cardEl.style.backgroundImage = `url(static/images/dixit/${image})`
+          cardEl.addEventListener('click', (e) => {
+              const style = e.target.currentStyle || window.getComputedStyle(e.target, false)
+              const imageUrl = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+              const splitImageUrl = imageUrl.split('/')
+              const imageSlug = splitImageUrl.at('-1')
+
+              if(imageSlug === clue.image) {
+                messageEl.textContent = "Correct! Our minds must be in sync!"
+              } else {
+                messageEl.textContent = "Guess again."
+              }
+          })
+          gridEl.appendChild(cardEl)
+        })
+      })
+
+      function shuffle(array) {
+        // Fisher-Yates
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+      return array;
+    }
+
+    newButton.addEventListener('click', () => {
+        location.reload()
+    })
+    </script>
   </body>
 </html>
