@@ -23,4 +23,16 @@ const dixitClues = [
     clue: 'Fruity Pebbles',
     image: 'magic-mountains.jpg',
   },
+  {
+    clue: 'death',
+    image: 'dia-muertos.jpg',
+  },
+  {
+    clue: 'almost King Arthur',
+    image: 'sword-tree.jpg',
+  },
+  {
+    clue: 'three hundred sixty degrees',
+    image: 'light-circle.jpg',
+  },
 ]
