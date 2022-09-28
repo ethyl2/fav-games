@@ -31,5 +31,15 @@ const images = [
     'grand-mosque.jpg',
     'happy-mugs.jpg',
     'phone-booths.jpg',
-    'sword-tree.jpg'
+    'sword-tree.jpg',
+    'bike-and-mural.jpg',
+    'balloons-head.jpg',
+    'leaf-row.jpg',
+    'self-portrait.jpg',
+    'light-circle.jpg',
+    'cup-pyramid.jpg',
+    'flowers.jpg',
+    'colorful-brick.jpg',
+    'face-mural.jpg',
+    'dia-muertos.jpg',
 ]
