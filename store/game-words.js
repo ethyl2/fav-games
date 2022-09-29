@@ -672,7 +672,7 @@ const amongUsTasks = [
   'water the plants',
   'fix a weather node',
   'fix the shower',
-  'fill cannisters',
+  'fill canisters',
   'inspect a sample',
   'unlock the safe',
   'clean a toilet',
