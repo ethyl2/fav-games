@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container mx-auto">
+        <h1 class="text-red-900 font-bold py-6 text-xl md:text-5xl">When I Go Out West...</h1>
+        <p class="whitespace-pre-line pb-4">One game that my family likes to play in the car on long trips is called "When I Go Out West..."
+            
+            This game can easily be played remotely via zoom as well, I believe!
+
+            Each person picks an item (usually something silly) that they would bring (like a teddy bear, a chain saw, a rattlesnake, etc.)
+            and then each person takes a turn saying an action -- what they would do with that item. 
+            ("When I go out west, I will bring my teddy bear and have a picnic with him." for example.)
+            
+            And then every person says the same action with their item. 
+            "When I go out west, I will bring my chain saw and have a picnic with it."
+            "When I go out west, I will bring my rattlesnake and have a picnic with her."
+            
+            And then we move on to the next person's action.
+            This game usually ends up with lots of laughs.
+        </p>
+
+        <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t text-center">Need help thinking of a item to bring out West? How about one of these?</h2>
+        <div id="item-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-4"></div>
+
+        </div>
+        <script>
+
+           
+            
+            var selectedItem;
+            var selectedAction;
+            
+            var customItem = "";
+            var customCards = [];
+            
+            var customItemEntered = false;
+            var customActionEntered = false;
+
+            var deck1Choices = ["birthday cake", "chainsaw", "teddy bear", "rattlesnake",
+                            "fat crayon", "beetle collection", "cupcake", "belly button",
+                            "tooth-brush", "gummy shark", "clown wig", "moon boots", "spider",
+                            "potato", "slice of bacon", "holey sock", "bowtie", "peach pie"];
+            shuffle(deck1Choices);
+            const itemSuggestionsEl = document.getElementById('item-suggestions')
+            deck1Choices.forEach(choice => {
+                const itemEl = document.createElement('div')
+                itemEl.classList.add('py-2.5', 'px-2.5', 'rounded-full', 'font-bold', 'bg-black', 'text-white')
+                let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+                itemEl.style.borderWidth = '8px'
+                itemEl.style.borderStyle = 'solid'
+                itemEl.style.borderColor = randomColor
+                itemEl.textContent = choice
+                itemSuggestionsEl.appendChild(itemEl)
+            })
+            
+            //Card Object Constructor:
+            
+            var Card = function(label, cardX, cardY, cardWidth, cardHeight) {
+                this.label = label;
+                this.cardX = cardX;
+                this.cardY = cardY;
+                this.cardWidth = cardWidth;
+                this.cardHeight = cardHeight;
+                this.red = random(0, 255);
+                this.green = random(0, 200);
+                this.blue = random(0, 200);
+            };
+            
+            Card.prototype.draw = function() {
+                fill(this.red, this.green, this.blue);
+                rect(this.cardX, this.cardY, this.cardWidth, this.cardHeight, 10);
+                fill(255, 255, 255);
+                textSize(18);
+                textAlign(CENTER, CENTER);
+                text(this.label, this.cardX + this.cardWidth/2, this.cardY + this.cardHeight/2);
+            };
+            
+            //Deck object constructor
+            var CardDeck = function(cards, cardsX, cardsY) {
+                this.cards = cards; //an array of the labels
+                this.cardsX = cardsX; //initial x position of the deck
+                this.cardsY = cardsY; //initial y position of the deck
+                this.cardWidth = 80;
+                this.cardHeight = 120;
+                this.cardSpacing = 6;
+                this.cardDeck = [];
+                this.cardPositions = [];
+                var currentX =  cardsX; //location variable to be changed in the loop below:
+                var currentY = cardsY; //location variable to be changed in the loop below:
+                for (var i = 0; i < cards.length; i++) {
+                   this.cardDeck[i] = new Card(cards[i], currentX, currentY, this.cardWidth, this.cardHeight);
+                        if (this.cardDeck[i].cardX > this.cardWidth - 200) {
+                            currentY += this.cardHeight + this.cardSpacing;
+                            currentX = this.cardSpacing;
+                        } else {
+                            currentX += this.cardWidth + this.cardSpacing;
+                        }
+                        var cardPosition = [];
+                        cardPosition.push(this.cardDeck[i].cardX);
+                        cardPosition.push(this.cardDeck[i].cardY);
+                        this.cardPositions.push(cardPosition);
+                }
+            };
+            
+            CardDeck.prototype.draw = function() {
+                for (var i = 0; i < this.cardDeck.length; i++) {
+                    this.cardDeck[i].draw();
+                }
+            };
+            
+            //Returns the positions of the cards in a card deck:
+            CardDeck.prototype.returnPositions = function() {
+                return this.cardPositions;
+            };
+            
+            //Returns the cardWidth and cardHeight:
+            CardDeck.prototype.returnWidth = function() {
+                return this.cardWidth;
+            };
+            
+            CardDeck.prototype.returnHeight = function() {
+                return this.cardHeight;
+            };
+            
+            
+            //Draws the button to advance through the pages:
+            var drawButton = function() {
+                fill(251, 0, 255);
+                rect(350, 360, 45, 35, 5);
+                fill(0, 0, 0);
+                textSize(15);
+                text("NEXT", 373, 380);
+            };
+            
+            //Draws the text box to show what the user types:
+            var drawTextBox = function() {
+                fill(247, 246, 237);
+                rect(10, 320, width - 20, 50, 2);
+                textAlign(LEFT, LEFT);
+                fill(18, 36, 92);
+            };
+            
+            //Shuffles the card deck choices, so they'll be in a different order and selection each time you restart the program:
+            // This website helped me to write this function: http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+            function shuffle(deckChoices) {
+                var currentIndex = deckChoices.length;
+                var tempValue;
+                var randomIndex;
+                while(currentIndex !== 0) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex-=1;
+                    tempValue = deckChoices[currentIndex];
+                    deckChoices[currentIndex] = deckChoices[randomIndex];
+                    deckChoices[randomIndex] = tempValue;
+                }
+                
+                return deckChoices;
+                    
+            };
+            
+            
+            // Generating the cards and the decks we'll use:
+            
+            var deck0= ["bunny\nslipper", "grow it\nin a pot", "???"];
+            shuffle(deck0);
+            var cardDeck0 = new CardDeck(deck0, width/6, height * 2/3);
+            
+            var deck1Choices = ["birthday\ncake", "chain\nsaw", "teddy\nbear", "rattle-\nsnake",
+                            "fat\ncrayon", "beetle\ncollection", "cupcake", "belly\nbutton",
+                            "tooth-\nbrush", "gummy\nshark", "clown\nwig", "moon\nboots", "spider",
+                            "potato", "slice of\nbacon", "holey\nsock", "bow\ntie", "peach\npie"];
+            shuffle(deck1Choices);
+            var deck1 = deck1Choices.splice(0,8);
+            var cardDeck1 = new CardDeck(deck1, 6, 24);
+            
+            var deck2Choices = ["eat it up", "make\nnoise\nwith it", "hug\nit", "wear it",
+                            "milk\nit", "write\nwith it", "scare\nsomeone\nwith it",
+                            "lick it", "admire it", "put\ntooth-\npaste\non it", 
+                            "stick it\non your\nhead", "dance\nwith it", "stick it\non my\nhead",
+                            "fry it\nin a pan", "name it\nFred", "give it\na perm", "apply\nmakeup\non it", "take out\nits\nappendix"];
+            shuffle(deck2Choices);
+            var deck2 = deck2Choices.slice(0, 8);
+            var cardDeck2 = new CardDeck(deck2, 6, 20);
+            
+            
+            //Page Zero: Title Page
+            var pageZero = function() {
+                background(245, 134, 54);
+                fill(61, 22, 22);
+                noStroke();
+                rect(10, height/7, width - 20, height/2, 5);
+                textSize(70);
+                textAlign(CENTER, LEFT);
+                fill(255, 255, 255);
+                text("\"When I Go\nOut West...\"", width/2, height/3);
+                stroke(0, 0, 0);
+                drawButton();
+                cardDeck0.draw();
+            };
+            
+            //Page One: Picking Your Item
+            var pageOne = function() {
+                stroke(0, 0, 0);
+                background(242, 241, 169);
+                textSize(18);
+                textAlign(LEFT, LEFT);
+                fill(0, 0, 0);
+                text("Click on the item you'd like to take out west:", 10, 18);
+                text("Or type your own item below and press enter:", 10, 300);
+                cardDeck1.draw();
+                drawTextBox();
+            };
+            
+            //Page Two: Picking Your Action
+            var pageTwo = function() {
+                background(255, 255, 0);
+                textSize(18);
+                textAlign(LEFT, LEFT);
+                fill(0, 0, 0);
+                text("Now click on your desired action:", 10, 15);
+                text("Or type your own item below and press enter:", 10, 300);
+                cardDeck2.draw();
+                drawTextBox();
+            };
+            
+            //Page Three: Putting it all together
+            var pageThree = function() {
+                background(30, 0, 255);
+                fill(77, 77, 77);
+                rect(8, 8, width - 16, height - 16, 5);
+                textAlign(CENTER, CENTER);
+                textSize(18);
+                noStroke();
+                fill(255, 164, 0);
+                rect(80, 60, width - 160, height - 130, 5);
+                fill(230, 247, 77);
+                text("Now, we'll put both together.\nSay this sentence:", 200, height - 370);
+                textSize(20);
+                fill(255, 255, 255);
+                text("\"When I go out west,\nI\'ll bring my", 200, height - 310);
+                
+                //Item:
+                fill(47, 237, 57);
+                textSize(22);
+                if(customCards.length === 2 | customItemEntered === true) {
+                    text(customCards[0], 200, height - 250);
+                    customCards.shift();
+                }
+                 else {
+                    text(selectedItem, 200, height - 250);
+                }
+                fill(255, 255, 255);
+                textSize(20);
+                text("and", 200, height - 210);
+                
+                //Action:
+                fill(255, 0, 0);
+                textSize(22);
+                if(customCards[0] | customActionEntered === true) {
+                    text(customCards[0], 200, height - 150);
+                } else {
+                    text(selectedAction, 200, height - 150);
+                }
+                
+                fill(255, 255, 255);
+                textSize(24);
+                text("!\"", 200, height - 90);
+                fill(43, 255, 0);
+                textSize(16);
+                text("Did it make you chuckle?\nIf not, try again with a\ndifferent combination!", 200, height - 40);
+                drawButton();
+            };
+            
+            var pageNumber = 0;
+            pageZero();
+            
+            
+            //Using the mouse to go through the pages and to select the cards:
+            
+            mouseClicked = function() {
+                if(mouseX > 349 & mouseY > 359) {
+                    pageNumber++;
+                }
+                if(pageNumber === 0) {
+                    pageZero();
+                }
+                else if(pageNumber === 1) {
+                    pageOne();
+                    for (var i = 0; i < cardDeck1.returnPositions().length; i++) {
+                        var minX = cardDeck1.returnPositions()[i][0];
+                        var maxX = minX + cardDeck1.returnWidth();
+                        var minY = cardDeck1.returnPositions()[i][1];
+                        var maxY = minY + cardDeck1.returnHeight();
+                        if (mouseX > minX & mouseX < maxX & mouseY > minY & mouseY < maxY) {
+                            selectedItem = deck1[i];
+                            pageNumber++;
+                            pageTwo();
+                        }
+                        if(mouseX > 10 & mouseX < width - 20 & mouseY > 320 & mouseY < 370) {
+                            text(customItem, 20, 350);
+                        }
+                    }
+                }
+                else if(pageNumber === 2) {
+                    pageTwo();
+                    for (var i = 0; i < cardDeck2.returnPositions().length; i++) {
+                        var minX = cardDeck2.returnPositions()[i][0];
+                        var maxX = minX + cardDeck2.returnWidth();
+                        var minY = cardDeck2.returnPositions()[i][1];
+                        var maxY = minY + cardDeck2.returnHeight();
+                        if (mouseX > minX & mouseX < maxX & mouseY > minY & mouseY < maxY) {
+                            selectedAction = deck2[i];
+                            pageNumber++;
+                            pageThree();
+                        }
+                    }
+                }
+                else if(pageNumber === 3) {
+                    pageThree();
+                }
+                else if(pageNumber === 4) {
+                    pageNumber = 1;
+                    selectedItem = 0;
+                    selectedAction = 0;
+                    customItem = "";
+                    customCards = [];
+                    customItemEntered = false;
+                    customActionEntered = false;
+                    pageOne();
+                }
+            };
+            
+            // This keyPressed code is adapted from https://www.khanacademy.org/computer-programming/text-messages-with-emojis/5614982856310784:
+            var keyPressed=function(){
+                switch(keyCode){
+                    case ENTER:
+                        customCards.push(customItem);
+                        customItem = "";
+                        fill(94, 18, 94);
+                        text(customCards[0], 30, 355);
+                        pageNumber++;
+                        if (pageNumber === 2) {
+                            customItemEntered = true;
+                            pageTwo();
+                        }
+                        else {
+                            customActionEntered = true;
+                            pageThree();
+                        }
+                        break;
+                    case 32: //Space
+                        customItem+=String.fromCharCode(key);
+                        fill(94, 18, 94);
+                        text(customItem, 30, 355);
+                        break;
+                    case BACKSPACE:
+                        customItem = customItem.slice(0, customItem.length - 1);
+                        drawTextBox();
+                        fill(94, 18, 94);
+                        text(customItem, 30, 355);
+                        break;
+                    default:
+                        if(keyCode>48){
+                            customItem+=String.fromCharCode(key);
+                            text(customItem, 30, 355);
+                        }
+                }
+                
+            };</script>
+    </body>
+</html>
