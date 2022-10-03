@@ -11,32 +11,181 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            /* ============================================================================================================================
+== BUBBLE WITH A BORDER AND TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border {
+  position:relative;
+  padding:15px;
+  margin:1em 0 0.5em;
+  border:5px solid #5a8f00;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-border.left {
+  margin-left:30px;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-border.right {
+  margin-right:30px;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+  content:"";
+  position:absolute;
+  bottom:-13px; /* value = - border-top-width - border-bottom-width */
+  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+  border-width:13px 13px 0;
+  border-style:solid;
+  border-color:#fff transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.top:before {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:40px; /* controls horizontal position */
+  border-width:0 20px 20px;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.top:after {
+  top:-13px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+  border-width:0 13px 13px;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.left:before {
+  top:10px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 30px 15px 0;
+  border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:-21px; /* value = - border-left-width - border-right-width */
+  border-width:9px 21px 9px 0;
+  border-color:transparent #fff;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.right:before {
+  top:10px; /* controls vertical position */
+  bottom:auto;
+  left:auto;
+  right:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 0 15px 30px;
+  border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.right:after {
+  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:auto;
+  right:-21px; /* value = - border-left-width - border-right-width */
+  border-width:9px 0 9px 21px;
+  border-color:transparent #fff;
+}
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container mx-auto">
-        <h1 class="text-red-900 font-bold py-6 text-xl md:text-5xl">When I Go Out West...</h1>
-        <p class="whitespace-pre-line pb-4">One game that my family likes to play in the car on long trips is called "When I Go Out West..."
-            
-            This game can easily be played remotely via zoom as well, I believe!
+        <div class="bg-yellow-50 text-base md:text-xl">
+        <div class="container bg-white mx-auto px-4 md:px-auto font-medium">
+            <h1 class="text-red-900 font-bold py-6 text-xl md:text-5xl">When I Go Out West...</h1>
+            <p class="whitespace-pre-line pb-2">One game that my family likes to play in the car on long trips is called "When I Go Out West..."
+                
+                This game can easily be played remotely via zoom as well, I believe!
 
-            Each person picks an item (usually something silly) that they would bring (like a teddy bear, a chain saw, a rattlesnake, etc.)
-            and then each person takes a turn saying an action -- what they would do with that item. 
-            ("When I go out west, I will bring my teddy bear and have a picnic with him." for example.)
+                Each person picks an item (usually something silly) that they would bring (like a teddy bear, a chain saw, a rattlesnake, etc.)
+                and then each person takes a turn saying an action -- what they would do with that item.
             
+                For example:
+            </p> 
+            <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                "When I go out west, I will bring my teddy bear and have a picnic with him."
+            </p>
+            <img src="./static/images/go-out-west/cowgirl2.png" alt="cowgirl" class="w-36 md:w-72"/>
+
+            <p class="whitespace-pre-line pb-2">    
             And then every person says the same action with their item. 
-            "When I go out west, I will bring my chain saw and have a picnic with it."
-            "When I go out west, I will bring my rattlesnake and have a picnic with her."
+            </p>
             
-            And then we move on to the next person's action.
-            This game usually ends up with lots of laughs.
-        </p>
+            <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                "When I go out west, I will bring my chain saw and have a picnic with it."
+            </p>
+            <div class="flex items-center justify-start max-w-5xl">
+                <img src="./static/images/go-out-west/cowgirl1.png" alt="cowgirl" class="w-36 md:w-72"/>
+                <img src="./static/images/go-out-west/cowboy1.png" alt="cowboy" class="w-36 md:w-72"/>
+            </div>
+            <div class="max-w-lg mx-auto" style="margin-left: 0 !important;">
+                <p class="triangle-border top font-bold text-sm md:text-base">"When I go out west, I will bring my rattlesnake and have a picnic with her."</p>
+            </div>
+            
+            <p class="whitespace-pre-line pb-8"> 
+                And then we move on to the next person's action.
+                This game usually ends up with lots of laughs.
+            </p>
 
-        <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t text-center">Need help thinking of a item to bring out West? How about one of these?</h2>
-        <div id="item-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-4"></div>
-
+            <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t border-yellow-900  border-opacity-20 text-center">Need help thinking of a item to bring out West? How about one of these?</h2>
+            <div id="item-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-4"></div>
+        </div>
         </div>
         <script>
 
@@ -53,13 +202,13 @@
 
             var deck1Choices = ["birthday cake", "chainsaw", "teddy bear", "rattlesnake",
                             "fat crayon", "beetle collection", "cupcake", "belly button",
-                            "tooth-brush", "gummy shark", "clown wig", "moon boots", "spider",
+                            "toothbrush", "gummy shark", "clown wig", "moon boots", "spider",
                             "potato", "slice of bacon", "holey sock", "bowtie", "peach pie"];
             shuffle(deck1Choices);
             const itemSuggestionsEl = document.getElementById('item-suggestions')
             deck1Choices.forEach(choice => {
-                const itemEl = document.createElement('div')
-                itemEl.classList.add('py-2.5', 'px-2.5', 'rounded-full', 'font-bold', 'bg-black', 'text-white')
+                const itemEl = document.createElement('button')
+                itemEl.classList.add('py-2.5', 'px-2.5', 'rounded-full', 'font-bold', 'bg-black', 'text-white', 'hover:bg-gray-600')
                 let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
                 itemEl.style.borderWidth = '8px'
                 itemEl.style.borderStyle = 'solid'
