@@ -7,529 +7,213 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>When I Go Out West...</title>
+        <meta name="description" content="Fun and silly road game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/go-out-west-og-image.png">
+        <meta property="og:image:alt" content="When I Go Out West...">
+        <meta property="og:url" content="https://ethyl2.github.io/fav-games/go-out-west.html">
+        <meta property="og:title" content="When I Go Out West...">
+        <meta property="og:description" content="Fun and silly road game">
+        <meta property="og:type" content="website" />
+        <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <style>
-            /* ============================================================================================================================
-== BUBBLE WITH A BORDER AND TRIANGLE
-** ============================================================================================================================ */
-
-/* THE SPEECH BUBBLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-.triangle-border {
-  position:relative;
-  padding:15px;
-  margin:1em 0 0.5em;
-  border:5px solid #5a8f00;
-  color:#333;
-  background:#fff;
-  /* css3 */
-  -webkit-border-radius:10px;
-  -moz-border-radius:10px;
-  border-radius:10px;
-}
-
-/* Variant : for left positioned triangle
------------------------------------------- */
-
-.triangle-border.left {
-  margin-left:30px;
-}
-
-/* Variant : for right positioned triangle
------------------------------------------- */
-
-.triangle-border.right {
-  margin-right:30px;
-}
-
-/* THE TRIANGLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-.triangle-border:before {
-  content:"";
-  position:absolute;
-  bottom:-20px; /* value = - border-top-width - border-bottom-width */
-  left:40px; /* controls horizontal position */
-  border-width:20px 20px 0;
-  border-style:solid;
-  border-color:#5a8f00 transparent;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-}
-
-/* creates the smaller  triangle */
-.triangle-border:after {
-  content:"";
-  position:absolute;
-  bottom:-13px; /* value = - border-top-width - border-bottom-width */
-  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-  border-width:13px 13px 0;
-  border-style:solid;
-  border-color:#fff transparent;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-}
-
-/* Variant : top
------------------------------------------- */
-
-/* creates the larger triangle */
-.triangle-border.top:before {
-  top:-20px; /* value = - border-top-width - border-bottom-width */
-  bottom:auto;
-  left:auto;
-  right:40px; /* controls horizontal position */
-  border-width:0 20px 20px;
-}
-
-/* creates the smaller  triangle */
-.triangle-border.top:after {
-  top:-13px; /* value = - border-top-width - border-bottom-width */
-  bottom:auto;
-  left:auto;
-  right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
-  border-width:0 13px 13px;
-}
-
-/* Variant : left
------------------------------------------- */
-
-/* creates the larger triangle */
-.triangle-border.left:before {
-  top:10px; /* controls vertical position */
-  bottom:auto;
-  left:-30px; /* value = - border-left-width - border-right-width */
-  border-width:15px 30px 15px 0;
-  border-color:transparent #5a8f00;
-}
-
-/* creates the smaller  triangle */
-.triangle-border.left:after {
-  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom:auto;
-  left:-21px; /* value = - border-left-width - border-right-width */
-  border-width:9px 21px 9px 0;
-  border-color:transparent #fff;
-}
-
-/* Variant : right
------------------------------------------- */
-
-/* creates the larger triangle */
-.triangle-border.right:before {
-  top:10px; /* controls vertical position */
-  bottom:auto;
-  left:auto;
-  right:-30px; /* value = - border-left-width - border-right-width */
-  border-width:15px 0 15px 30px;
-  border-color:transparent #5a8f00;
-}
-
-/* creates the smaller  triangle */
-.triangle-border.right:after {
-  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom:auto;
-  left:auto;
-  right:-21px; /* value = - border-left-width - border-right-width */
-  border-width:9px 0 9px 21px;
-  border-color:transparent #fff;
-}
-        </style>
+        <link rel="stylesheet" href="css/out-west.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="bg-yellow-50 text-base md:text-xl">
-        <div class="container bg-white mx-auto px-4 md:px-auto font-medium">
-            <h1 class="text-red-900 font-bold py-6 text-xl md:text-5xl">When I Go Out West...</h1>
-            <p class="whitespace-pre-line pb-2">One game that my family likes to play in the car on long trips is called "When I Go Out West..."
+        <div class="bg-yellow-50 text-base pb-12 md:pb-48 md:text-xl">
+            <div id="banner" class="h-24 w-full md:h-32"></div>
+            <div class="hidden md:block h-4 w-full bg-white mb-24"></div>
+            <h1 class="text-red-900 font-bold py-6 text-2xl 2 bg-yellow-50 md:hidden pl-4">When I Go Out West...</h1>
+            <div class="container bg-white mx-auto px-4 md:px-auto font-medium">
+                <h1 class="hidden md:block text-red-900 font-bold pt-6 pb-3 text-6xl">When I Go Out West...</h1>
                 
-                This game can easily be played remotely via zoom as well, I believe!
-
-                Each person picks an item (usually something silly) that they would bring (like a teddy bear, a chain saw, a rattlesnake, etc.)
-                and then each person takes a turn saying an action -- what they would do with that item.
-            
-                For example:
-            </p> 
-            <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
-                "When I go out west, I will bring my teddy bear and have a picnic with him."
-            </p>
-            <img src="./static/images/go-out-west/cowgirl2.png" alt="cowgirl" class="w-36 md:w-72"/>
-
-            <p class="whitespace-pre-line pb-2">    
-            And then every person says the same action with their item. 
-            </p>
-            
-            <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
-                "When I go out west, I will bring my chain saw and have a picnic with it."
-            </p>
-            <div class="flex items-center justify-start max-w-5xl">
-                <img src="./static/images/go-out-west/cowgirl1.png" alt="cowgirl" class="w-36 md:w-72"/>
-                <img src="./static/images/go-out-west/cowboy1.png" alt="cowboy" class="w-36 md:w-72"/>
-            </div>
-            <div class="max-w-lg mx-auto" style="margin-left: 0 !important;">
-                <p class="triangle-border top font-bold text-sm md:text-base">"When I go out west, I will bring my rattlesnake and have a picnic with her."</p>
-            </div>
-            
-            <p class="whitespace-pre-line pb-8"> 
-                And then we move on to the next person's action.
-                This game usually ends up with lots of laughs.
-            </p>
-
-            <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t border-yellow-900  border-opacity-20 text-center">Need help thinking of a item to bring out West? How about one of these?</h2>
-            <div id="item-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-4"></div>
-        </div>
-        </div>
-        <script>
-
-           
-            
-            var selectedItem;
-            var selectedAction;
-            
-            var customItem = "";
-            var customCards = [];
-            
-            var customItemEntered = false;
-            var customActionEntered = false;
-
-            var deck1Choices = ["birthday cake", "chainsaw", "teddy bear", "rattlesnake",
-                            "fat crayon", "beetle collection", "cupcake", "belly button",
-                            "toothbrush", "gummy shark", "clown wig", "moon boots", "spider",
-                            "potato", "slice of bacon", "holey sock", "bowtie", "peach pie"];
-            shuffle(deck1Choices);
-            const itemSuggestionsEl = document.getElementById('item-suggestions')
-            deck1Choices.forEach(choice => {
-                const itemEl = document.createElement('button')
-                itemEl.classList.add('py-2.5', 'px-2.5', 'rounded-full', 'font-bold', 'bg-black', 'text-white', 'hover:bg-gray-600')
-                let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-                itemEl.style.borderWidth = '8px'
-                itemEl.style.borderStyle = 'solid'
-                itemEl.style.borderColor = randomColor
-                itemEl.textContent = choice
-                itemSuggestionsEl.appendChild(itemEl)
-            })
-            
-            //Card Object Constructor:
-            
-            var Card = function(label, cardX, cardY, cardWidth, cardHeight) {
-                this.label = label;
-                this.cardX = cardX;
-                this.cardY = cardY;
-                this.cardWidth = cardWidth;
-                this.cardHeight = cardHeight;
-                this.red = random(0, 255);
-                this.green = random(0, 200);
-                this.blue = random(0, 200);
-            };
-            
-            Card.prototype.draw = function() {
-                fill(this.red, this.green, this.blue);
-                rect(this.cardX, this.cardY, this.cardWidth, this.cardHeight, 10);
-                fill(255, 255, 255);
-                textSize(18);
-                textAlign(CENTER, CENTER);
-                text(this.label, this.cardX + this.cardWidth/2, this.cardY + this.cardHeight/2);
-            };
-            
-            //Deck object constructor
-            var CardDeck = function(cards, cardsX, cardsY) {
-                this.cards = cards; //an array of the labels
-                this.cardsX = cardsX; //initial x position of the deck
-                this.cardsY = cardsY; //initial y position of the deck
-                this.cardWidth = 80;
-                this.cardHeight = 120;
-                this.cardSpacing = 6;
-                this.cardDeck = [];
-                this.cardPositions = [];
-                var currentX =  cardsX; //location variable to be changed in the loop below:
-                var currentY = cardsY; //location variable to be changed in the loop below:
-                for (var i = 0; i < cards.length; i++) {
-                   this.cardDeck[i] = new Card(cards[i], currentX, currentY, this.cardWidth, this.cardHeight);
-                        if (this.cardDeck[i].cardX > this.cardWidth - 200) {
-                            currentY += this.cardHeight + this.cardSpacing;
-                            currentX = this.cardSpacing;
-                        } else {
-                            currentX += this.cardWidth + this.cardSpacing;
-                        }
-                        var cardPosition = [];
-                        cardPosition.push(this.cardDeck[i].cardX);
-                        cardPosition.push(this.cardDeck[i].cardY);
-                        this.cardPositions.push(cardPosition);
-                }
-            };
-            
-            CardDeck.prototype.draw = function() {
-                for (var i = 0; i < this.cardDeck.length; i++) {
-                    this.cardDeck[i].draw();
-                }
-            };
-            
-            //Returns the positions of the cards in a card deck:
-            CardDeck.prototype.returnPositions = function() {
-                return this.cardPositions;
-            };
-            
-            //Returns the cardWidth and cardHeight:
-            CardDeck.prototype.returnWidth = function() {
-                return this.cardWidth;
-            };
-            
-            CardDeck.prototype.returnHeight = function() {
-                return this.cardHeight;
-            };
-            
-            
-            //Draws the button to advance through the pages:
-            var drawButton = function() {
-                fill(251, 0, 255);
-                rect(350, 360, 45, 35, 5);
-                fill(0, 0, 0);
-                textSize(15);
-                text("NEXT", 373, 380);
-            };
-            
-            //Draws the text box to show what the user types:
-            var drawTextBox = function() {
-                fill(247, 246, 237);
-                rect(10, 320, width - 20, 50, 2);
-                textAlign(LEFT, LEFT);
-                fill(18, 36, 92);
-            };
-            
-            //Shuffles the card deck choices, so they'll be in a different order and selection each time you restart the program:
-            // This website helped me to write this function: http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-            function shuffle(deckChoices) {
-                var currentIndex = deckChoices.length;
-                var tempValue;
-                var randomIndex;
-                while(currentIndex !== 0) {
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex-=1;
-                    tempValue = deckChoices[currentIndex];
-                    deckChoices[currentIndex] = deckChoices[randomIndex];
-                    deckChoices[randomIndex] = tempValue;
-                }
-                
-                return deckChoices;
+                <p class="whitespace-pre-line pb-2 pt-4 md:pt-auto">One game that my family likes to play in the car on long trips is called "When I Go Out West..."
                     
-            };
-            
-            
-            // Generating the cards and the decks we'll use:
-            
-            var deck0= ["bunny\nslipper", "grow it\nin a pot", "???"];
-            shuffle(deck0);
-            var cardDeck0 = new CardDeck(deck0, width/6, height * 2/3);
-            
-            var deck1Choices = ["birthday\ncake", "chain\nsaw", "teddy\nbear", "rattle-\nsnake",
-                            "fat\ncrayon", "beetle\ncollection", "cupcake", "belly\nbutton",
-                            "tooth-\nbrush", "gummy\nshark", "clown\nwig", "moon\nboots", "spider",
-                            "potato", "slice of\nbacon", "holey\nsock", "bow\ntie", "peach\npie"];
-            shuffle(deck1Choices);
-            var deck1 = deck1Choices.splice(0,8);
-            var cardDeck1 = new CardDeck(deck1, 6, 24);
-            
-            var deck2Choices = ["eat it up", "make\nnoise\nwith it", "hug\nit", "wear it",
-                            "milk\nit", "write\nwith it", "scare\nsomeone\nwith it",
-                            "lick it", "admire it", "put\ntooth-\npaste\non it", 
-                            "stick it\non your\nhead", "dance\nwith it", "stick it\non my\nhead",
-                            "fry it\nin a pan", "name it\nFred", "give it\na perm", "apply\nmakeup\non it", "take out\nits\nappendix"];
-            shuffle(deck2Choices);
-            var deck2 = deck2Choices.slice(0, 8);
-            var cardDeck2 = new CardDeck(deck2, 6, 20);
-            
-            
-            //Page Zero: Title Page
-            var pageZero = function() {
-                background(245, 134, 54);
-                fill(61, 22, 22);
-                noStroke();
-                rect(10, height/7, width - 20, height/2, 5);
-                textSize(70);
-                textAlign(CENTER, LEFT);
-                fill(255, 255, 255);
-                text("\"When I Go\nOut West...\"", width/2, height/3);
-                stroke(0, 0, 0);
-                drawButton();
-                cardDeck0.draw();
-            };
-            
-            //Page One: Picking Your Item
-            var pageOne = function() {
-                stroke(0, 0, 0);
-                background(242, 241, 169);
-                textSize(18);
-                textAlign(LEFT, LEFT);
-                fill(0, 0, 0);
-                text("Click on the item you'd like to take out west:", 10, 18);
-                text("Or type your own item below and press enter:", 10, 300);
-                cardDeck1.draw();
-                drawTextBox();
-            };
-            
-            //Page Two: Picking Your Action
-            var pageTwo = function() {
-                background(255, 255, 0);
-                textSize(18);
-                textAlign(LEFT, LEFT);
-                fill(0, 0, 0);
-                text("Now click on your desired action:", 10, 15);
-                text("Or type your own item below and press enter:", 10, 300);
-                cardDeck2.draw();
-                drawTextBox();
-            };
-            
-            //Page Three: Putting it all together
-            var pageThree = function() {
-                background(30, 0, 255);
-                fill(77, 77, 77);
-                rect(8, 8, width - 16, height - 16, 5);
-                textAlign(CENTER, CENTER);
-                textSize(18);
-                noStroke();
-                fill(255, 164, 0);
-                rect(80, 60, width - 160, height - 130, 5);
-                fill(230, 247, 77);
-                text("Now, we'll put both together.\nSay this sentence:", 200, height - 370);
-                textSize(20);
-                fill(255, 255, 255);
-                text("\"When I go out west,\nI\'ll bring my", 200, height - 310);
+                    This game can easily be played remotely via zoom as well, I believe!
+
+                    Each person picks an item (usually something silly) that they would bring (like a teddy bear, a chain saw, a rattlesnake, etc.)
+                    and then each person takes a turn saying an action -- what they would do with that item.
                 
-                //Item:
-                fill(47, 237, 57);
-                textSize(22);
-                if(customCards.length === 2 | customItemEntered === true) {
-                    text(customCards[0], 200, height - 250);
-                    customCards.shift();
-                }
-                 else {
-                    text(selectedItem, 200, height - 250);
-                }
-                fill(255, 255, 255);
-                textSize(20);
-                text("and", 200, height - 210);
+                    For example:
+                </p>
                 
-                //Action:
-                fill(255, 0, 0);
-                textSize(22);
-                if(customCards[0] | customActionEntered === true) {
-                    text(customCards[0], 200, height - 150);
-                } else {
-                    text(selectedAction, 200, height - 150);
-                }
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                            "When I go out west, I will bring my <span class="italic">teddy bear</span> and have a picnic with it."
+                        </p>
+                        <img src="./static/images/go-out-west/cowgirl2.png" alt="cowgirl" class="w-36 md:w-72" style="transform: scaleX(-1);"/>
+                    </div>
+
+                    <div>
+                        <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                            "When I go out west, I will bring my <span class="italic">chain saw</span> and cut down a tree with it."
+                        </p>
+                        <img src="./static/images/go-out-west/cowgirl1.png" alt="cowgirl" class="w-36 md:w-72" style="transform: scaleX(-1);"/>
+                    </div>
+
+                    <div>
+                        <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                            "When I go out west, I will bring my <span class="italic">rattlesnake</span> and scare people with it."
+                        </p>
+                        <img src="./static/images/go-out-west/cowboy1.png" alt="cowgirl" class="w-36 md:w-72"/>
+                    </div>
+                </div>
+                <p class="whitespace-pre-line pb-2">    
+                And then every person says the same action with their item. 
+                </p>
                 
-                fill(255, 255, 255);
-                textSize(24);
-                text("!\"", 200, height - 90);
-                fill(43, 255, 0);
-                textSize(16);
-                text("Did it make you chuckle?\nIf not, try again with a\ndifferent combination!", 200, height - 40);
-                drawButton();
-            };
-            
-            var pageNumber = 0;
-            pageZero();
-            
-            
-            //Using the mouse to go through the pages and to select the cards:
-            
-            mouseClicked = function() {
-                if(mouseX > 349 & mouseY > 359) {
-                    pageNumber++;
-                }
-                if(pageNumber === 0) {
-                    pageZero();
-                }
-                else if(pageNumber === 1) {
-                    pageOne();
-                    for (var i = 0; i < cardDeck1.returnPositions().length; i++) {
-                        var minX = cardDeck1.returnPositions()[i][0];
-                        var maxX = minX + cardDeck1.returnWidth();
-                        var minY = cardDeck1.returnPositions()[i][1];
-                        var maxY = minY + cardDeck1.returnHeight();
-                        if (mouseX > minX & mouseX < maxX & mouseY > minY & mouseY < maxY) {
-                            selectedItem = deck1[i];
-                            pageNumber++;
-                            pageTwo();
-                        }
-                        if(mouseX > 10 & mouseX < width - 20 & mouseY > 320 & mouseY < 370) {
-                            text(customItem, 20, 350);
-                        }
-                    }
-                }
-                else if(pageNumber === 2) {
-                    pageTwo();
-                    for (var i = 0; i < cardDeck2.returnPositions().length; i++) {
-                        var minX = cardDeck2.returnPositions()[i][0];
-                        var maxX = minX + cardDeck2.returnWidth();
-                        var minY = cardDeck2.returnPositions()[i][1];
-                        var maxY = minY + cardDeck2.returnHeight();
-                        if (mouseX > minX & mouseX < maxX & mouseY > minY & mouseY < maxY) {
-                            selectedAction = deck2[i];
-                            pageNumber++;
-                            pageThree();
-                        }
-                    }
-                }
-                else if(pageNumber === 3) {
-                    pageThree();
-                }
-                else if(pageNumber === 4) {
-                    pageNumber = 1;
-                    selectedItem = 0;
-                    selectedAction = 0;
-                    customItem = "";
-                    customCards = [];
-                    customItemEntered = false;
-                    customActionEntered = false;
-                    pageOne();
-                }
-            };
-            
-            // This keyPressed code is adapted from https://www.khanacademy.org/computer-programming/text-messages-with-emojis/5614982856310784:
-            var keyPressed=function(){
-                switch(keyCode){
-                    case ENTER:
-                        customCards.push(customItem);
-                        customItem = "";
-                        fill(94, 18, 94);
-                        text(customCards[0], 30, 355);
-                        pageNumber++;
-                        if (pageNumber === 2) {
-                            customItemEntered = true;
-                            pageTwo();
-                        }
-                        else {
-                            customActionEntered = true;
-                            pageThree();
-                        }
-                        break;
-                    case 32: //Space
-                        customItem+=String.fromCharCode(key);
-                        fill(94, 18, 94);
-                        text(customItem, 30, 355);
-                        break;
-                    case BACKSPACE:
-                        customItem = customItem.slice(0, customItem.length - 1);
-                        drawTextBox();
-                        fill(94, 18, 94);
-                        text(customItem, 30, 355);
-                        break;
-                    default:
-                        if(keyCode>48){
-                            customItem+=String.fromCharCode(key);
-                            text(customItem, 30, 355);
-                        }
-                }
+                <p class="triangle-border max-w-sm font-bold text-sm md:text-base">
+                    "When I go out west, I will bring my <span class="italic">chain saw</span> and have a picnic with it."
+                </p>
+                <div class="flex items-center justify-start max-w-5xl">
+                    <img src="./static/images/go-out-west/cowgirl1.png" alt="cowgirl" class="w-36 md:w-72"/>
+                    <img src="./static/images/go-out-west/cowboy1.png" alt="cowboy" class="w-36 md:w-72"/>
+                </div>
+                <div class="max-w-lg mx-auto" style="margin-left: 0 !important;">
+                    <p class="triangle-border top font-bold text-sm md:text-base">
+                        "When I go out west, I will bring my <span class="italic">rattlesnake</span> and have a picnic with it."
+                    </p>
+                </div>
                 
-            };</script>
+                <p class="whitespace-pre-line pb-8"> 
+                    And then we move on to the next person's action.
+                    This game usually ends up with lots of laughs.
+                </p>
+
+                <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t border-yellow-900  border-opacity-20 text-center">
+                    Need help thinking of a item to bring out West? How about one of these?
+                </h2>
+                <div id="item-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-2 md:gap-4"></div>
+                <p id="chosen-item" class="text-center invisible pb-4">choice goes here</p>
+
+                <h2 class="text-red-900 font-semibold text-base md:text-xl pt-6 border-t border-yellow-900  border-opacity-20 text-center">
+                    Need help thinking of an action? How about one of these?
+                </h2>
+                <div id="action-suggestions" class="py-8 flex items-center justify-center flex-wrap gap-2 md:gap-4"></div>
+                <p id="chosen-action" class="text-center invisible pb-4">action goes here</p>
+
+                <div id="put-together" class="flex items-center justify-center invisible pb-3 md:pb-24">
+                    <p id="put-together-speech-bubble" class="triangle-border right max-w-sm font-bold text-sm md:text-base">
+                        "When I go out west, I will bring my teddy bear and have a picnic with him."
+                    </p>
+                    <img src="./static/images/go-out-west/cactus1.png" alt="cactus person" class="w-36 md:w-72"/>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-yellow-900 py-10 text-center text-white font-semibold">
+            <a href="/" target="_blank" class="hover:bg-yellow-800 rounded px-1 py-px">Favorite Group Online Games</a>
+            <nav class="pt-2 flex items-center justify-center mb-4">
+                <a
+                  href="https://github.com/ethyl2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-1 rounded hover:bg-yellow-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    focusable="false"
+                    width="1.73em"
+                    height="1.5em"
+                    style="
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+                    "
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 1227.825 1000"
+                  >
+                    <path
+                      d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                      fill="white"
+                    />
+                  </svg>
+                  <span class="sr-only">GitHub</span>
+                </a>
+                <a
+                  href="https://twitter.com/ethyl22000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-1 rounded hover:bg-yellow-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    focusable="false"
+                    width="1.5em"
+                    height="1.5em"
+                    style="
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+                    "
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                      fill="white"
+                    />
+                  </svg>
+                  <span class="sr-only">Twitter</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/heather-nuffer/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-1 rounded hover:bg-yellow-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    focusable="false"
+                    width="1.5em"
+                    height="1.5em"
+                    style="
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+                    "
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z"
+                      fill="white"
+                    />
+                    <span class="sr-only">LinkedIn</span>
+                  </svg>
+                </a>
+            </nav>
+            <p>Copyright <span id="current-year">2022</span> Heather Nuffer</p>
+          </footer>
+
+        <script src="./js/out-west.js" async defer></script>
     </body>
 </html>
