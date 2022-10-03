@@ -278,7 +278,7 @@ const games = [
   {
       title: 'Longwave',
       url: 'https://longwave.web.app/',
-      gameLogoSrc: 'images/longwave.png',
+      gameLogoSrc: 'images/Longwave.png',
       gameLogoAlt: 'Longwave logo',
       description: 'An online, real-time adaptation of the board game Wavelength. Best enjoyed with voice chat!',
       howTo: `
