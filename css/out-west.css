@@ -138,7 +138,7 @@
   ------------------------------------------ */
 
   #banner {
-    background-image: url('static/images/go-out-west/go-out-west-line.png');
+    background-image: url('https://ethyl2.github.io/fav-games/static/images/go-out-west/go-out-west-line.png');
     animation: slideleft 500s linear infinite;
     background-position: 0px 0px;
     background-repeat: repeat-x;
