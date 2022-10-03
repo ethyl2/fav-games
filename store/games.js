@@ -332,7 +332,7 @@ const games = [
     {
       title: 'When I Go Out West...',
       url: './go-out-west.html',
-      gameLogoSrc: '/static/images/go-out-west/go-out-west-og-image.png',
+      gameLogoSrc: 'static/images/go-out-west/go-out-west-og-image.png',
       gameLogoAlt: 'When I Go Out West...',
       description: 'Laugh at what happens when you go out west. A simple, funny road game.',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./go-out-west.html" target="_blank" class="underline text-yellow-900 hover:text-blue-600">page</a> for how to play!</p>`,

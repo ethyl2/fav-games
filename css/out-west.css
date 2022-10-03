@@ -18,30 +18,30 @@
     -moz-border-radius:10px;
     border-radius:10px;
   }
-  
+
   @media(max-width:500px) {
       .triangle-border {
           padding:8px;
       }
   }
-  
+
   /* Variant : for left positioned triangle
   ------------------------------------------ */
-  
+
   .triangle-border.left {
     margin-left:30px;
   }
-  
+
   /* Variant : for right positioned triangle
   ------------------------------------------ */
-  
+
   .triangle-border.right {
     margin-right:30px;
   }
-  
+
   /* THE TRIANGLE
   ------------------------------------------------------------------------------------------------------------------------------- */
-  
+
   .triangle-border:before {
     content:"";
     position:absolute;
@@ -54,7 +54,7 @@
     display:block;
     width:0;
   }
-  
+
   /* creates the smaller  triangle */
   .triangle-border:after {
     content:"";
@@ -68,10 +68,10 @@
     display:block;
     width:0;
   }
-  
+
   /* Variant : top
   ------------------------------------------ */
-  
+
   /* creates the larger triangle */
   .triangle-border.top:before {
     top:-20px; /* value = - border-top-width - border-bottom-width */
@@ -80,7 +80,7 @@
     right:40px; /* controls horizontal position */
     border-width:0 20px 20px;
   }
-  
+
   /* creates the smaller  triangle */
   .triangle-border.top:after {
     top:-13px; /* value = - border-top-width - border-bottom-width */
@@ -89,10 +89,10 @@
     right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
     border-width:0 13px 13px;
   }
-  
+
   /* Variant : left
   ------------------------------------------ */
-  
+
   /* creates the larger triangle */
   .triangle-border.left:before {
     top:10px; /* controls vertical position */
@@ -101,7 +101,7 @@
     border-width:15px 30px 15px 0;
     border-color:transparent #5a8f00;
   }
-  
+
   /* creates the smaller  triangle */
   .triangle-border.left:after {
     top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
@@ -110,10 +110,10 @@
     border-width:9px 21px 9px 0;
     border-color:transparent #fff;
   }
-  
+
   /* Variant : right
   ------------------------------------------ */
-  
+
   /* creates the larger triangle */
   .triangle-border.right:before {
     top:10px; /* controls vertical position */
@@ -123,7 +123,7 @@
     border-width:15px 0 15px 30px;
     border-color:transparent #5a8f00;
   }
-  
+
   /* creates the smaller  triangle */
   .triangle-border.right:after {
     top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
@@ -138,7 +138,7 @@
   ------------------------------------------ */
 
   #banner {
-    background-image: url('/static/images/go-out-west/go-out-west-line.png');
+    background-image: url('static/images/go-out-west/go-out-west-line.png');
     animation: slideleft 500s linear infinite;
     background-position: 0px 0px;
     background-repeat: repeat-x;
