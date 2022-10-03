@@ -1,7 +1,8 @@
 const deck1Choices = ["birthday cake", "chainsaw", "teddy bear", "rattlesnake",
                             "fat crayon", "beetle collection", "cupcake", "belly button",
-                            "toothbrush", "gummy shark", "clown wig", "moon boots", "spider",
-                            "potato", "slice of bacon", "holey sock", "bowtie", "peach pie", 'bunny slipper']
+                            "toothbrush", "gummy shark", "clown wig", "pair of moon boots", "spider",
+                            "potato", "slice of bacon", "holey sock", "bowtie", "peach pie", 'bunny slipper', 'rubber chicken', 'pet cow', 
+                            'fidget spinner', 'phone booth', 'mummy sleeping bag', 'ketchup bottle', 'porta potty', 'q-tip', 'split pea soup']
 shuffle(deck1Choices);
 const itemSuggestionsEl = document.getElementById('item-suggestions')
 const itemChosenEl = document.getElementById('chosen-item')
@@ -36,7 +37,11 @@ const deck2Choices = ["eat it up", "make noise with it", "hug it", "wear it",
                 "milk it", "write with it", "scare someone with it",
                 "lick it", "admire it", "put toothpaste on it", 
                 "stick it on your head", "dance with it", "stick it on my head",
-                "fry it in a pan", "name it Fred", "give it a perm", "apply makeup on it", "take out its appendix", 'plant it in a pot']
+                "fry it in a pan", "name it Fred", "give it a perm", "apply makeup on it",
+                 "take out its appendix", 'plant it in a pot', 'take it to a dance', 'eat it whole', 'build it a house',
+                 'take it skydiving', 'teach it to drive', 'bury it'
+                ]
+shuffle(deck2Choices)
 
 deck2Choices.forEach(choice => {
     const itemEl = document.createElement('button')

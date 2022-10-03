@@ -119,6 +119,7 @@ function loadGames() {
 
       // How to play paragraph(s)
       const howToEl = document.createElement('div')
+      howToEl.classList.add('flex', 'flex-col', 'items-start', 'justify-start', 'w-full')
       howToEl.innerHTML = game.howTo
 
       // Append all to parent
