@@ -32,6 +32,17 @@ const items = [
     'favorite pair of sunglasses',
     'mixtape',
     'walkman',
+    'pine tree air freshener',
+    'credit card',
+    'piñata', 
+    'boom box',
+    'baby doll',
+    'tuba',
+    'soy sauce packet',
+    'Twister floor mat',
+    'toilet paper roll',
+    'Christmas stocking',
+    'scrunchie',
 ]
 
 const actions = [
@@ -63,6 +74,16 @@ const actions = [
     'start a fan club about it',
     'send it to you',
     'bedazzle it',
+    'pretend it\'s a superhero',
+    'drink it',
+    'put it in a blender',
+    'rub it under my armpits',
+    'burn it',
+    'decorate it with a Sharpie',
+    'use it as a bookmark',
+    'freeze it with dry ice',
+    'turn it into jewelry',
+    'put in in my hair',
 ]
 
 

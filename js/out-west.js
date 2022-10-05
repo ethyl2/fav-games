@@ -4,11 +4,12 @@ const actionSuggestionsEl = document.getElementById('action-suggestions')
 const actionChosenEl = document.getElementById('chosen-action')
 const putTogetherEl = document.getElementById('put-together')
 const speechBubbleEl = document.getElementById('put-together-speech-bubble')
+const resetButton = document.getElementById('reset')
 
 let itemChosen = null
 let actionChosen = null
 
-window.addEventListener('load', () => {
+function getChoices() {
     shuffle(items);
     itemsToUse = items.slice(0,25)
 
@@ -52,12 +53,26 @@ window.addEventListener('load', () => {
             }
         })
     })
-})
+}
 
+window.addEventListener('load', () => {
+    getChoices()
+    resetButton.addEventListener('click', () => {
+        removeAllChildNodes(itemSuggestionsEl)
+        removeAllChildNodes(actionSuggestionsEl)
+        getChoices()
+    })
+})
 
 function putItTogether() {
     speechBubbleEl.textContent = `When I go out west, I will bring my ${itemChosen} and ${actionChosen}.`
     putTogetherEl.classList.remove('invisible')
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
