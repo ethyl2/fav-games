@@ -336,5 +336,17 @@ const games = [
       gameLogoAlt: 'When I Go Out West...',
       description: 'Laugh at what happens when you go out west. A simple, funny road game.',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./go-out-west.html" target="_blank" class="underline text-yellow-900 hover:text-blue-600">page</a> for how to play!</p>`,
-  },
+    },
+    {
+      title: 'Catan Universe: Settlers of Catan',
+      url: 'https://catanuniverse.com/en/game/',
+      gameLogoSrc: 'static/images/catan-logo.png',
+      gameLogoAlt: 'Catan Logo',
+      description: 'A realistic online version of the famous board game. Gather resources to build settlements & cities and earn victory points to win.',
+      howTo: `<p class="text-xs mt-2 md:text-sm text-left">To play with friends, you'll need to register.</p>
+      <p class="text-xs mt-2 md:text-sm text-left">Next, add your friends to your friends list. To add friends, click on your hexagon avatar, & then click on 'Friends'. Next, click on the 'Find Friends' button on the bottom. Ask your friends for their usernames and search for them. Then click on 'Send Friend Request.'</p>
+      <p class="text-xs mt-2 md:text-sm text-left">If you haven't played Settlers before, you might want to read <a href="https://medium.com/board-game-brother/how-to-play-settlers-of-catan-e51c5a5aa499" rel="nofollow noopener noreferrer" target="_blank" class="underline text-yellow-900 hover:text-blue-600">this article</a> to learn how to play.</p>
+      <p class="text-xs mt-2 md:text-sm text-left">To start a game, select 'Multiplayer' and then 'Custom Match.' Next, use 'Add player' to add 2 of your friends. (If you buy the expansions, you could invite more.)</p>
+      `,
+    },
   ]
