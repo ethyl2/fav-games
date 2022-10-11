@@ -30,8 +30,8 @@ This project will became even more useful as we are able to include more of the 
 
 ## Possible Future Features
 
-- Dixit Practice page where a user is given a clue and then tries to guess the correct image.
 - More game pages!
+- More online games to add to the list
 - Any other ideas?
 
 ---
