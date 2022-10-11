@@ -15,6 +15,7 @@ Uses a bit of css animation, and tailwind, too.
 - Dixit Practice
 - Six Second Rule game
 - Adverb game
+- When I Go Out West game
 
 ---
 
