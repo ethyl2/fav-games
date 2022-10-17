@@ -37,6 +37,12 @@ This project will became even more useful as we are able to include more of the 
 
 ---
 
+## Contributors
+
+| [Heather Nuffer](https://github.com/ethyl2) | [mufzaal](https://github.com/mufzaal)
+|----------------- | --------------- |
+| [<img src="https://avatars.githubusercontent.com/u/6438167?v=4" width = "100" alt="Heather Nuffer" />](https://github.com/ethyl2) | [<img src="https://avatars.githubusercontent.com/u/92710085?v=4" width = "100" alt="mufzaal" />](https://github.com/mufzaal) |
+
 ### Freesound.org sounds used
 
 - https://freesound.org/s/639420/
