@@ -255,9 +255,8 @@ const games = [
       gameLogoSrc: 'images/adverb.png',
       gameLogoAlt: 'acting out adverbs',
       description: 'Take turns telling people what to do, in order to guess the secret adverb.',
-      howTo: `<p class="text-xs mt-2 md:text-sm">
-          See the page for instructions and adverb suggestions.
-        </p>`,
+      howTo:
+          `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./go-out-west.html" target="_blank" class="underline text-green-500 hover:text-blue-600">page</a> for instructions and adverb suggestions.</p>`,
   },
   {
       title: 'Gartic.io',
@@ -348,5 +347,13 @@ const games = [
       <p class="text-xs mt-2 md:text-sm text-left">If you haven't played Settlers before, you might want to read <a href="https://medium.com/board-game-brother/how-to-play-settlers-of-catan-e51c5a5aa499" rel="nofollow noopener noreferrer" target="_blank" class="underline text-yellow-900 hover:text-blue-600">this article</a> to learn how to play.</p>
       <p class="text-xs mt-2 md:text-sm text-left">To start a game, select 'Multiplayer' and then 'Custom Match.' Next, use 'Add player' to add 2 of your friends. (If you buy the expansions, you could invite more.)</p>
       `,
+    },
+    {
+      title: 'The Smurf Game: How Do You Smurf?',
+      url: './smurf.html',
+      gameLogoSrc: 'static/images/smurf-og.png',
+      gameLogoAlt: 'The Smurf Game: How Do You Smurf?',
+      description: 'A hilarious verb-guessing game',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./smurf.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
     },
   ]
