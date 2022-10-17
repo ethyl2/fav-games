@@ -10,9 +10,10 @@ const descriptions = document.getElementsByTagName('h2')
 const instructionItems = document.getElementsByClassName('instruction-item')
 const footerEl = document.getElementsByTagName('footer')[0]
 
+darkModeButton.addEventListener('click', toggleDarkMode)
 
-darkModeButton.addEventListener('click', () => {
-    Array.from(paragraphEls).forEach(el => {
+function toggleDarkMode() {
+  Array.from(paragraphEls).forEach(el => {
         el.classList.toggle('text-yellow-500')
     })
     Array.from(anchorEls).forEach(el => {
@@ -47,7 +48,7 @@ darkModeButton.addEventListener('click', () => {
     } else {
       darkModeButton.textContent = 'Dark Mode'
     }
-})
+}
 
 // Share using JS native web share API
 // https://dev.to/dailydevtips1/using-the-native-web-share-javascript-api-23ei
