@@ -356,4 +356,12 @@ const games = [
       description: 'A hilarious verb-guessing game',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./smurf.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
     },
+    {
+      title: 'The Good News/Bad News Game',
+      url: './good-news-bad-news.html',
+      gameLogoSrc: 'static/images/news/laugh.png',
+      gameLogoAlt: 'Good News & Bad News',
+      description: 'Create good & bad news to create stories as imaginative and comical as you\'d like.',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./good-news-bad-news.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
+    },
   ]
