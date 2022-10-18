@@ -7,12 +7,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>The Good News/Bad News Game</title>
+    <title>The Good News/Bad News Game | Favorite Online Games</title>
     <meta name="description" content="A hilarious story-building game">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/smurf-og.png">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/news/laugh.png">
     <meta property="og:image:alt" content="The Good News/Bad News Game">
-    <meta property="og:url" content="https://ethyl2.github.io/fav-games/smurf.html">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/good-news-bad-news.html">
     <meta property="og:title" content="The Good News/Bad News Game">
     <meta property="og:description" content="A hilarious story-building game">
     <meta property="og:type" content="website" />
@@ -57,85 +57,90 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="min-h-screen">
-      <header class="w-full bg-gray-200 text-black font-news font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
-        <h1>The Good News/Bad News Game</h1>
-      </header>
 
-      <main class="flex flex-col items-start md:justify-around container pt-16 mx-auto md:space-x-8 md:flex-row">
-        <div class="md:border md:border-shirt-yellow md:rounded p-6 w-full flex flex-col items-stretch justify-start space-y-6 md:mb-16 bg-gray-100 md:grid md:grid-cols-3 md:gap-6 md:space-y-0 shadow">
-          <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow flex flex-col items-start justify-between">
-            <h2 class="font-news font-semibold text-5xl">The What</h2>
-            <p>The Good News/Bad News Game is an excellent opportunity to create stories as imaginative and comical as you'd like.</p>
-            <p>Play with 2 or more players.</p>
-            <p>You will alternate giving good and bad news until you just can't keep going anymore, maybe because someone laughs too hard and chokes on their spit or something.</p>
-            <img src="./static/images/news/newspaper-room.jpg" alt="newspaper-room"
-              class="w-full border border-gray-300 shadow md:max-w-sm max-w-xs mx-auto rounded"
-            />
-          </section>
+    <header class="w-full bg-gray-200 text-black font-news font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
+      <h1>The Good News/Bad News Game</h1>
+    </header>
 
-          <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow">
-            <h2 class="font-news font-semibold text-5xl">The How</h2>
-            <div>
-              <p>1. Choose someone to be first.</p>
-              <p>They come up with a line of good news, such as, <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
-                'The good news is that today's weather is beautiful.'
-              </span></p>
-              <button
-                type="button"
-                id="suggestion-button"
-                class="bg-gray-700 text-shirt-yellow py-1 px-2 rounded-lg mt-4 mb-2 font-bold hover:bg-gray-500"
-              >
-                Get an opening suggestion
-              </button>
-              <p id="suggestion" class="italic font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40"></p>
-            </div>
-
-            <div class="flex flex-col items-start justify-start py-2">
-              <p>2. The next person comes up with a piece of bad news, that contradicts the good news in some way.</p>
-              <p>For example, <span class="font-news text-gray-800 font-semibold text-xl bg-gray-200 p-0.5">
-                'The bad news is that we are stuck inside all day doing a math test.'</span></p>
-            </div>
-
-            <div class="pb-2">
-              <p>3. The person next up comes up with a piece of good news, that helps to make the bad news seem less bad.</p>
-              <p>Here we go: <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
-                'The good news is that we are all math geniuses and can't think of anything we'd rather do than take math tests!'</span></p>
-            </div>
-
-            <div>
-              <p>4. Continue taking turns, with each playing telling alternate lines of good or bad news.</p>
-              <p>Player 4 might say, <span class="font-news text-gray-800 font-semibold text-xl bg-gray-200 p-0.5">
-                'The bad news is that we were just sucked into an alternate universe that bases their math on a purely complex combination of colors, calculus, and cookie crumbs.'</span></p>
-              <p>Next up might be with Player 5 with: <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
-                'The good news is that we love cookies and can't wait to learn cookie math.'</span></p>
-            </div>
-          </section>
-
-          <img src="./static/images/news/newspaper-room.jpg" alt="newspaper-room"
-          class="w-full border border-gray-400 shadow md:max-w-sm max-w-xs mx-auto rounded mb-16 md:mb-0"
+    <main
+      class="mt-16 mx-auto container lg:border lg:border-shirt-yellow lg:rounded p-6 w-full flex flex-col items-stretch justify-start space-y-6 mb-10 md:mb-16 bg-gray-100 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-6 md:space-y-0 shadow"
+    >
+      <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow flex flex-col items-start justify-between">
+        <h2 class="font-news font-semibold text-5xl">The What</h2>
+        <p>The Good News/Bad News Game is an excellent opportunity to create stories as imaginative and comical as you'd like.</p>
+        <p class="py-2">Play with 2 or more players.</p>
+        <p>You will alternate giving good and bad news until you just can't keep going anymore, maybe because someone laughs too hard and chokes on their spit or something.</p>
+        <img src="./static/images/news/laugh.png" alt="laughing while telling the news"
+          class="w-full border border-gray-300 shadow md:max-w-sm max-w-xs mx-auto rounded mt-4"
         />
+      </section>
 
-          <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow">
-            <h2 class="font-news font-semibold text-5xl">The Where</h2>
-            <p>This game can be played pretty much anywhere: online, in person, during a long car ride, somewhere where you need to break some serious ice, etc.</p>
-          </section>
-
-          <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow">
-            <h2 class="font-news font-semibold text-5xl">The When</h2>
-            <p>Just like The Where, the sky's the limit.</p>
-          </section>
-
-          <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50">
-            <h2 class="font-news font-semibold text-5xl">The Why</h2>
-            <p>Do you need a reason? Well, it has the potential to build connections, increase creativity and quick-thinking, and be good practice for listening skills. Also, laughter is good for the soul.</p>
-          </section>
-
+      <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow">
+        <h2 class="font-news font-semibold text-5xl">The How</h2>
+        <div>
+          <p>1. Choose someone to be first.</p>
+          <p>They come up with a line of good news, such as, <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
+            'The good news is that today's weather is beautiful.'
+          </span></p>
+          <button
+            type="button"
+            id="suggestion-button"
+            class="bg-gray-700 text-shirt-yellow py-1 px-2 rounded-lg mt-4 mb-2 font-bold hover:bg-gray-500 mx-auto block"
+          >
+            Get an opening suggestion
+          </button>
+          <p id="suggestion" class="italic font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 text-center"></p>
         </div>
 
+        <div class="flex flex-col items-start justify-start py-2">
+          <p>2. The next person comes up with a piece of bad news, that contradicts the good news in some way.</p>
+          <p>For example, <span class="font-news text-gray-800 font-semibold text-xl bg-gray-200 p-0.5">
+            'The bad news is that we are stuck inside all day doing a math test.'</span></p>
+        </div>
 
-      </main>
-    </div>
+        <div class="pb-2">
+          <p>3. The person next up comes up with a piece of good news, that helps to make the bad news seem less bad.</p>
+          <p>Here we go: <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
+            'The good news is that we are all math geniuses and can't think of anything we'd rather do than take math tests!'</span></p>
+        </div>
+
+        <div>
+          <p>4. Continue taking turns, with each playing telling alternate lines of good or bad news.</p>
+          <p>Player 4 might say, <span class="font-news text-gray-800 font-semibold text-xl bg-gray-200 p-0.5">
+            'The bad news is that we were just sucked into an alternate universe that bases their math on a purely complex combination of colors, calculus, and cookie crumbs.'</span></p>
+          <img src="./static/images/news/cookie-math.png" alt="cookie math" class="w-36 rounded  my-4 mx-auto" />
+          <p>Next up might be with Player 5 with: <span class="font-news text-gray-800 font-semibold text-xl bg-shirt-yellow bg-opacity-40 p-0.5">
+            'The good news is that we love cookies and can't wait to learn cookie math.'</span></p>
+        </div>
+      </section>
+
+      <img src="./static/images/news/newspaper-room.jpg" alt="newspaper-room"
+      class="w-full border border-shirt-yellow shadow mx-auto rounded mb-16 md:mb-0"
+    />
+
+      <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow">
+        <h2 class="font-news font-semibold text-5xl">The Where</h2>
+        <p>This game can be played pretty much anywhere: online, in person, during a long car ride, somewhere where you need to break some serious ice, etc.</p>
+        <img src="./static/images/news/road-trip.png" alt="exercising brain" class="w-24 mt-2 md:w-20 md:mt-4 mx-auto" />
+      </section>
+
+      <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50 shadow flex flex-col items-start justify-between">
+        <div>
+          <h2 class="font-news font-semibold text-5xl">The When</h2>
+        <p>Just like The Where, the sky's the limit.</p>
+        </div>
+
+        <img src="./static/images/news/sky-limit.png" alt="the sky's the limit" class="w-24 md:w-36 mx-auto rounded border" />
+      </section>
+
+      <section class="border border-shirt-yellow rounded p-6 w-full bg-gray-50">
+        <h2 class="font-news font-semibold text-5xl">The Why</h2>
+        <p>Do you need a reason? Well, it has the potential to build connections, increase creativity and quick-thinking, and be good practice for listening skills. Also, laughter is good for the soul.</p>
+        <img src="./static/images/news/exercise-brain.png" alt="exercising brain" class="w-36 md:w-32 mx-auto" />
+      </section>
+
+    </main>
+
     <footer class="bg-black py-10 text-center text-white font-semibold">
       <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
           <a
@@ -223,7 +228,7 @@
             </svg>
           </a>
       </nav>
-      <p>Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-shirt-yellow rounded px-1 py-px hover:text-gray-600">Favorite Group Online Games</a></p>
+      <p class="text-sm">Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-shirt-yellow rounded px-1 py-px hover:text-gray-600">Favorite Group Online Games</a></p>
     </footer>
     <script src="store/openingGoodNews.js" async defer></script>
     <script>

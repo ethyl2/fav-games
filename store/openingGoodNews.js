@@ -29,7 +29,7 @@ const openingGoodNews = [
   'Target is having an incredible sale today.',
   'I met my long-long relative.',
   'Costco has a record number of free samples today.',
-  'Mountain Dew just release a new flavor!',
+  'Mountain Dew just released a new flavor!',
   'It\'s my birthday!',
   'they canceled my least-favorite TV show.',
   'my favorite author just wrote a new book!',
@@ -41,5 +41,6 @@ const openingGoodNews = [
   'I\'m engaged!',
   'I\'m alive!',
   'I\'m going to space!',
-  'There\'s cheese in the fridge.'
+  'there\'s cheese in the fridge.',
+  'I learned why the chicken crossed the road.'
 ]
