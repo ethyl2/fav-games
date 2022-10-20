@@ -16,6 +16,7 @@ Uses a bit of css animation, and tailwind, too.
 - Six Second Rule game
 - Adverb game
 - When I Go Out West game
+- The Good News/Bad News Game
 
 ---
 
