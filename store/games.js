@@ -364,4 +364,20 @@ const games = [
       description: 'Create good & bad news to create stories as imaginative and comical as you\'d like.',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./good-news-bad-news.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
     },
+    {
+      title: 'Somewherewords',
+      url: 'https://words.aroma1997.org/',
+      gameLogoSrc: 'static/images/logos/somewherewords.png',
+      gameLogoAlt: 'Somewherewords',
+      description: 'Play Werewords online with your friends! See if the villagers can guess the secret word, or if the werewolves can successfully prevent them.',
+      howTo: `<ol class="list-decimal list-inside" ><li class="text-xs mt-6 md:text-sm text-left">To start a game, enter your desired lobby name in the input box.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">Then share the url with your friends. Join a zoom together so you can discuss things easily.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">Either choose to be the mayor or have one picked randomly.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">The mayor will then choose any word they'd like.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">If you'd like to have a time limit, start a timer somewhere.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">The other players will then ask yes/no questions, and the mayor will answer them and click on the answers in the table.</li>
+        <li class="text-xs mt-2 md:text-sm text-left">See the <a href="https://words.aroma1997.org/howto.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">rules</a> for more details on how to proceed.</li>
+        </ol>
+        `,
+    },
   ]
