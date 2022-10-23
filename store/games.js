@@ -380,4 +380,12 @@ const games = [
         </ol>
         `,
     },
+    {
+      title: 'What\'s Yours Like?',
+      url: './whats-yours-like.html',
+      gameLogoSrc: 'static/images/yours-like/lamp.png',
+      gameLogoAlt: 'lamp',
+      description: 'Be clever and subtle in this guessing game',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./whats-yours-like.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
+    },
   ]
