@@ -64,7 +64,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="w-full text-black font-puff font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 bg-sign-green border-bag-blue">
+    <header class="w-full text-black font-puff font-bold text-4xl md:text-6xl text-center pt-10 pb-6 bg-sign-green shadow">
       <h1>What's Yours Like?</h1>
     </header>
 
@@ -82,7 +82,15 @@
           <li>favorite dessert</li>
           <li>lawn mower</li>
           <li>favorite magazine</li>
+          <li>neighbor</li>
+          <li>hair</li>
         </ul>
+        <p>If you have more than one of the item, such as cars, choose one specifically in your mind as you describe the secret item.</p>
+
+        <div class="flex item-center justify-center space-x-4">
+          <button type="button" class="bg-motel-red py-1 px-2 rounded-full text-white hover:bg-lamp-orange" id="get-suggestion">Get a Suggestion</button>
+          <p id="suggestion" class="pt-1 text-tiger-brown font-puff text-xl">computer</p>
+        </div>
 
         <p>Invite the guesser back.</p>
         <p>Take turns describing what your secret item is like. Try to be clever and subtle -- not too obvious, but truthful & accurate. The other players can act as judges to enforce that.</p>
@@ -93,9 +101,9 @@
       </div>
       <img src="./static/images/yours-like/collection.jpg" alt="collection" class="w-3/4 rounded-md md:w-1/3 mx-auto" />
     </main>
-    <section class="container mx-auto flex flex-wrap items-stretch justify-between w-full md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 mb-16">
-      <div class="border-4 rounded-md pb-2 bg-white border-tiger-brown shadow w-full mb-4 max-w-sm mx-auto md:mb-auto">
-        <div class="bg-tiger-brown py-2 mb-2 text-white">
+    <section class="container mx-auto flex flex-wrap items-stretch justify-center w-full mb-16">
+      <div class="border-4 rounded-md pb-2 bg-white border-tiger-brown shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
+        <div class="bg-tiger-brown py-2 mb-2 text-white w-full">
           <h3 class="font-puff text-xl text-center">Example 1:</h3>
           <h4 class="font-puff text-lg text-center">Washing Machine</h4>
         </div>
@@ -112,57 +120,58 @@
         </div>
       </div>
 
-      <div class="border-4 rounded-md pb-2 bg-white border-sign-green shadow w-full mb-4 max-w-sm mx-auto md:mb-auto">
-        <div class="bg-sign-green py-2 mb-2 text-white">
+      <div class="border-4 rounded-md pb-2 bg-white border-sign-green shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
+        <div class="bg-sign-green py-2 mb-2 text-white w-full">
           <h3 class="font-puff text-xl text-center">Example 2:</h3>
-          <h4 class="font-puff text-lg text-center">Washing Machine</h4>
+          <h4 class="font-puff text-lg text-center">Hair</h4>
         </div>
         <div class="px-2">
           <p class="italic text-sm">Possible descriptions:</p>
           <ul class="list-disc list-inside text-base">
-            <li>"Mine is noisy."</li>
-            <li>"Mine is used mostly on the weekend."</li>
-            <li>"Mine is white."</li>
-            <li>"Mine is complicated."</li>
-            <li>"Mine makes my shirts wet."</li>
+            <li>"Mine is messy."</li>
+            <li>"Mine is disappearing a little more every day."</li>
+            <li>"Mine is longer than my mom's."</li>
+            <li>"Mine smells like strawberries."</li>
+            <li>"I get mine wet every day."</li>
           </ul>
-          <img src="./static/images/yours-like/washing-machine.png" alt="washing machine" class="mt-2 w-36 mx-auto"/>
+          <img src="./static/images/yours-like/hair.png" alt="hair" class="mt-2 w-36 mx-auto"/>
         </div>
       </div>
 
-      <div class="border-4 rounded-md pb-2 bg-white border-lamp-orange shadow w-full mb-4 max-w-sm mx-auto md:mb-auto">
-        <div class="bg-lamp-orange py-2 mb-2">
-          <h3 class="font-puff text-xl text-center">Example 1:</h3>
-          <h4 class="font-puff text-lg text-center">Washing Machine</h4>
+      <div class="border-4 rounded-md pb-2 bg-white border-lamp-orange shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex items-center justify-between flex-col">
+        <div class="bg-lamp-orange py-2 mb-2 w-full">
+          <h3 class="font-puff text-xl text-center">Example 3:</h3>
+          <h4 class="font-puff text-lg text-center">License Plate</h4>
         </div>
         <div class="px-2">
           <p class="italic text-sm">Possible descriptions:</p>
           <ul class="list-disc list-inside text-base">
-            <li>"Mine is noisy."</li>
-            <li>"Mine is used mostly on the weekend."</li>
-            <li>"Mine is white."</li>
-            <li>"Mine is complicated."</li>
-            <li>"Mine makes my shirts wet."</li>
+            <li>"Mine has a Y on it."</li>
+            <li>"Mine is boring."</li>
+            <li>"Mine has a sticker on it."</li>
+            <li>"Mine belongs to my mom."</li>
+            <li>"Mine is dirty."</li>
           </ul>
-          <img src="./static/images/yours-like/washing-machine.png" alt="washing machine" class="mt-2 w-36 mx-auto"/>
+
         </div>
+        <img src="./static/images/yours-like/license-plate.jpg" alt="license plate" class="mb-4 w-36 mx-auto"/>
       </div>
 
-      <div class="border-4 rounded-md pb-2 bg-white border-motel-red shadow w-full mb-4 max-w-sm mx-auto md:mb-auto">
-        <div class="bg-motel-red py-2 mb-2 text-white">
-          <h3 class="font-puff text-xl text-center">Example 1:</h3>
-          <h4 class="font-puff text-lg text-center">Washing Machine</h4>
+      <div class="border-4 rounded-md pb-2 bg-white border-motel-red shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
+        <div class="bg-motel-red py-2 mb-2 text-white w-full">
+          <h3 class="font-puff text-xl text-center">Example 4:</h3>
+          <h4 class="font-puff text-lg text-center">Lamp</h4>
         </div>
         <div class="px-2">
           <p class="italic text-sm">Possible descriptions:</p>
           <ul class="list-disc list-inside text-base">
-            <li>"Mine is noisy."</li>
-            <li>"Mine is used mostly on the weekend."</li>
-            <li>"Mine is white."</li>
-            <li>"Mine is complicated."</li>
-            <li>"Mine makes my shirts wet."</li>
+            <li>"Mine is cute."</li>
+            <li>"Mine is used mostly in the evening."</li>
+            <li>"Mine is electric."</li>
+            <li>"Mine is an antique."</li>
+            <li>"I bought mine at a thrift store."</li>
           </ul>
-          <img src="./static/images/yours-like/washing-machine.png" alt="washing machine" class="mt-2 w-36 mx-auto"/>
+          <img src="./static/images/yours-like/lamp.png" alt="lamp" class="mt-2 w-36 mx-auto"/>
         </div>
       </div>
     </section>
@@ -256,5 +265,13 @@
       </nav>
       <p class="text-sm">Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-shirt-yellow rounded px-1 py-px hover:text-gray-600">Favorite Group Online Games</a></p>
     </footer>
+    <script src="./store/items.js"></script>
+    <script>
+      const suggestionButton = document.getElementById('get-suggestion')
+      const suggestionEl = document.getElementById('suggestion')
+      suggestionButton.addEventListener('click', () => {
+        suggestionEl.textContent = items[Math.floor(Math.random() * items.length)]
+      })
+    </script>
   </body>
 </html>
