@@ -44,12 +44,16 @@
         extend: {
           colors: {
             'sign-green':  '#1AA68D',
+            'light-sign-green': '#ccece6',
             'bag-blue': '#1E4E5C',
             'man-beige': '#DCC4B6',
             'lighter-man-beige': '#f5f1eb',
             'lamp-orange': '#E49339',
+            'light-lamp-orange': '#eebf89',
             'motel-red': '#8A0A33',
+            'light-motel-red': '#c894a5',
             'tiger-brown': '#A6561B',
+            'light-tiger-brown': '#ecbb98',
           },
           fontFamily: {
             puff: "'DynaPuff', cursive",
@@ -64,7 +68,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="w-full text-black font-puff font-bold text-4xl md:text-6xl text-center pt-10 pb-6 bg-sign-green shadow">
+    <header class="w-full text-black font-puff font-bold text-4xl md:text-6xl text-center pt-10 pb-6 shadow bg-gradient-to-r from-sign-green to-light-sign-green">
       <h1>What's Yours Like?</h1>
     </header>
 
@@ -74,7 +78,7 @@
       <div class="w-full bg-white p-4 sm:border-4 border-man-beige rounded-md flex flex-col items-start justify-start space-y-4 text-sm md:text-lg md:p-8">
         <h2 class="font-puff text-3xl">How to Play</h2>
         <p>Choose one player to be the guesser. Have them close their eyes, deafen themselves, or leave the room or zoom for a couple of minutes.</p>
-        <p>The rest of the players will choose a secret word that is an item that everyone (or mostly everyone) present has or uses, such as</p>
+        <p>The rest of the players will choose a secret word that is an item that everyone (or mostly everyone) present has or uses, such as a:</p>
         <ul class="list-disc list-inside">
           <li>toothbrush</li>
           <li>washing machine</li>
@@ -85,7 +89,6 @@
           <li>neighbor</li>
           <li>hair</li>
         </ul>
-        <p>If you have more than one of the item, such as cars, choose one specifically in your mind as you describe the secret item.</p>
 
         <div class="flex item-center justify-center space-x-4">
           <button type="button" class="bg-motel-red py-1 px-2 rounded-full text-white hover:bg-lamp-orange" id="get-suggestion">Get a Suggestion</button>
@@ -93,9 +96,12 @@
         </div>
 
         <p>Invite the guesser back.</p>
+
         <p>Take turns describing what your secret item is like. Try to be clever and subtle -- not too obvious, but truthful & accurate. The other players can act as judges to enforce that.</p>
+        <p>If you have more than one of the item, choose one specifically in your mind as you describe the secret item.</p>
         <p>After each description, the guesser can try and guess the secret item.</p>
         <p>The guesser is trying to guess the secret item in as few guesses as possible, while the other players try to keep them guessing for as long as possible (within reason). </p>
+        <p>When the guesser guesses correctly, the player who gave the last clue gets to be the next guesser.</p>
 
         <p class="italic text-xs md:text-base">You can buy a physical version of the game
           <a href="https://www.amazon.com/PlayMonster-7415-Whats-Yours-Like/dp/B000NADFOU?th=1" target="_blank" rel="noreferrer noopener nofollow" class="text-lamp-orange hover:text-sign-green">here</a>.</p>
@@ -104,7 +110,7 @@
     </main>
     <section class="container mx-auto flex flex-wrap items-stretch justify-center w-full mb-16">
       <div class="border-4 rounded-md pb-2 bg-white border-tiger-brown shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
-        <div class="bg-tiger-brown py-2 mb-2 text-white w-full">
+        <div class="bg-tiger-brown py-2 mb-2 text-black w-full bg-gradient-to-b from-tiger-brown to-light-tiger-brown">
           <h3 class="font-puff text-xl text-center">Example 1:</h3>
           <h4 class="font-puff text-lg text-center">Washing Machine</h4>
         </div>
@@ -122,7 +128,7 @@
       </div>
 
       <div class="border-4 rounded-md pb-2 bg-white border-sign-green shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
-        <div class="bg-sign-green py-2 mb-2 text-white w-full">
+        <div class="py-2 mb-2 text-black w-full bg-gradient-to-b from-sign-green to-light-sign-green">
           <h3 class="font-puff text-xl text-center">Example 2:</h3>
           <h4 class="font-puff text-lg text-center">Hair</h4>
         </div>
@@ -140,7 +146,7 @@
       </div>
 
       <div class="border-4 rounded-md pb-2 bg-white border-lamp-orange shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex items-center justify-between flex-col">
-        <div class="bg-lamp-orange py-2 mb-2 w-full">
+        <div class="py-2 mb-2 w-full bg-gradient-to-b from-lamp-orange to-light-lamp-orange">
           <h3 class="font-puff text-xl text-center">Example 3:</h3>
           <h4 class="font-puff text-lg text-center">License Plate</h4>
         </div>
@@ -155,11 +161,11 @@
           </ul>
 
         </div>
-        <img src="./static/images/yours-like/license-plate.jpg" alt="license plate" class="mb-4 w-36 mx-auto"/>
+        <img src="./static/images/yours-like/license-plate.jpg" alt="license plate" class="mt-2 mb-4 w-36 mx-auto"/>
       </div>
 
       <div class="border-4 rounded-md pb-2 bg-white border-motel-red shadow w-full max-w-sm m-2 md:m-4 lg:m-6 flex flex-col items-center justify-between">
-        <div class="bg-motel-red py-2 mb-2 text-white w-full">
+        <div class="py-2 mb-2 text-white w-full bg-gradient-to-b from-motel-red to-light-motel-red">
           <h3 class="font-puff text-xl text-center">Example 4:</h3>
           <h4 class="font-puff text-lg text-center">Lamp</h4>
         </div>
