@@ -104,7 +104,7 @@ const games = [
               <li class="instruction-item">Everyone but the storyteller votes on which card they think belongs to the storyteller, of the collection of cards that result.</li>
               <li class="instruction-item">Points are awarded to the storyteller if some (but not all) guess the correct card, and the other players get points they guessed the right card and also if someone picked their card.</li>
             </ol>
-            <p class="instruction-item">You can practice examining images and thinking of clues <a href="./dixit-practice.html" class="underline text-blue-600 text-xs md:text-sm hover:text-blue-900">here</a>.</p>
+            <p>You can practice examining images and thinking of clues <a href="./dixit-practice.html" class="underline text-blue-600 text-xs md:text-sm hover:text-blue-900">here</a>.</p>
           </div>`,
   },
   {
@@ -370,13 +370,13 @@ const games = [
       gameLogoSrc: 'static/images/logos/somewherewords.png',
       gameLogoAlt: 'Somewherewords',
       description: 'Play Werewords online with your friends! See if the villagers can guess the secret word, or if the werewolves can successfully prevent them.',
-      howTo: `<ol class="list-decimal list-inside" ><li class="text-xs mt-6 md:text-sm text-left">To start a game, enter your desired lobby name in the input box.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">Then share the url with your friends. Join a zoom together so you can discuss things easily.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">Either choose to be the mayor or have one picked randomly.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">The mayor will then choose any word they'd like.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">If you'd like to have a time limit, start a timer somewhere.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">The other players will then ask yes/no questions, and the mayor will answer them and click on the answers in the table.</li>
-        <li class="text-xs mt-2 md:text-sm text-left">See the <a href="https://words.aroma1997.org/howto.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">rules</a> for more details on how to proceed.</li>
+      howTo: `<ol class="list-decimal list-inside" ><li class="text-xs mt-6 md:text-sm text-left instruction-item">To start a game, enter your desired lobby name in the input box.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">Then share the url with your friends. Join a zoom together so you can discuss things easily.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">Either choose to be the mayor or have one picked randomly.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">The mayor will then choose any word they'd like.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">If you'd like to have a time limit, start a timer somewhere.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">The other players will then ask yes/no questions, and the mayor will answer them and click on the answers in the table.</li>
+        <li class="text-xs mt-2 md:text-sm text-left instruction-item">See the <a href="https://words.aroma1997.org/howto.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">rules</a> for more details on how to proceed.</li>
         </ol>
         `,
     },
