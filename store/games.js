@@ -388,4 +388,19 @@ const games = [
       description: 'Be clever and subtle in this guessing game',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./whats-yours-like.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`,
     },
+    {
+      title: 'Bananagrams Online',
+      url: 'https://www.playbananagrams.com/',
+      gameLogoSrc: 'static/images/banana.png',
+      gameLogoAlt: 'banana',
+      description: 'Speed-round Scrabble!',
+      howTo: `<p class="text-xs mt-2 md:text-sm">Click the 'Create a Game' button to open a new game.</p>
+        <p class="text-xs mt-2 md:text-sm">Share the url with your friends.</p>
+        <p class="text-xs mt-2 md:text-sm">You and everyone needs to join the game by entering a name in the input box near the bottom of the yellow area and then pressing 'Join Game.'</p>
+        <p class="text-xs mt-2 md:text-sm">Once everyone is in, click the 'Start Game' button to begin.</p>
+        <p class="text-xs mt-2 md:text-sm">Click on the tiles to arrange them in a Scrabble-style arrangement. Once you use all your tiles, click on the banana button. Everyone will then be given another tile.</p>
+        <p class="text-xs mt-2 md:text-sm">You win by being the first to place the very last tile and clicking the win button.</p>
+        <p class="text-xs mt-2 md:text-sm">Click on 'Rules' to watch a video about how to play, and 'Controls' for more details.</p>
+      `,
+    },
   ]
