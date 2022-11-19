@@ -256,7 +256,7 @@ const games = [
       gameLogoAlt: 'acting out adverbs',
       description: 'Take turns telling people what to do, in order to guess the secret adverb.',
       howTo:
-          `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./go-out-west.html" target="_blank" class="underline text-green-500 hover:text-blue-600">page</a> for instructions and adverb suggestions.</p>`,
+          `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./adverb-game.html" target="_blank" class="underline text-green-500 hover:text-blue-600">page</a> for instructions and adverb suggestions.</p>`,
   },
   {
       title: 'Gartic.io',
@@ -402,5 +402,13 @@ const games = [
         <p class="text-xs mt-2 md:text-sm">You win by being the first to place the very last tile and clicking the win button.</p>
         <p class="text-xs mt-2 md:text-sm">Click on 'Rules' to watch a video about how to play, and 'Controls' for more details.</p>
       `,
+    },
+    {
+      title: 'Same Word',
+      url: './same-word.html',
+      gameLogoSrc: 'static/images/dinos/dino4.png',
+      gameLogoAlt: 'dino',
+      description: 'See how quickly your friends can get in-sync!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./same-word.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`
     },
   ]
