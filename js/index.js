@@ -129,4 +129,22 @@ function loadGames() {
       gameLi.append(howToEl)
       gameContainerEl.append(gameLi)
   })
+
+      // Add smooth scroll to anchor links
+      const links = document.querySelectorAll("a.smooth-scroll")
+      for (const link of links) {
+        link.addEventListener("click", linkClickHandler)
+      }
+
+      function linkClickHandler(e) {
+        e.preventDefault()
+        const href = this.getAttribute("href")
+        const section = document.querySelector(href)
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        scroll({
+          top: (section.getBoundingClientRect().top + scrollTop),
+          behavior: "smooth"
+        })
+      }
+
 }
