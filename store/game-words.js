@@ -304,6 +304,14 @@ const gameNames = [
   'Sriracha the Game',
   'Undertale',
   'Hollow Knight',
+  'Rummikub',
+  'Rummy-O',
+  'Phase 10',
+  'Phase 10 Dice',
+  'Last Word',
+  'Shut the Box',
+  'MadLibs Card Game',
+  'CAMP',
 ]
 
 
