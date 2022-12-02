@@ -5,6 +5,16 @@ const paragraphCountInput = document.getElementById('paragraph-count')
 const paragraphCountLabel = document.getElementById('paragraph-count-label')
 const copiedBox = document.getElementById('copied-box')
 const messageEl = document.getElementById('message')
+const startsWithEl = document.getElementById('start-with')
+
+// Stores state of checkbox in session storage
+startsWithEl.addEventListener('input', ()=> {
+  if (startsWithEl.checked === true) {
+    window.sessionStorage.setItem('starts-with', 'checked')
+  } else {
+    window.sessionStorage.setItem('starts-with', 'unchecked')
+  }
+})
 
 let paragraphCount =  paragraphCountInput.value
 let paragraphLength = 'short'
@@ -49,6 +59,14 @@ function init() {
     paragraphCountLabel.textContent = 'Paragraphs'
   }
 
+  // Get checked state of 'starts with' checkbox from session storage
+  const startsWith = window.sessionStorage.getItem('starts-with')
+  if (startsWith === 'checked') {
+    startsWithEl.checked = true
+  } else {
+    startsWithEl.checked = false
+  }
+
   const copyButton = document.getElementById('copy-button')
   copyButton.addEventListener('click', copyToClipboard)
 
@@ -90,6 +108,9 @@ function init() {
 
 function updateLoremIpsum() {
   let updatedContent = ''
+  if (startsWithEl.checked) {
+    updatedContent += 'Game lorem ipsum dolor sit amet '
+  }
   for (let i=0; i < paragraphCount; i++) {
     updatedContent += makeParagraph(paragraphLength)
   }
