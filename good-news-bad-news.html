@@ -239,6 +239,9 @@
         suggestionEl.classList.add('p-0.5')
         suggestionEl.textContent = 'The good news is that ' + suggestion
       })
+
+      const currentYearSpan = document.getElementById('current-year')
+      currentYearSpan.textContent = new Date().getFullYear()
     </script>
   </body>
 </html>

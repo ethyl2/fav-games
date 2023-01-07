@@ -411,4 +411,12 @@ const games = [
       description: 'See how quickly your friends can get in-sync!',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./same-word.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for how to play!</p>`
     },
+    {
+      title: 'Guess That Song',
+      url: './guess-that-song.html',
+      gameLogoSrc: 'static/images/love-song-2.png',
+      gameLogoAlt: 'love song',
+      description: 'Learn how to create a guess-that-song game with audio files of funny-sounding lyrics',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./guess-that-song.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and a sample game!</p>`
+    },
   ]
