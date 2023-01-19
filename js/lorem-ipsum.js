@@ -1,3 +1,6 @@
+const currentYearSpan = document.getElementById('current-year')
+currentYearSpan.textContent = new Date().getFullYear()
+
 window.addEventListener('load', init)
 const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
 const updateButton = document.getElementById('update')

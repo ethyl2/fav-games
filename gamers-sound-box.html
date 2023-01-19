@@ -338,6 +338,9 @@
     </footer>
     <script src="" async defer></script>
     <script>
+      const currentYearSpan = document.getElementById('current-year')
+      currentYearSpan.textContent = new Date().getFullYear()
+
       let allowAudio = false
 
       const firstBox = document.getElementById('first-box')
