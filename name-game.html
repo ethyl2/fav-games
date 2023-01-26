@@ -7,14 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Guess that Song Game | Favorite Online Games</title>
-    <meta name="description" content="How to create a hilarious song-guessing game">
+    <title>The Name Game | Favorite Online Games</title>
+    <meta name="description" content="Take a name & create a silly nonsense song with it">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/love-song.png">
-    <meta property="og:image:alt" content=">Guess that Song Game">
-    <meta property="og:url" content="https://ethyl2.github.io/fav-games/guess-that-song.html">
-    <meta property="og:title" content=">Guess that Song Game">
-    <meta property="og:description" content="How to create a hilarious song-guessing game">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/name-mug.jpg">
+    <meta property="og:image:alt" content="The Name Game">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/name-game.html">
+    <meta property="og:title" content=">The Name Game">
+    <meta property="og:description" content="Take a name & create a silly nonsense song with it">
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -65,31 +65,69 @@
     </header>
 
     <main class="container pt-8 mx-auto px-4 min-h-screen md:px-0">
-        <p class="text-center font-text md:text-lg font-semibold">Get to know people's names by singing the Name Game song until you feel like you might go crazy!
-            <a href="https://www.goodjobbrain.com/" target="_blank" rel="noopener noreferrer nofollow"
-                class="text-blue-500 hover:text-blue-700 underline"
-            >Good Job Brain</a>.
+      <section class="p-4 rounded-lg bg-yellow-200 bg-opacity-75 w-full mx-auto">
+        <p class="text-center font-text md:text-xl font-semibold">Get to know people's names by singing the Name Game song until
+          you feel like you might go crazy!
         </p>
         <p class="text-center text-base md:text-lg font-medium">Enter a name below to generate the lyrics.</p>
+      </section>
 
-        <form id="form" class="w-full max-w-2xl mx-auto p-4 md:p-8 rounded-lg bg-gradient-to-b from-yellow-200 to-shirt-yellow mt-8 font-bold text-base md:text-lg">
-            <input type="text" id="name" class="w-full p-2 border-2 border-black rounded-lg" placeholder="Enter a name">
-            <button id="generate" class="w-full p-2 mt-2 bg-black text-white rounded-lg">Generate Lyrics</button>
-        </form>
+      <form id="form" class="w-full max-w-sm mx-auto p-4 md:p-8 rounded-lg bg-gradient-to-b from-yellow-200 to-shirt-yellow mt-8 font-bold text-base md:text-lg">
+          <input type="text" id="name" class="w-full p-2 border-2 border-black rounded-lg" placeholder="Enter a name">
+          <button id="generate" class="w-full p-2 mt-2 bg-black text-white rounded-lg">Generate Lyrics</button>
+      </form>
 
-        <div class="w-full max-w-2xl mx-auto p-4 md:p-8 rounded-lg bg-gradient-to-b from-yellow-200 to-shirt-yellow mt-8 font-bold text-base md:text-lg">
-            <p id="lyrics" class="whitespace-pre-line"></p>
+      <div
+        id="lyrics-container"
+        class="hidden w-full max-w-sm mx-auto p-4 md:p-8 rounded-lg bg-yellow-200 bg-opacity-80 mt-8 font-bold text-base md:text-xl">
+          <p id="lyrics" class="whitespace-pre-line leading-loose"></p>
+      </div>
+
+      <section class="container mx-auto mt-12 max-w-sm">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1wQjtqCtUqvaV6CjPKIGdc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </section>
+
+      <section class="flex flex-col items-center justify-center space-y-2 container mx-auto mt-12 max-w-lg mb-12 bg-yellow-200 bg-opacity-75 rounded-lg p-4 md:p-8">
+        <h2 class="text-lg md:text-xl lg:text-3xl font-bold text-center">How to do it yourself</h2>
+        <ol class="space-y-2 list-decimal list-inside text-sm md:text-base">
+          <li>Sing the name twice, then sing 'bo-' and take off the first consonant of the name and replace it with a b. Sing the b-version of the name.
+            <br /><span class="italic text-red-500 font-medium">Example: Mary, Mary, bo-bary</span>
+          </li>
+          <li>Sing 'Banana-fana fo-' and take off the first consonant of the name and replace it with an f. Sing the f-version of the name.
+            <br /><span class="italic text-red-500 font-medium">Example: Banana-fana fo-fary</span>
+          </li>
+          <li>Sing 'Fee-fi-mo-' and take off the first consonant of the name and replace it with an m. Sing the m-version of the name.
+            <br /><span class="italic text-red-500 font-medium">Example: Fee-fi-mo-mary</span>
+          </li>
+          <li>Sing the name again and you're done!
+            <br /><span class="italic text-red-500 font-medium">Example: Mary!</span>
+          </li>
+        </ol>
+        <div>
+          <h3 class="text-center font-bold text-lg">NOTES:</h3>
+          <ul class="list-disc list-inside text-sm md:text-base">
+            <li class="self-start">If the name starts with a vowel, don't take off the first letter.
+              <br /><span class="italic text-red-500 font-medium">Example: Alice, Alice, bo-alice</span>
+            </li>
+            <li>For a line, if the name starts with the replacement letter, just take off the first letter; no replacement needed.
+              <br /><span class="italic text-red-500 font-medium">Example: Billy, Billy, bo-illy</span>
+            </li>
+          </ul>
         </div>
+      </section>
 
-        <section class="container mx-auto mt-12 max-w-2xl">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1wQjtqCtUqvaV6CjPKIGdc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </section>
-
-
-
-      </main>
+      <section class="container mx-auto mb-12 max-w-lg">
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/60exn3Bygw23RdgYwycumU?utm_source=generator&theme=0" width="100%"
+          height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </section>
+    </main>
 
     <footer class="bg-black py-10 text-center text-white font-semibold">
+      <a href="/fav-games/index.html" target="_blank"
+        class="text-comb-yellow rounded px-1 py-px hover:text-yellow-200">Favorite Group
+        Online Games</a>
       <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
           <a
             href="https://github.com/ethyl2/fav-games"
@@ -179,17 +217,21 @@
       <p class="text-sm">Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-shirt-yellow rounded px-1 py-px hover:text-gray-600">Favorite Group Online Games</a></p>
     </footer>
     <script>
-       const nameInput = document.getElementById('name')
-       const form = document.getElementById('form')
-       const lyricsEl = document.getElementById('lyrics')
-       form.addEventListener('submit', (e) => {
-           e.preventDefault()
-           const name = nameInput.value
-           if (name) {
-                const lyrics = getLyrics(name)
-                lyricsEl.textContent = lyrics
-           }
-        })
+      const nameInput = document.getElementById('name')
+      const form = document.getElementById('form')
+      const lyricsEl = document.getElementById('lyrics')
+      const lyricsContainer = document.getElementById('lyrics-container')
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const name = nameInput.value
+        if (name) {
+          const lyrics = getLyrics(name)
+          lyricsEl.textContent = lyrics
+          lyricsContainer.classList.remove('hidden')
+          lyricsContainer.classList.add('flex')
+        }
+      })
 
         const currentYearSpan = document.getElementById('current-year')
         currentYearSpan.textContent = new Date().getFullYear()
@@ -200,7 +242,7 @@
             const nameSubstring = ['a', 'e', 'i', 'o', 'u'].includes(name.charAt(0).toLowerCase()) ? lowerCaseFirstLetter(name) : name.slice(1)
             const bWord = ' bo-' + (name.charAt(0).toLowerCase() === 'b' ? '' : 'b') + nameSubstring
             const fWord = 'Banana-fana fo-' + (name.charAt(0).toLowerCase() === 'f' ? '' : 'f') + nameSubstring
-            const mWord = 'Fee-f-mo-' + (name.charAt(0).toLowerCase() === 'm' ? '' : 'm') + nameSubstring
+            const mWord = 'Fee-fi-mo-' + (name.charAt(0).toLowerCase() === 'm' ? '' : 'm') + nameSubstring
 
             const lyrics = `${formattedName}, ${formattedName}, ${bWord}
                 ${fWord}

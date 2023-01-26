@@ -419,4 +419,12 @@ const games = [
       description: 'Learn how to create a guess-that-song game with audio files of funny-sounding lyrics',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./guess-that-song.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and a sample game!</p>`
     },
+    {
+      title: 'The Name Game',
+      url: './name-game.html',
+      gameLogoSrc: 'static/images/name-mug.jpg',
+      gameLogoAlt: 'hello my name is',
+      description: 'Take a name & create a silly nonsense song with it',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./name-game.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to generate the lyrics, learn how to create them yourself, and hear lots of recordings!</p>`
+    },
   ]
