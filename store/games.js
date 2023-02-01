@@ -427,4 +427,12 @@ const games = [
       description: 'Take a name & create a silly nonsense song with it',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./name-game.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to generate the lyrics, learn how to create them yourself, and hear lots of recordings!</p>`
     },
+    {
+      title: 'The Minister\'s Cat',
+      url: './ministers-cat.html',
+      gameLogoSrc: 'static/images/cats/cat-1.png',
+      gameLogoAlt: 'The Minister\'s Cat',
+      description: 'A challenging but fun game with adjectives',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./ministers-cat.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and suggestions!</p>`
+    },
   ]

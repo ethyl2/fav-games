@@ -8,14 +8,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>The Name Game | Favorite Online Games</title>
-    <meta name="description" content="Take a name & create a silly nonsense song with it">
+    <title>The Minister's Cat | Favorite Online Games</title>
+    <meta name="description" content="A challenging but fun game with adjectives">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/name-mug.jpg">
-    <meta property="og:image:alt" content="The Name Game">
-    <meta property="og:url" content="https://ethyl2.github.io/fav-games/name-game.html">
-    <meta property="og:title" content=">The Name Game">
-    <meta property="og:description" content="Take a name & create a silly nonsense song with it">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/cats/cat-1.png">
+    <meta property="og:image:alt" content="The Minister's Cat">
+    <meta property="og:url" content="https://ethyl2.github.io/fav-games/ministers-cat.html">
+    <meta property="og:title" content="The Minister's Cat">
+    <meta property="og:description" content="A challenging but fun game with adjectives">
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -64,35 +64,32 @@
     <header
       class="w-full bg-yellow-200 text-black font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
       <h1>The Minister's Cat</h1>
+      <h2 class="text-lg pt-4">Challenge your brain with this vocabulary-rich game.</h2>
     </header>
 
-    <main class="container pt-8 mx-auto px-4 min-h-screen md:px-0">
-      <section class="p-4 rounded-lg bg-yellow-200 bg-opacity-75 w-full mx-auto">
-        <p class="text-center font-text md:text-xl font-semibold">
-          Challenge your brain with this vocabulary-rich game.
-        </p>
-
-      </section>
-      <section class="py-8">
-        <h2 class="font-bold text-4xl">How to Play</h2>
-        <ol class="list-decimal list-inside py-4">
+    <main class="container mx-auto px-4 min-h-screen md:px-0">
+      <section class="pt-4 md:pt-8">
+        <h3 class="font-bold text-2xl md:text-4xl">How to Play</h3>
+        <ol class="list-decimal list-inside pt-4 text-sm md:text-base">
           <li>Have everyone sit in a circle.</li>
           <li>Get a nice rhythm going by alternating clapping and slapping your thighs.</li>
-          <li>One person starts by saying, "The minister's cat is an ..." and saying an adjective that starts with 'a', such as 'angry,' and then finishing up with "...cat!"</li>
-          <li>Keeping a steady rhythm, the next person repeats the phrase, but must use a different adjective that starts with 'a', such as 'adorable,' and then finishes with "...cat!"</li>
+          <li>One person starts by saying,
+            <span class="text-orange-500">"The minister's cat is an..."</span> and saying an adjective that starts with 'a', such as
+            <span class="text-orange-500">"angry"</span> and then finishing up with <span class="text-orange-500">"...cat!"</span></li>
+          <li>Keeping a steady rhythm, the next person starts the same, but must use a different adjective that starts with 'a', such as <span class="text-orange-500">"adorable"</span> and then finishes with
+            <span class="text-orange-500">"...cat!"</span>
+            <br /><span class="text-orange-500">"The minister's cat is an adorable cat!"</span>
+          </li>
           <li>Keep going until someone can't think of an adjective that starts with 'a'.</li>
           <li>Then that person is out!</li>
-          <li>The next person advances to the next letter of the alphabet, in this case, 'b'. Such as "The minister's cat is a boring cat."</li>
+          <li>The next person advances to the next letter of the alphabet, in this case, 'b'. Such as <span class="text-orange-500">"The minister's cat is a boring cat."</span></li>
           <li>The play continues until only one person is left, or you've made it through the entire alphabet!</li>
         </ol>
       </section>
-      <section class="py-8">
-        <p class="text-center text-3xl">The minister's cat is a <span id="current-cat"></span> cat.</p>
+      <section class="pb-4 md:pt-4">
+        <p class="text-center text-lg md:text-3xl">The minister's cat is <span id="article">a</span> <span id="current-cat"></span> cat.</p>
       </section>
-      <section id="alpha-cats" class="flex flex-wrap w-full items-center justify-center"></section>
-
-
-
+      <section id="alpha-cats" class="flex flex-wrap w-full items-center justify-center mb-12"></section>
     </main>
 
     <footer class="bg-black py-10 text-center text-white font-semibold">
@@ -150,15 +147,21 @@
       const currentYearSpan = document.getElementById('current-year')
       currentYearSpan.textContent = new Date().getFullYear()
 
+      const currentCatEl = document.getElementById('current-cat')
+      const articleSpan = document.getElementById('article')
+
       const alphaCatsSection = document.getElementById('alpha-cats')
+
+      const catImages = ['cat-1.png', 'cat-2.png', 'cat-3.png', 'cat-4.png', 'cat-5.png', 'cat-6.png', 'cat-7.png', 'cat-8.png', 'cat-9.png', 'cat-10.png', 'cat-11.png', 'cat-12.png', 'cat-13.png', 'cat-14.png', 'cat-15.png', 'cat-16.png', 'cat-17.png']
+
       for (let i=0; i<26; i++) {
         const alphaCat = document.createElement('div')
-        alphaCat.classList.add('w-36', 'h-36', 'pt-16', 'pr-5', 'bg-center', 'bg-cover', 'bg-no-repeat', 'm-2', 'rounded-lg', 'flex', 'justify-center', 'items-center')
+        alphaCat.classList.add('w-12', 'h-12', 'md:w-36', 'md:h-36', 'pt-5', 'md:pt-16', 'pr-2', 'md:pr-5', 'bg-center', 'bg-cover', 'bg-no-repeat', 'm-1', 'md:m-2', 'rounded-lg', 'flex', 'justify-center', 'items-center', 'bg-yellow-100', 'hover:bg-yellow-200')
         const letterEl = document.createElement('p')
         letterEl.textContent = String.fromCharCode(65 + i)
-        letterEl.classList.add('text-5xl', 'font-bold', 'text-gray-600', 'cursor-pointer')
+        letterEl.classList.add('text-2xl', 'md:text-5xl', 'font-bold', 'text-gray-600', 'cursor-pointer')
         alphaCat.appendChild(letterEl)
-        alphaCat.style.backgroundImage = "url('./static/images/cats/cat-1.png')"
+        alphaCat.style.backgroundImage = `url(./static/images/cats/${catImages[i % catImages.length]})`
         alphaCat.addEventListener('click', () => {
           const alphaCatChild = alphaCat.firstChild
           setCurrentCat(alphaCatChild.textContent)
@@ -167,41 +170,51 @@
       }
 
       const catAdjectives = {
-        'A': 'Adorable',
-        'B': 'Beautiful',
-        'C': 'Cute',
-        'D': 'Dapper',
-        'E': 'Elegant',
-        'F': 'Fancy',
-        'G': 'Gorgeous',
-        'H': 'Handsome',
-        'I': 'Incredible',
-        'J': 'Jazzy',
-        'K': 'Killer',
-        'L': 'Lovable',
-        'M': 'Magnificent',
-        'N': 'Noble',
-        'O': 'Outstanding',
-        'P': 'Precious',
-        'Q': 'Quirky',
-        'R': 'Ravishing',
-        'S': 'Sassy',
-        'T': 'Talented',
-        'U': 'Unique',
-        'V': 'Valiant',
-        'W': 'Wonderful',
-        'X': 'Xtraordinary',
-        'Y': 'Yellow',
-        'Z': 'Zany'
+        'A': ['Adorable', 'Angry', 'Aggressive', 'Awesome', 'Adventurous', 'Agile', 'Agitated', 'Alert', 'Alive', 'Anxious', 'Affable', 'Adaptable', 'Attentive', 'Analytical', 'Accomplished', 'Artistic', 'Amusing', 'Aloof'],
+        'B': ['Beautiful', 'Bored', 'Bewildered', 'Bewitched', 'Baby', 'Black', 'Brown', 'Bejeweled', 'Brave', 'Boring', 'Bold', 'Bad-tempered', 'Bashful', 'Bossy', 'Boisterous',],
+        'C': ['Cute', 'Carnivorous', 'Compassionate', 'Communicative', 'Cuddly', 'Curious', 'Crazy', 'Cowardly', 'Cool', 'Chunky', 'Clueless', 'Cooperative', 'Confident', 'Calm', 'Cautious', 'Charming', 'Chatty', 'Cheerful', 'Chubby', 'Clean','Clever', 'Clumsy', 'Colorful',],
+        'D': ['Dapper', 'Determined', 'Daring', 'Dashing', 'Dumb', 'Dumbfounded', 'Dumbstruck', 'Durable', 'Dusty', 'Dazzling', 'Dynamic', 'Dependable', 'Domesticated'],
+        'E': ['Elegant', 'Energetic', 'Enraged', 'Enraptured', 'Expensive', 'Evil', 'Exhausted', 'Exuberant', 'Exciting', 'Extroverted', 'Easygoing', 'Emotional'],
+        'F': ['Fancy', 'Fierce', 'Furious', 'Frightened', 'Free', 'Fearless', 'Festive', 'Feeble', 'Female', 'Fat', 'Friendly', 'Furry', 'Fuzzy', 'Fast', 'Focused', 'Funny', 'Faithful', 'Finicky', 'Foolish'],
+        'G': ['Gorgeous', 'Gentle', 'Giggly', 'Gloomy', 'Glow-in-the-dark', 'Gassy', 'Grumpy', 'Good', 'Gregarious', 'Gullible'],
+        'H': ['Handsome', 'Happy', 'Hilarious', 'Hungry', 'Heavy', 'Humble', 'Honest', 'Huge', 'Hairy', 'Hairless', 'Hunter', 'Hard-working', 'Humorous', 'Helpful', 'Hostile', 'Healthy',],
+        'I': ['Incredible', 'Inquisitive', 'Irritated', 'Irrational', 'Intelligent', 'Interesting', 'Invisible', 'Imaginary', 'Introverted', 'Independent', 'Impatient', 'Impolite'],
+        'J': ['Jazzy', 'Jolly', 'Jovial', 'Jubilant', 'Joyful', 'Jealous', 'Jovial', 'Japanese', 'Jinxed', 'Jittery', 'Judgemental', 'Jumbo', 'Jumpy', 'Juvenile', 'Jungle', 'Jailed'],
+        'K': ['Killer', 'Kind', 'Koolaid-loving', 'Kingly', 'Knowledgeable', 'Kind-hearted', 'King-sized', 'Kissable', 'Klutzy', 'Knavish', 'Korean', 'Kuwaiti', 'Kleptomaniac', 'Kooky'],
+        'L': ['Lovable', 'Loyal', 'Lively', 'Loud', 'Lazy', 'Lionlike', 'Lucky', 'Light', 'Lovely'],
+        'M': ['Magnificent', 'Majestic', 'Mellow', 'Mysterious', 'Merry', 'Mustard-colored', 'Musical', 'Mean', 'Magical', 'Mama', 'Male', 'Medium', 'Mature', 'Moody'],
+        'N': ['Noble', 'Nervous', 'Noisy', 'Naughty', 'Nutty', 'Neat', 'Nice', 'Non-judgemental'],
+        'O': ['Outstanding', 'Obedient', 'Obnoxious', 'Odd', 'Orange', 'Observant', 'Optimistic', 'Overemotional', 'Obstinate', 'Oblivious',],
+        'P': ['Precious', 'Playful', 'Proud', 'Puzzled', 'Papa', 'Picky', 'Pretty', 'Pale', 'Pleasant', 'Persistent', 'Polite', 'Popular', 'Pessimistic', 'Plucky', 'Powerful', 'Pig-headed', 'Pompous'],
+        'Q': ['Quirky', 'Quiet', 'Quaint', 'Quizzical', 'Quick-witted', 'Quality', 'Quarantined', 'Queenlike', 'Queen-size', 'Quick-tempered', 'Quizzical', 'Quotable', 'Questionable'],
+        'R': ['Ravishing', 'Rambunctious', 'Rebellious', 'Ridiculous', 'Respectful', 'Reflective', 'Rude', 'Reserved', 'Romantic'],
+        'S': ['Sassy', 'Secretive', 'Sullen', 'Silly', 'Sneaky', 'Sneezing', 'Skinny', 'Smart', 'Sensational', 'Sun-loving', 'Scary', 'Slow', 'Sandy', 'Sloth-like', 'Sad', 'Skilled', 'Selfish', 'Shy', 'Sensible', 'Sensitive', 'Socialable'],
+        'T': ['Talented', 'Tender', 'Tense', 'Terrified', 'Three-dimensional', 'Tiny', 'Toothless', 'Tricky', 'Terrible', 'Thankful', 'Teal', 'Teachable', 'Tidy'],
+        'U': ['Unique', 'Unusual', 'Unhappy', 'Unruly', 'Ugly', 'Unsightly', 'Unlucky', 'Unfriendly', 'Unpredictable', 'Unpleasant', 'Untidy', 'Unassuming', 'Unhealthy'],
+        'V': ['Valiant', 'Vivacious', 'Vigilant', 'Vengeful', 'Vibrant', 'Vain', 'Vegan', 'Vegetarian', 'Velvety', 'Violent', 'Voiceless', 'Vulnerable', 'Venomous', 'Vicious', 'Virtuous'],
+        'W': ['Wonderful', 'Wise', 'Witty', 'Worried', 'White', 'Warmhearted', 'Wild', 'Wacky', 'Weak', 'Worldly', 'Wizen', 'Woozy', 'Wealthy', 'Well-known', 'Willful', 'Winsome', 'World-class', 'Wicked', 'Worthless', 'Wounded', 'Wet', 'Wee', 'Wiry', 'Wobbly', 'Wrinkly'],
+        'X': ['Xtraordinary', 'Xenophobic', 'Xenodochial',],
+        'Y': ['Yellow', 'Yawning', 'Young', 'Young-looking', 'Youthful', 'Yankee', 'Yellow-bellied', 'Young-at-heart', 'Youngish'],
+        'Z': ['Zany', 'Zealous', 'Zippy', 'Zaftig', 'Zombielike']
       }
 
-      function getAdjective(letter) {
+      const vowels = ['A', 'E', 'I', 'O', 'U']
+
+      function getAdjectives(letter) {
         return catAdjectives[letter]
       }
 
       function setCurrentCat(letter) {
-        const currentCatEl = document.getElementById('current-cat')
-        currentCatEl.textContent = getAdjective(letter).toLowerCase()
+
+        const choices = getAdjectives(letter)
+        const choice = choices[Math.floor(Math.random() * choices.length)]
+        currentCatEl.textContent = choice.toLowerCase()
+
+        if (vowels.includes(letter)) {
+          articleSpan.textContent = 'an'
+        } else {
+          articleSpan.textContent = 'a'
+        }
       }
 
     </script>
