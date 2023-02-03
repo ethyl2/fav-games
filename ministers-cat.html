@@ -64,7 +64,7 @@
     <header
       class="w-full bg-yellow-200 text-black font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
       <h1>The Minister's Cat</h1>
-      <h2 class="text-lg pt-4">Challenge your brain with this vocabulary-rich game.</h2>
+      <h2 class="text-lg pt-4 px-4">Challenge your brain with this vocabulary-rich game.</h2>
     </header>
 
     <main class="container mx-auto px-4 min-h-screen md:px-0">
@@ -170,29 +170,42 @@
       }
 
       const catAdjectives = {
-        'A': ['Adorable', 'Angry', 'Aggressive', 'Awesome', 'Adventurous', 'Agile', 'Agitated', 'Alert', 'Alive', 'Anxious', 'Affable', 'Adaptable', 'Attentive', 'Analytical', 'Accomplished', 'Artistic', 'Amusing', 'Aloof'],
-        'B': ['Beautiful', 'Bored', 'Bewildered', 'Bewitched', 'Baby', 'Black', 'Brown', 'Bejeweled', 'Brave', 'Boring', 'Bold', 'Bad-tempered', 'Bashful', 'Bossy', 'Boisterous',],
-        'C': ['Cute', 'Carnivorous', 'Compassionate', 'Communicative', 'Cuddly', 'Curious', 'Crazy', 'Cowardly', 'Cool', 'Chunky', 'Clueless', 'Cooperative', 'Confident', 'Calm', 'Cautious', 'Charming', 'Chatty', 'Cheerful', 'Chubby', 'Clean','Clever', 'Clumsy', 'Colorful',],
-        'D': ['Dapper', 'Determined', 'Daring', 'Dashing', 'Dumb', 'Dumbfounded', 'Dumbstruck', 'Durable', 'Dusty', 'Dazzling', 'Dynamic', 'Dependable', 'Domesticated'],
+        'A': ['Adorable', 'Angry', 'Aggressive', 'Awesome', 'Adventurous', 'Agile', 'Agitated', 'Arthritic',
+              'Alert', 'Alive', 'Anxious', 'Affable', 'Adaptable', 'Attentive', 'Analytical', 'Accomplished', 'Artistic', 'Amusing', 'Aloof'],
+        'B': ['Beautiful', 'Bored', 'Bewildered', 'Bewitched', 'Baby', 'Black', 'Brown', 'Bejeweled', 'Brave', 'Boring', 'Bold', 'Bad-tempered', 'Bashful', 'Bossy', 'Boisterous',
+              'Bushy', 'Bushy', 'Brainy', 'Beefy', 'Blissful', 'Bad', 'Bitter', 'Bankrupt', 'Bogus', 'Bearded', 'Blind', 'Bighearted', 'Bony', 'Broken', 'Beloved', 'Bulky',
+              'Bold', 'Brainless', 'Bedridden', 'Buff', 'Bobtailed', 'Beige',
+              'Bemused', 'Brown', 'Big', 'Barren', 'Bullheaded', 'Bewitching', 'Biased', 'Bizarre', 'Batty', 'Brawny', 'Bodacious', 'Buoyant', 'Bicolored'],
+        'C': ['Cute', 'Carnivorous', 'Compassionate', 'Communicative', 'Cuddly', 'Curious', 'Crazy', 'Chocolate-colored', 'Coffee-colored',
+              'Cowardly', 'Cool', 'Chunky', 'Clueless', 'Cooperative', 'Confident', 'Calm', 'Cautious', 'Charming', 'Chatty', 'Cheerful', 'Chubby', 'Clean','Clever', 'Clumsy', 'Colorful',],
+        'D': ['Dapper', 'Determined', 'Daring', 'Dashing', 'Dumb', 'Dumbfounded', 'Dumbstruck', 'Durable', 'Dusty', 'Dazzling', 'Dynamic', 'Dependable', 'Domesticated', 'Dirty', 'Dead'],
         'E': ['Elegant', 'Energetic', 'Enraged', 'Enraptured', 'Expensive', 'Evil', 'Exhausted', 'Exuberant', 'Exciting', 'Extroverted', 'Easygoing', 'Emotional'],
-        'F': ['Fancy', 'Fierce', 'Furious', 'Frightened', 'Free', 'Fearless', 'Festive', 'Feeble', 'Female', 'Fat', 'Friendly', 'Furry', 'Fuzzy', 'Fast', 'Focused', 'Funny', 'Faithful', 'Finicky', 'Foolish'],
+        'F': ['Fancy', 'Fierce', 'Furious', 'Frightened', 'Free', 'Fearless', 'Festive', 'Feeble', 'Female',
+              'Fat', 'Fake', 'Friendly', 'Furry', 'Fuzzy', 'Fast', 'Focused', 'Funny', 'Faithful', 'Finicky', 'Foolish'],
         'G': ['Gorgeous', 'Gentle', 'Giggly', 'Gloomy', 'Glow-in-the-dark', 'Gassy', 'Grumpy', 'Good', 'Gregarious', 'Gullible'],
         'H': ['Handsome', 'Happy', 'Hilarious', 'Hungry', 'Heavy', 'Humble', 'Honest', 'Huge', 'Hairy', 'Hairless', 'Hunter', 'Hard-working', 'Humorous', 'Helpful', 'Hostile', 'Healthy',],
-        'I': ['Incredible', 'Inquisitive', 'Irritated', 'Irrational', 'Intelligent', 'Interesting', 'Invisible', 'Imaginary', 'Introverted', 'Independent', 'Impatient', 'Impolite'],
+        'I': ['Incredible', 'Inquisitive', 'Irritated', 'Irrational', 'Intelligent', 'Interesting', 'Invisible', 'Imaginary', 'Introverted', 'Independent', 'Impatient', 'Impolite', 'Insane'],
         'J': ['Jazzy', 'Jolly', 'Jovial', 'Jubilant', 'Joyful', 'Jealous', 'Jovial', 'Japanese', 'Jinxed', 'Jittery', 'Judgemental', 'Jumbo', 'Jumpy', 'Juvenile', 'Jungle', 'Jailed'],
         'K': ['Killer', 'Kind', 'Koolaid-loving', 'Kingly', 'Knowledgeable', 'Kind-hearted', 'King-sized', 'Kissable', 'Klutzy', 'Knavish', 'Korean', 'Kuwaiti', 'Kleptomaniac', 'Kooky'],
-        'L': ['Lovable', 'Loyal', 'Lively', 'Loud', 'Lazy', 'Lionlike', 'Lucky', 'Light', 'Lovely'],
-        'M': ['Magnificent', 'Majestic', 'Mellow', 'Mysterious', 'Merry', 'Mustard-colored', 'Musical', 'Mean', 'Magical', 'Mama', 'Male', 'Medium', 'Mature', 'Moody'],
-        'N': ['Noble', 'Nervous', 'Noisy', 'Naughty', 'Nutty', 'Neat', 'Nice', 'Non-judgemental'],
+        'L': ['Lovable', 'Loyal', 'Lively', 'Loud', 'Lazy', 'Lionlike', 'Lucky', 'Light', 'Lovely', 'Loopy', 'Loquacious', 'Lowly', 'Literal', 'Live', 'Local', 'Lofty', 'Logical', 'Little', 'Lopsided', 'Lost',
+              'Likeable', 'Ladylike', 'Lame', 'Lanky', 'Large', 'Leftover', 'Lifesize', 'Long', 'Limber', 'Lean', 'Loathsome',
+              'Left-handed', 'Legendary', 'Lethal', 'Lifeless', 'Low-maintenance', 'Lucrative', 'Lumpy', 'Leonine', 'Loving'],
+        'M': ['Magnificent', 'Majestic', 'Mellow', 'Mysterious', 'Merry', 'Mustard-colored', 'Musical', 'Mean', 'Misshapen', 'Maladjusted',
+              'Magical', 'Mama', 'Messy', 'Monstrous', 'Meek', 'Melodramatic', 'Morose', 'Mischievous', 'Miserable', 'Misunderstood', 'Malodorous',
+              'Male', 'Medium', 'Mature', 'Moody', 'Mad', 'Manageable', 'Mesmerizing', 'Motivated', 'Mannerly', 'Manipulative', 'Meddlesome', 'Malicious', 'Mediocre', 'Motionless'],
+        'N': ['Noble', 'Nervous', 'Noisy', 'Naughty', 'Nutty', 'Neat', 'Nice', 'Non-judgemental', 'Naked'],
         'O': ['Outstanding', 'Obedient', 'Obnoxious', 'Odd', 'Orange', 'Observant', 'Optimistic', 'Overemotional', 'Obstinate', 'Oblivious',],
         'P': ['Precious', 'Playful', 'Proud', 'Puzzled', 'Papa', 'Picky', 'Pretty', 'Pale', 'Pleasant', 'Persistent', 'Polite', 'Popular', 'Pessimistic', 'Plucky', 'Powerful', 'Pig-headed', 'Pompous'],
         'Q': ['Quirky', 'Quiet', 'Quaint', 'Quizzical', 'Quick-witted', 'Quality', 'Quarantined', 'Queenlike', 'Queen-size', 'Quick-tempered', 'Quizzical', 'Quotable', 'Questionable'],
         'R': ['Ravishing', 'Rambunctious', 'Rebellious', 'Ridiculous', 'Respectful', 'Reflective', 'Rude', 'Reserved', 'Romantic'],
-        'S': ['Sassy', 'Secretive', 'Sullen', 'Silly', 'Sneaky', 'Sneezing', 'Skinny', 'Smart', 'Sensational', 'Sun-loving', 'Scary', 'Slow', 'Sandy', 'Sloth-like', 'Sad', 'Skilled', 'Selfish', 'Shy', 'Sensible', 'Sensitive', 'Socialable'],
+        'S': ['Sassy', 'Secretive', 'Sullen', 'Silly', 'Sneaky', 'Sneezing', 'Skinny', 'Smelly', 'Stinky', 'Sleepy', 'Sick',
+              'Soggy', 'Smart', 'Sensational', 'Sun-loving', 'Scary', 'Slow', 'Sandy', 'Sloth-like', 'Sad', 'Skilled', 'Selfish', 'Shy', 'Sensible', 'Sensitive', 'Socialable'],
         'T': ['Talented', 'Tender', 'Tense', 'Terrified', 'Three-dimensional', 'Tiny', 'Toothless', 'Tricky', 'Terrible', 'Thankful', 'Teal', 'Teachable', 'Tidy'],
-        'U': ['Unique', 'Unusual', 'Unhappy', 'Unruly', 'Ugly', 'Unsightly', 'Unlucky', 'Unfriendly', 'Unpredictable', 'Unpleasant', 'Untidy', 'Unassuming', 'Unhealthy'],
+        'U': ['Unique', 'Unusual', 'Unhappy', 'Unruly', 'Ugly', 'Unsightly', 'Unlucky', 'Unfriendly',
+              'Uncivilized', 'Unpredictable', 'Unpleasant', 'Untidy', 'Unassuming', 'Unhealthy'],
         'V': ['Valiant', 'Vivacious', 'Vigilant', 'Vengeful', 'Vibrant', 'Vain', 'Vegan', 'Vegetarian', 'Velvety', 'Violent', 'Voiceless', 'Vulnerable', 'Venomous', 'Vicious', 'Virtuous'],
-        'W': ['Wonderful', 'Wise', 'Witty', 'Worried', 'White', 'Warmhearted', 'Wild', 'Wacky', 'Weak', 'Worldly', 'Wizen', 'Woozy', 'Wealthy', 'Well-known', 'Willful', 'Winsome', 'World-class', 'Wicked', 'Worthless', 'Wounded', 'Wet', 'Wee', 'Wiry', 'Wobbly', 'Wrinkly'],
+        'W': ['Wonderful', 'Wise', 'Witty', 'Worried', 'White', 'Warmhearted', 'Wild', 'Wacky', 'Weak', 'Worldly', 'Wizen', 'Woozy', 'Wealthy',
+              'Well-known', 'Willful', 'Winsome', 'World-class', 'Wicked', 'Worthless', 'Wounded', 'Wet', 'Wee', 'Wiry', 'Wobbly', 'Wrinkly'],
         'X': ['Xtraordinary', 'Xenophobic', 'Xenodochial',],
         'Y': ['Yellow', 'Yawning', 'Young', 'Young-looking', 'Youthful', 'Yankee', 'Yellow-bellied', 'Young-at-heart', 'Youngish'],
         'Z': ['Zany', 'Zealous', 'Zippy', 'Zaftig', 'Zombielike']
