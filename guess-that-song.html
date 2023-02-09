@@ -75,7 +75,13 @@
             <h2 class="text-center pb-4 text-lg md:text-3xl">3 Easy Steps</h2>
             <ol class="list-decimal list-inside text-sm md:text-lg space-y-2">
                 <li>Pick a song and choose lyrics that don't use the title and immediately give the song away.</li>
-                <li>Use a text-to-voice generator, like <a href="https://readloud.net/" target="_blank" rel="noopener nofollow noreferrer">readloud.net</a>, <a href="https://voicegenerator.io/" target="_blank" rel="noopener noreferrer nofollow"
+                <li>Use a text-to-voice generator, like
+                    <a href="https://readloud.net/"
+                      target="_blank"
+                      rel="noopener nofollow noreferrer"
+                      class="text-blue-500 hover:text-blue-700 underline"
+                    >readloud.net
+                    </a>, <a href="https://voicegenerator.io/" target="_blank" rel="noopener noreferrer nofollow"
                     class="text-blue-500 hover:text-blue-700 underline">voicegenerator.io</a>
                     or <a href="https://voicemaker.in/" target="_blank" rel="nofollow noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">voicemaker.in</a>
                     to turn those lyrics into an audio file.</li>
@@ -510,6 +516,41 @@
                   Everywhere
                   </p>
                 </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center space-y-2">
+              <div class="flex items-center justify-center space-x-2">
+                <span>11.</span>
+                <audio controls>
+                  <source src="./static/audio/cant-help.mp3" type="audio/wav">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div>
+                <button type="button" id="button11" class="bg-shirt-yellow text-black font-bold py-2 px-4 rounded hover:bg-yellow-300"
+                  onclick="showAnswer(11)">Show Answer</button>
+                <button type="button" id="lyrics-button11" class="bg-red-300 text-black font-bold py-2 px-4 rounded hover:bg-red-200"
+                  onclick="seeLyrics(11)">See Lyrics</button>
+              </div>
+
+              <p id="answer11" class="text-transparent text-xs md:text-sm font-medium text-center">"Can't Help Falling in Love"
+                written by Hugo Peretti, Luigi Creatore, and George David Weiss.
+                Famously recorded by <a href="https://open.spotify.com/track/44AyOl4qVkzS48vBsbNXaC?si=2d0ed09e315a4612"
+                  rel="nofollow noopener noreferrer" class="underline" target="_blank">Elvis Presley</a>
+              </p>
+              <div id="lyrics11" class="hidden text-xs md:text-sm font-medium text-center">
+                <p class="whitespace-pre-line">Wise men say
+                  Only fools rush in...
+                  Shall I stay?
+                  Would it be a sin...
+                  Like a river flows
+                  Surely to the sea,
+                  Darling, so it goes.
+                  Some things are meant to be.
+                  Take my hand.
+                  Take my whole life, too...
+                </p>
+              </div>
             </div>
 
             <p id="final-message" class="text-transparent text-center text-sm md:text-base">How did you do?<br/> I hope you have fun making your own song guessing games!</p>
