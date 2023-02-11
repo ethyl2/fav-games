@@ -9,13 +9,23 @@ const paragraphCountLabel = document.getElementById('paragraph-count-label')
 const copiedBox = document.getElementById('copied-box')
 const messageEl = document.getElementById('message')
 const startsWithEl = document.getElementById('start-with')
+const addDateEl = document.getElementById('start-date')
 
-// Stores state of checkbox in session storage
+// Stores state of start-with checkbox in session storage
 startsWithEl.addEventListener('input', ()=> {
   if (startsWithEl.checked === true) {
     window.sessionStorage.setItem('starts-with', 'checked')
   } else {
     window.sessionStorage.setItem('starts-with', 'unchecked')
+  }
+})
+
+// Stores state of start-date checkbox in session storage
+addDateEl.addEventListener('input', ()=> {
+  if (addDateEl.checked === true) {
+    window.sessionStorage.setItem('start-date', 'checked')
+  } else {
+    window.sessionStorage.setItem('start-date', 'unchecked')
   }
 })
 
@@ -70,6 +80,14 @@ function init() {
     startsWithEl.checked = false
   }
 
+  // Get checked state of 'start-date' checkbox from session storage
+  const startDate = window.sessionStorage.getItem('start-date')
+  if (startDate === 'checked') {
+    addDateEl.checked = true
+  } else {
+    addDateEl.checked = false
+  }
+
   const copyButton = document.getElementById('copy-button')
   copyButton.addEventListener('click', copyToClipboard)
 
@@ -111,6 +129,9 @@ function init() {
 
 function updateLoremIpsum() {
   let updatedContent = ''
+  if (addDateEl.checked) {
+    updatedContent += getTodaysDateAndTime() + ' '
+  }
   if (startsWithEl.checked) {
     updatedContent += 'Game lorem ipsum dolor sit amet '
   }
@@ -334,6 +355,13 @@ const sentenceTypes = [
     function: 'playCharades'
   }
 ]
+
+function getTodaysDateAndTime() {
+  const today = new Date()
+  const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+  const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+  return date+' '+time
+}
 
 function shuffle(array) {
   // Fisher-Yates
