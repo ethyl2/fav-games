@@ -127,6 +127,57 @@ function init() {
   updateLoremIpsum()
 }
 
+const bgColorChoices = [
+  'bg-blue-100',
+  'bg-blue-200',
+  'bg-blue-300',
+  'bg-green-100',
+  'bg-green-200',
+  'bg-green-300',
+  'bg-yellow-100',
+  'bg-yellow-200',
+  'bg-yellow-300',
+  'bg-white',
+  'bg-gray-100',
+  'bg-gray-200',
+  'bg-gray-300',
+  'bg-fuchsia-100',
+  'bg-fuchsia-200',
+  'bg-fuchsia-300',
+  'bg-indigo-100',
+  'bg-indigo-200',
+  'bg-indigo-300',
+  'bg-sky-100',
+  'bg-sky-200',
+  'bg-sky-300',
+  'bg-cyan-100',
+  'bg-cyan-200',
+  'bg-cyan-300',
+  'bg-pink-100',
+  'bg-pink-200',
+  'bg-pink-300',
+  'bg-teal-100',
+  'bg-teal-200',
+  'bg-teal-300',
+  'bg-emerald-100',
+  'bg-emerald-200',
+  'bg-emerald-300',
+  'bg-lime-100',
+  'bg-lime-200',
+  'bg-lime-300',
+  'bg-amber-100',
+  'bg-amber-200',
+  'bg-amber-300',
+  'bg-stone-50',
+  'bg-stone-100',
+  'bg-stone-200',
+  'bg-stone-300',
+  'bg-neutral-50',
+  'bg-neutral-100',
+  'bg-neutral-200',
+  'bg-neutral-300',
+]
+
 function updateLoremIpsum() {
   let updatedContent = ''
   if (addDateEl.checked) {
@@ -139,6 +190,8 @@ function updateLoremIpsum() {
     updatedContent += makeParagraph(paragraphLength)
   }
   generatedLoremIpsumEl.innerText = updatedContent
+  generatedLoremIpsumEl.classList.remove(...bgColorChoices)
+  generatedLoremIpsumEl.classList.add(bgColorChoices[Math.floor(Math.random() * bgColorChoices.length)])
 }
 
 function getSubject() {

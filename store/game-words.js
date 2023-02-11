@@ -312,6 +312,16 @@ const gameNames = [
   'Shut the Box',
   'MadLibs Card Game',
   'CAMP',
+  'Word on the Street',
+  'DiagnosThis',
+  'Cover Your A$$ets',
+  'We Didn\'t Playtest This At All',
+  'Kids Against Maturity',
+  'Bunco',
+  'Tenzi',
+  'LCR',
+  'Left Center Right',
+  'Sardines',
 ]
 
 
