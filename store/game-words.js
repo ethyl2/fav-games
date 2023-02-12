@@ -286,6 +286,7 @@ const gameNames = [
   'You\'ve Got Crabs',
   'A Little Wordy',
   'Happy Salmon',
+  'The Name Game',
   'What\'s Yours Like?',
   'A Game of Cat & Mouth',
   'Poetry for Neanderthals',
