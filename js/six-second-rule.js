@@ -2,10 +2,10 @@ let allowAudio = false
 const audioToggle = document.getElementById('audio-toggle')
 audioToggle.addEventListener('click', () => {
   allowAudio = !allowAudio
-  if (audioToggle.textContent == 'Audio On') {
-    audioToggle.textContent = 'Audio Off'
+  if (audioToggle.textContent == 'Turn Audio On!') {
+    audioToggle.textContent = 'Turn Audio Off'
   } else {
-    audioToggle.textContent = 'Audio On'
+    audioToggle.textContent = 'Turn Audio On!'
   }
 })
 
