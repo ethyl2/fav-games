@@ -58,7 +58,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="w-full bg-yellow-200 text-black font-bold text-4xl md:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
+    <header class="w-full bg-yellow-200 text-black font-bold text-4xl md:text-5xl lg:text-6xl text-center pt-10 pb-6 border-b-4 border-shirt-yellow">
       <h1>How to Create a Guess That Song Game</h1>
     </header>
 
@@ -647,27 +647,6 @@
       </nav>
       <p class="text-sm">Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-shirt-yellow rounded px-1 py-px hover:text-gray-600">Favorite Group Online Games</a></p>
     </footer>
-    <script>
-        let answersShown = []
-        function showAnswer(number) {
-          const currentButton = document.getElementById("button" + number)
-          document.getElementById("answer" + number).classList.toggle('text-transparent')
-          currentButton.textContent = (currentButton.textContent === 'Hide Answer' ? 'Show Answer' : 'Hide Answer')
-          answersShown.push(number)
-
-          if (answersShown.length === 6) {
-              document.getElementById("final-message").classList.remove('text-transparent')
-          }
-        }
-
-        function seeLyrics(number) {
-          const currentLyricsButton = document.getElementById("lyrics-button" + number)
-          document.getElementById("lyrics" + number).classList.toggle('hidden')
-          currentLyricsButton.textContent = (currentLyricsButton.textContent === 'Hide Lyrics' ? 'See Lyrics' : 'Hide Lyrics')
-        }
-
-        const currentYearSpan = document.getElementById('current-year')
-        currentYearSpan.textContent = new Date().getFullYear()
-    </script>
+  <script src="js/guess-that-song.js" async defer></script>
   </body>
 </html>
