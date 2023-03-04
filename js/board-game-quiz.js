@@ -6,7 +6,7 @@ const questions = [
       { text: "The Game of Life", correct: false },
       { text: "Monopoly", correct: true },
       { text: "Risk", correct: false }
-    ]
+    ],
   },
   {
     question: "What game has pieces shaped like a boxy car with holes for putting pegs in?",
@@ -15,7 +15,7 @@ const questions = [
       { text: "Checkers", correct: false },
       { text: "Dixit", correct: false },
       { text: "Scrabble", correct: false }
-    ]
+    ],
   },
   {
     question: "What game has pieces shaped like train cars?",
@@ -24,7 +24,8 @@ const questions = [
       { text: "Ticket to Ride", correct: true },
       { text: "Monopoly", correct: false },
       { text: "Trivial Pursuit", correct: false },
-    ]
+    ],
+    image: './static/images/ticket-to-ride-trains.jpg',
   },
   {
     question: "What game has a piece shaped like a knife?",
@@ -33,7 +34,7 @@ const questions = [
       { text: "Clue", correct: true},
       { text: "Monopoly", correct: false },
       { text: "Candyland", correct: false }
-    ]
+    ],
   },
   {
     question: "What game has a heart-shaped piece with a crack in it?",
@@ -42,7 +43,7 @@ const questions = [
       { text: "Clue", correct: false },
       { text: "Monopoly", correct: false },
       { text: "Operation", correct: true }
-    ]
+    ],
   },
   {
     question: "What game has a piece shaped like a castle tower?",
@@ -50,8 +51,9 @@ const questions = [
       { text: "Battleship", correct: false },
       { text: "Clue", correct: false },
       { text: "Chess", correct: true },
-      { text: "Wits and Wagers Family Edition", correct: false }
-    ]
+      { text: "Wits and Wagers Family Edition", correct: false },
+    ],
+    image: './static/images/rook.jpg',
   },
   {
     question: "What game has pieces shaped like gingerbread men?",
@@ -69,7 +71,8 @@ const questions = [
       { text: "The Game of Life", correct: false },
       { text: "Monopoly", correct: false },
       { text: "Scrabble", correct: true }
-    ]
+    ],
+    image: './static/images/scrabble-tiles.jpg',
   },
   {
     question: "What game has pieces shaped like houses?",
@@ -78,7 +81,7 @@ const questions = [
       { text: "The Game of Life", correct: false },
       { text: "Risk", correct: false },
       { text: "Othello", correct: true }
-    ]
+    ],
   },
   {
     question: "What game has circular pieces with room for 6 pie wedge-shaped pieces inside?",
@@ -87,7 +90,7 @@ const questions = [
       { text: "Trivial Pursuit", correct: true },
       { text: "Monopoly", correct: false },
       { text: "Wits and Wagers Family Edition", correct: false }
-    ]
+    ],
   },
   {
     question: "What game has a thimble-shaped piece?",
@@ -96,7 +99,7 @@ const questions = [
       { text: "Checkers", correct: false },
       { text: "Candyland", correct: false },
       { text: "Monopoly", correct: true },
-      ]
+      ],
   },
   {
     question: "What game has a piece that is shaped like a piece of bread?",
@@ -105,7 +108,7 @@ const questions = [
       { text: "Dixit", correct: false },
       { text: "Candyland", correct: false },
       { text: "Monopoly", correct: false },
-    ]
+    ],
   },
   {
     question: "What game has wooden rabbit-shaped pieces?",
@@ -114,7 +117,7 @@ const questions = [
       { text: "Checkers", correct: false },
       { text: "Dixit", correct: true },
       { text: "Wits and Wagers Family Edition", correct: false },
-    ]
+    ],
   },
   {
     question: "What game has a piece shaped like a candlestick?",
@@ -123,7 +126,7 @@ const questions = [
       { text: "Checkers", correct: false },
       { text: "Chess", correct: false },
       { text: "Candyland", correct: true },
-    ]
+    ],
   },
   {
     question: "What game has a pieces shaped like army men toys?",
@@ -132,7 +135,7 @@ const questions = [
       { text: "Risk", correct: true },
       { text: "Chess", correct: false },
       { text: "Candyland", correct: false },
-    ]
+    ],
   },
   {
     question: "What game has a disc pieces that are black on one side and white on the other?",
@@ -141,7 +144,7 @@ const questions = [
       { text: "Checkers", correct: false },
       { text: "Chess", correct: false },
       { text: "Othello", correct: true },
-    ]
+    ],
   },
   {
     question: "What game has pieces that shaped like boats?",
@@ -150,7 +153,7 @@ const questions = [
       { text: "Battleship", correct: true },
       { text: "Othello", correct: false },
       { text: "Trivial Pursuit", correct: false },
-    ]
+    ],
   },
   {
     question: "What game has rectangular pieces with a dividing line in the middle and dots on either side of the line?",
@@ -159,7 +162,7 @@ const questions = [
       { text: "Chess", correct: false },
       { text: "Risk", correct: false },
       { text: "Scrabble", correct: false },
-    ]
+    ],
   },
   {
     question: "What game has vaguely human-shaped pieces?",
@@ -168,12 +171,16 @@ const questions = [
       { text: "Wits and Wagers Family Edition", correct: true },
       { text: "Bananagrams", correct: false },
       { text: "Scrabble", correct: false },
-    ]
+    ],
   },
 ]
 
 function getSiblings(node) {
   return [...node.parentElement.children].filter(child => child !== node)
+}
+
+function getImageFromQuestion(node) {
+   return node.parentElement.parentElement.querySelector('img')
 }
 
 const questionsDiv = document.getElementById('questions')
@@ -188,10 +195,9 @@ questions.forEach((question, index) => {
   questionDiv.appendChild(questionP)
   const answersDiv = document.createElement('div')
   answersDiv.classList.add('flex', 'flex-col', 'md:flex-row', 'justify-center', 'items-center')
-  question.answers.forEach((answer, answerIndex) => {
+  question.answers.forEach((answer) => {
     const answerButton = document.createElement('button')
     answerButton.innerText = answer.text
-    answerButton.id = `answer-${index}-${answerIndex}`
     answerButton.classList.add('bg-gray-900', 'text-white', 'p-2', 'm-2', 'rounded', 'hover:bg-gray-800')
     answerButton.addEventListener('click', () => {
       answerButton.classList.remove('hover:bg-gray-800')
@@ -206,11 +212,17 @@ questions.forEach((question, index) => {
         totalCorrectEl.innerText = parseInt(totalCorrectEl.innerText) + 1
 
         const siblings = getSiblings(answerButton)
+
         Array.from(siblings).forEach(sibling => {
           sibling.classList.add('bg-red-500', 'line-through')
           sibling.classList.remove('hover:bg-gray-800')
           sibling.disabled = true
         })
+
+        if (question.image) {
+          const imageEl = getImageFromQuestion(answerButton)
+          imageEl.classList.remove('hidden')
+        }
 
       } else {
         answerButton.classList.add('bg-red-500', 'line-through')
@@ -219,6 +231,13 @@ questions.forEach((question, index) => {
     answersDiv.appendChild(answerButton)
   })
   questionDiv.appendChild(answersDiv)
+  if (question.image) {
+    const imageEl = document.createElement('img')
+    imageEl.src = question.image
+    imageEl.alt= 'game piece'
+    imageEl.classList.add('w-36', 'mx-auto', 'mt-4', 'rounded', 'hidden')
+    questionDiv.appendChild(imageEl)
+  }
   questionsDiv.appendChild(questionDiv)
 })
 
