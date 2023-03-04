@@ -1,12 +1,13 @@
 const questions = [
   {
-    question: "What game has a piece shaped like a top hat?",
+    question: "What game has a piece shaped like a hat?",
     answers: [
       { text: "Dominoes", correct: false },
       { text: "The Game of Life", correct: false },
       { text: "Monopoly", correct: true },
       { text: "Risk", correct: false }
     ],
+    image: './static/images/monopoly-hat.jpg',
   },
   {
     question: "What game has pieces shaped like a boxy car with holes for putting pegs in?",
@@ -16,6 +17,7 @@ const questions = [
       { text: "Dixit", correct: false },
       { text: "Scrabble", correct: false }
     ],
+    image: './static/images/life-car.jpg',
   },
   {
     question: "What game has pieces shaped like train cars?",
@@ -82,6 +84,7 @@ const questions = [
       { text: "Risk", correct: false },
       { text: "Othello", correct: true }
     ],
+    image: './static/images/monopoly-houses.jpg',
   },
   {
     question: "What game has circular pieces with room for 6 pie wedge-shaped pieces inside?",
@@ -111,6 +114,16 @@ const questions = [
     ],
   },
   {
+    question: "What game has marble pieces that a certain type of animal wants to eat?",
+    answers: [
+      { text: "Operation", correct: false },
+      { text: "Hungry Hungry Hippos", correct: true },
+      { text: "Candyland", correct: false },
+      { text: "Risk", correct: false },
+    ],
+    image: './static/images/hungry-hungry-hippos.jpg',
+  },
+  {
     question: "What game has wooden rabbit-shaped pieces?",
     answers: [
       { text: "The Game of Life", correct: false },
@@ -127,6 +140,7 @@ const questions = [
       { text: "Chess", correct: false },
       { text: "Candyland", correct: true },
     ],
+    image: './static/images/candlestick.jpg',
   },
   {
     question: "What game has a pieces shaped like army men toys?",
@@ -136,6 +150,7 @@ const questions = [
       { text: "Chess", correct: false },
       { text: "Candyland", correct: false },
     ],
+    image: './static/images/risk-guys.jpg',
   },
   {
     question: "What game has a disc pieces that are black on one side and white on the other?",
@@ -163,6 +178,7 @@ const questions = [
       { text: "Risk", correct: false },
       { text: "Scrabble", correct: false },
     ],
+    image: './static/images/dominoes.jpg',
   },
   {
     question: "What game has vaguely human-shaped pieces?",
@@ -172,6 +188,17 @@ const questions = [
       { text: "Bananagrams", correct: false },
       { text: "Scrabble", correct: false },
     ],
+    image: './static/images/meeples.jpg',
+  },
+  {
+    question: "What game has wooden rectangular prism-shaped pieces?",
+    answers: [
+      { text: "Risk", correct: false },
+      { text: "Wits and Wagers Family Edition", correct: false },
+      { text: "Hungry Hungry Hippos", correct: false },
+      { text: "Jenga", correct: true },
+    ],
+    image: './static/images/jenga.jpg',
   },
 ]
 
