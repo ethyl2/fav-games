@@ -1,6 +1,11 @@
 const currentYearSpan = document.getElementById('current-year')
 currentYearSpan.textContent = new Date().getFullYear()
 
+const currentCharacterCountEl = document.getElementById('current-character-count')
+const useCharacterCountCheckbox = document.getElementById('use-character-count')
+const characterCountInput = document.getElementById('character-count')
+const characterCountLabel = document.getElementById('character-count-label')
+
 window.addEventListener('load', init)
 const generatedLoremIpsumEl = document.getElementById('generated-lorem-ipsum')
 const updateButton = document.getElementById('update')
@@ -10,6 +15,8 @@ const copiedBox = document.getElementById('copied-box')
 const messageEl = document.getElementById('message')
 const startsWithEl = document.getElementById('start-with')
 const addDateEl = document.getElementById('start-date')
+
+toggleCharacterCountClasses()
 
 // Stores state of start-with checkbox in session storage
 startsWithEl.addEventListener('input', ()=> {
@@ -177,9 +184,6 @@ const bgColorChoices = [
   'bg-neutral-200',
   'bg-neutral-300',
 ]
-const currentCharacterCountEl = document.getElementById('current-character-count')
-const useCharacterCountCheckbox = document.getElementById('use-character-count')
-const characterCountInput = document.getElementById('character-count')
 
 function updateLoremIpsum() {
   let updatedContent = ''
@@ -202,6 +206,26 @@ function updateLoremIpsum() {
   generatedLoremIpsumEl.innerText = updatedContent
   generatedLoremIpsumEl.classList.remove(...bgColorChoices)
   generatedLoremIpsumEl.classList.add(bgColorChoices[Math.floor(Math.random() * bgColorChoices.length)])
+}
+
+useCharacterCountCheckbox.addEventListener('input', toggleCharacterCountClasses)
+
+function toggleCharacterCountClasses() {
+  if (useCharacterCountCheckbox.checked) {
+    characterCountInput.classList.remove('bg-gray-100')
+    characterCountInput.classList.add('bg-green-200')
+    characterCountInput.classList.remove('text-gray-400')
+    characterCountInput.classList.add('text-black')
+    characterCountLabel.classList.remove('text-gray-400')
+    characterCountLabel.classList.add('text-black')
+  } else {
+    characterCountInput.classList.remove('bg-green-200')
+    characterCountInput.classList.remove('text=gray-100')
+    characterCountInput.classList.add('text-gray-400')
+    characterCountInput.classList.add('bg-gray-100')
+    characterCountLabel.classList.remove('text-black')
+    characterCountLabel.classList.add('text-gray-400')
+  }
 }
 
 function modifyCharacterLength(updatedContent) {
