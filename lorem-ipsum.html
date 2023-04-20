@@ -68,6 +68,22 @@
           value="1"
         />
         <label for="paragraph-count" id="paragraph-count-label">Paragraph</label>
+
+        <div class="flex items-center justify-center space-x-2">
+          <input type="checkbox" id="use-character-count" name="use-character-count" value="use-character-count" />
+          <label for="use-character-count" class="pt-1">Make it this long: </label>
+        </div>
+
+        <input
+          type="number"
+          name="character-count"
+          id="character-count"
+          class="border rounded mr-2 w-24 px-1"
+          step="10"
+          value="500"
+        />
+        <label for="character-count" id="character-count-label">Characters</label>
+        
         <div class="pt-2">
           <input type="radio" id="short" name="paragraph-length" value="short" checked>
           <label for="short" class="pr-2">short</label>
@@ -96,8 +112,9 @@
         id="generated-lorem-ipsum"
         class="w-full leading-relaxed flex flex-col space-y-3 text-left items-center overflow-y-auto border justify-center text-base max-w-2xl mx-auto pb-4 h-auto bg-white rounded-lg p-3 shadow-sm mb-4"
         style="min-height: 300px;"
+        
       ></div>
-
+      <p id="current-character-count" class="text-right max-w-2xl italic text-gray-500 w-full container">250</p>
       <div>
         <button
           type="button"

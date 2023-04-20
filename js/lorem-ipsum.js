@@ -177,6 +177,9 @@ const bgColorChoices = [
   'bg-neutral-200',
   'bg-neutral-300',
 ]
+const currentCharacterCountEl = document.getElementById('current-character-count')
+const useCharacterCountCheckbox = document.getElementById('use-character-count')
+const characterCountInput = document.getElementById('character-count')
 
 function updateLoremIpsum() {
   let updatedContent = ''
@@ -189,9 +192,43 @@ function updateLoremIpsum() {
   for (let i=0; i < paragraphCount; i++) {
     updatedContent += makeParagraph(paragraphLength)
   }
+
+  if (useCharacterCountCheckbox.checked) {
+    updatedContent = modifyCharacterLength(updatedContent)
+  }
+  
+  currentCharacterCountEl.textContent = updatedContent.length
+
   generatedLoremIpsumEl.innerText = updatedContent
   generatedLoremIpsumEl.classList.remove(...bgColorChoices)
   generatedLoremIpsumEl.classList.add(bgColorChoices[Math.floor(Math.random() * bgColorChoices.length)])
+}
+
+function modifyCharacterLength(updatedContent) {
+  const desiredLength = characterCountInput.value
+    
+    if (updatedContent.length > desiredLength) {
+      updatedContent = updatedContent.slice(0, desiredLength)
+    } else if (updatedContent.length < desiredLength)
+    {
+     
+      const neededCharacterCount = desiredLength - updatedContent.length
+     
+      let fillerString = ' '
+      while(fillerString.length < neededCharacterCount) {
+        fillerString += capitalizeFirstLetter(gameNames[Math.floor(Math.random() * gameNames.length)]) + '. '
+      }
+      
+      updatedContent = updatedContent.trim()
+      updatedContent  += fillerString
+      if (updatedContent.length > desiredLength) {
+        updatedContent = updatedContent.slice(0, desiredLength)
+      } else if (updatedContent.length < desiredLength) {
+        const newNeededCharacterCount = desiredLength - updatedContent.length
+        updatedContent += '!'.repeat(newNeededCharacterCount)
+      }
+    }
+    return updatedContent
 }
 
 function getSubject() {
