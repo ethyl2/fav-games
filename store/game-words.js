@@ -328,6 +328,19 @@ const gameNames = [
   'LCR',
   'Left Center Right',
   'Sardines',
+  'Truth or Dare?',
+  'Pin the Tail on the Donkey',
+  'Never Have I Ever',
+  'Egg and Spoon Race',
+  'Among Us',
+  'Twenty  Questions',
+  'Quiplash',
+  'The Saran Wrap Game',
+  'Would You Rather?',
+  'Two Truths and a Lie',
+  'I Spy',
+  'Minute to Win It',
+  'The Limbo',
 ]
 
 
