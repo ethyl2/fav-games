@@ -341,6 +341,18 @@ const gameNames = [
   'I Spy',
   'Minute to Win It',
   'The Limbo',
+  'Jackbox Games',
+  'Trivia Murder Party',
+  'Quiplash 2',
+  'Guesspionage',
+  'Tee K.O.',
+  'Split the Room',
+  'Joke Boat',
+  'Dictionarium',
+  'Bomb Corp',
+  'You Don\'t Know Jack',
+  'Fibbage',
+  'Don\'t Get Got!'
 ]
 
 
