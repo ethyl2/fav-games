@@ -8,6 +8,8 @@ const games = [
       howTo: `<p class="text-xs mt-2 md:text-sm"> A fun and challenging social word game with a simple premise. Two rival spymasters know the secret
       identities of 25 agents. Their teammates know the agents only by their CODENAMES. Teams compete to contact all of their agents first.
       </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Skribbl.io',
@@ -18,6 +20,8 @@ const games = [
       howTo: `<p class="text-xs mt-2 md:text-sm"> One game consists of a few rounds in which every round someone has to draw their chosen word and others have to guess it to gain points!
                 The person with the most points at the end of game will then be crowned as the winner!
             </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Song Trivia 2',
@@ -26,6 +30,8 @@ const games = [
       gameLogoAlt: 'Song Trivia 2 Logo',
       description: 'Test your musical knowledge - Challenge your friends - Discover new artists',
       howTo: `<p class="text-xs mt-2 md:text-sm">A music quiz game that allows you to play online with other players or your friends.</p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Gartic Phone',
@@ -36,6 +42,8 @@ const games = [
       howTo: `<p class="text-xs mt-2 md:text-sm"> Invite your friends to a voice call (Discord, Zoom). Each player must write a quirky sentence. You gonna receive a
                   bizarre sentence to draw. Try to describe one of the crazy drawings. Watch the hilarious results of the telephone game!
             </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Scattergories',
@@ -48,6 +56,8 @@ const games = [
               sheet. OR pick 'Play Online (BETA)' to do everything in your browser.
               See the 'Rulebook' tab in the online version for instructions on how to play.
             </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Capitalista',
@@ -67,6 +77,8 @@ const games = [
             Once the game is started you can communicate with friends using the chat. Or start a zoom and talk to each other
             instead!
           </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Taboo',
@@ -87,10 +99,13 @@ const games = [
               class="underline text-blue-600 text-xs md:text-sm hover:text-blue-900" target="_blank" rel="noopener nofollow noreferrer"
               rel="noopener nofollow noreferrer">here</a>.
           </p>`,
+      mine: false,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Dixit',
       url: 'https://play-dixit.online/en/',
+      mine: false,
       gameLogoSrc: 'images/dixit.png',
       gameLogoAlt: 'Dixit logo',
       description: 'Online version of Dixit: a beautiful illustrated card game where your imagination unlocks the tale',
@@ -106,10 +121,12 @@ const games = [
             </ol>
             <p>You can practice examining images and thinking of clues <a href="./dixit-practice.html" class="underline text-blue-600 text-xs md:text-sm hover:text-blue-900">here</a>.</p>
           </div>`,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Jigsaw Explorer',
       url: 'https://www.jigsawexplorer.com/',
+      mine: false,
       gameLogoSrc: 'images/jigsaw-explorer.png',
       gameLogoAlt: 'Jigsaw Explorer',
       description: 'Put jigsaw puzzles together with online friends',
@@ -122,10 +139,13 @@ const games = [
               <li class="instruction-item">Copy the link and share it with your friends. Enjoy chatting over a zoom while you put the puzzle together as a team.</li>
             </ol>
           </div>`,
+      dateAdded: '26 Apr 2023',
   },
   {
       title: 'Jstris',
       url: 'https://jstris.jezevec10.com/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/Jstris.png',
       gameLogoAlt: 'Jstris logo',
       description: 'A simple online multiplayer block game',
@@ -145,6 +165,7 @@ const games = [
   {
       title: 'Google Feud',
       url: 'https://www.googlefeud.com/',
+      mine: false,
       gameLogoSrc: 'images/google_feud.svg',
       gameLogoAlt: 'Google Feud logo',
       description: 'Guess the most popular autocomplete phrases in a Google search',
@@ -161,6 +182,8 @@ const games = [
       title: 'Spyfall',
       url: 'https://spyfall.tannerkrewson.com/',
       gameLogoSrc: 'images/spyfall.jpg',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoAlt: 'Spyfall Favicon',
       description: 'The spy\'s mission: to find out the location of the other players. The others\' mission: to figure out who is the spy.',
       howTo: `<p class="text-xs mt-2 md:text-sm">Click on 'New Game', and enter your name. Click 'Join' and you will be taken to a page with a slug at the end of the url, such as https://spyfall.tannerkrewson.com/dbxv. Share that link with friends.</p>
@@ -177,6 +200,8 @@ const games = [
   {
       title: 'Rummikub',
       url: 'https://rummikub-apps.com/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/rummikub-logo.png',
       gameLogoAlt: 'Rummikub logo',
       description: 'Tile-based game that combines elements of the card game rummy and mahjong',
@@ -189,6 +214,8 @@ const games = [
   {
       title: 'Crazy Eights AKA UNO',
       url: 'https://play.gidd.io/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/uno-cards.png',
       gameLogoAlt: 'cards',
       description: `Try to lose all your cards before your friends can. But be sure to say 'UNO' once you're down to one card left; otherwise, you'll have to draw 2 cards if other players notice.`,
@@ -210,6 +237,8 @@ const games = [
   {
       title: 'Squabble',
       url: 'https://squabble.me/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/squabble-logo.png',
       gameLogoAlt: 'Squabble logo',
       description: 'A multiplayer version of the viral sensation Wordle',
@@ -224,6 +253,8 @@ const games = [
   {
       title: 'Yatzy',
       url: 'https://play.gidd.io/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/dice.png',
       gameLogoAlt: 'dice',
       description: 'An online version of Yahtzee',
@@ -242,6 +273,8 @@ const games = [
   {
       title: 'Six Second Rule',
       url: './six-second-rule.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/six-second-rule.png',
       gameLogoAlt: 'dice',
       description: 'Quickly think of 3 things!',
@@ -252,6 +285,8 @@ const games = [
   {
       title: 'Adverb',
       url: './adverb-game.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/adverb.png',
       gameLogoAlt: 'acting out adverbs',
       description: 'Take turns telling people what to do, in order to guess the secret adverb.',
@@ -261,6 +296,8 @@ const games = [
   {
       title: 'Gartic.io',
       url: 'https://gartic.io/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/gartic-io.png',
       gameLogoAlt: 'Gartic.io logo',
       description: 'Draw, Guess, Win',
@@ -277,6 +314,8 @@ const games = [
   {
       title: 'Longwave',
       url: 'https://longwave.web.app/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'images/Longwave.png',
       gameLogoAlt: 'Longwave logo',
       description: 'An online, real-time adaptation of the board game Wavelength. Best enjoyed with voice chat!',
@@ -300,6 +339,8 @@ const games = [
   {
     title: 'Chicken Coup',
     url: 'https://longwave.web.app/',
+    mine: false,
+    dateAdded: '26 Apr 2023',
     gameLogoSrc: 'images/coup.png',
     gameLogoAlt: 'Chicken Coup logo',
     description: 'A game of deduction and deception',
@@ -314,6 +355,8 @@ const games = [
     {
     title: 'Charades',
     url: 'https://psycatgames.com/app/charades/',
+    mine: false,
+    dateAdded: '26 Apr 2023',
     gameLogoSrc: 'images/psycat-games-logo.png',
     gameLogoAlt: 'Psycat Games logo',
     description: 'A popular word guessing game',
@@ -331,6 +374,8 @@ const games = [
     {
       title: 'When I Go Out West...',
       url: './go-out-west.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/go-out-west/go-out-west-og-image.png',
       gameLogoAlt: 'When I Go Out West...',
       description: 'Laugh at what happens when you go out west. A simple, funny road game.',
@@ -339,6 +384,8 @@ const games = [
     {
       title: 'Catan Universe: Settlers of Catan',
       url: 'https://catanuniverse.com/en/game/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/catan-logo.png',
       gameLogoAlt: 'Catan Logo',
       description: 'A realistic online version of the famous board game. Gather resources to build settlements & cities and earn victory points to win.',
@@ -351,6 +398,8 @@ const games = [
     {
       title: 'The Smurf Game: How Do You Smurf?',
       url: './smurf.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/smurf-og.png',
       gameLogoAlt: 'The Smurf Game: How Do You Smurf?',
       description: 'A hilarious verb-guessing game',
@@ -359,6 +408,8 @@ const games = [
     {
       title: 'The Good News/Bad News Game',
       url: './good-news-bad-news.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/news/laugh.png',
       gameLogoAlt: 'Good News & Bad News',
       description: 'Create good & bad news to create stories as imaginative and comical as you\'d like.',
@@ -367,6 +418,8 @@ const games = [
     {
       title: 'Somewherewords',
       url: 'https://words.aroma1997.org/',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/logos/somewherewords.png',
       gameLogoAlt: 'Somewherewords',
       description: 'Play Werewords online with your friends! See if the villagers can guess the secret word, or if the werewolves can successfully prevent them.',
@@ -383,6 +436,8 @@ const games = [
     {
       title: 'What\'s Yours Like?',
       url: './whats-yours-like.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/yours-like/lamp.png',
       gameLogoAlt: 'lamp',
       description: 'Be clever and subtle in this guessing game',
@@ -392,6 +447,8 @@ const games = [
       title: 'Bananagrams Online',
       url: 'https://www.playbananagrams.com/',
       gameLogoSrc: 'static/images/banana.png',
+      mine: false,
+      dateAdded: '26 Apr 2023',
       gameLogoAlt: 'banana',
       description: 'Speed-round Scrabble!',
       howTo: `<p class="text-xs mt-2 md:text-sm">Click the 'Create a Game' button to open a new game.</p>
@@ -406,6 +463,8 @@ const games = [
     {
       title: 'Same Word',
       url: './same-word.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/dinos/dino4.png',
       gameLogoAlt: 'dino',
       description: 'See how quickly your friends can get in-sync!',
@@ -416,12 +475,15 @@ const games = [
       url: './guess-that-song.html',
       gameLogoSrc: 'static/images/love-song-2.png',
       gameLogoAlt: 'love song',
+      dateAdded: '26 Apr 2023',
       description: 'Learn how to create a guess-that-song game with audio files of funny-sounding lyrics',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./guess-that-song.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and a sample game!</p>`
     },
     {
       title: 'The Name Game',
       url: './name-game.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/name-mug.jpg',
       gameLogoAlt: 'hello my name is',
       description: 'Take a name & create a silly nonsense song with it',
@@ -430,6 +492,8 @@ const games = [
     {
       title: 'The Minister\'s Cat',
       url: './ministers-cat.html',
+      mine: true,
+      dateAdded: '26 Apr 2023',
       gameLogoSrc: 'static/images/cats/cat-1.png',
       gameLogoAlt: 'The Minister\'s Cat',
       description: 'A challenging but fun game with adjectives',
