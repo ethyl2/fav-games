@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#ffffff">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&family=Sigmar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="min-h-screen relative">
@@ -52,60 +52,81 @@
           <span class="sr-only">Favorite Games Home</span>
           <img src="images/tic-tac-toe.png" class="w-full" />
         </a>
-        <h1 class="tracking-wider text-xl md:text-5xl">Game-Themed Lorem Ipsum</h1>
+        <h1 class="tracking-wider text-xl md:text-5xl" style="font-family: 'Sigmar', cursive;">Game-Themed Lorem Ipsum</h1>
         </div>
       </header>
     <main
-      class="flex flex-col items-center justify-between container mx-auto bg-white md:mt-12 p-4 text-center max-w-5xl shadow-lg rounded"
+      class="flex flex-col items-center justify-center container mx-auto bg-white md:mt-12 p-4 text-center max-w-5xl shadow-lg rounded space-y-2 md:space-y-6"
       style="min-height: 800px;"
       >
-      <form class="pt-6">
-        <input
-          type="number"
-          name="paragraph-count"
-          id="paragraph-count"
-          class="border rounded mr-2 w-12 px-1"
-          value="1"
-        />
-        <label for="paragraph-count" id="paragraph-count-label">Paragraph</label>
+      <form class="flex flex-col items-center justify-center space-y-2">
+        <div class="flex flex-col items-center justify-center md:flex-row md:space-x-4">
+          <div class="flex items-center justify-center space-x-2">
+            <label class="font-bold" for="paragraph-length">Paragraph length: </label>
+            <input type="radio" id="short" name="paragraph-length" value="short" checked>
+            <label for="short">short</label>
+            <input type="radio" id="medium" name="paragraph-length" value="medium">
+            <label for="medium" >medium</label>
+            <input type="radio" id="long" name="paragraph-length" value="long">
+            <label for="long">long</label>
+          </div>
+          <div>
+            <input
+            type="number"
+            name="paragraph-count"
+            id="paragraph-count"
+            class="border rounded w-12 px-1"
+            value="1"
+            />
+            <label class="font-bold" for="paragraph-count" id="paragraph-count-label">Paragraph</label>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center md:flex-row md:space-x-4">
+          <div class="flex items-center justify-center space-x-2">
+            <input type="checkbox" id="use-character-count" name="use-character-count" value="use-character-count" />
+            <label for="use-character-count" class="pt-1">Make it this long: </label>
+          </div>
+
+          <div class="flex items-center justify-center">
+            <input
+              type="number"
+              name="character-count"
+              id="character-count"
+              class="border rounded mr-1 w-24 px-1"
+              step="10"
+              value="500"
+            />
+            <label for="character-count" id="character-count-label">Characters</label>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center md:flex-row md:space-x-4">
+          <div class="flex items-center justify-center space-x-2">
+            <input type="checkbox" id="start-with" name="start-with" value="start-with" checked />
+            <label for="start-with" class="pt-1">Start with 'Game ipsum dolor sit amet'</label>
+          </div>
+
+          <div class="flex items-center justify-center space-x-2">
+            <input type="checkbox" id="start-date" name="start-date" value="start-date" checked />
+            <label for="start-date" class="pt-1">Start with today's date</label>
+          </div>
+        </div>
 
         <div class="flex items-center justify-center space-x-2">
-          <input type="checkbox" id="use-character-count" name="use-character-count" value="use-character-count" />
-          <label for="use-character-count" class="pt-1">Make it this long: </label>
+          <button id="update" type="button"
+            class="font-bold rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white shadow"
+          >
+            Update Lorem Ipsum
+          </button>
+          <button
+            type="button"
+            id="copy-button"
+            class="font-bold rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-indigo-500 hover:bg-indigo-400 text-center md:text-lg text-white shadow"
+          >
+            Copy to Clipboard
+          </button>
         </div>
-
-        <input
-          type="number"
-          name="character-count"
-          id="character-count"
-          class="border rounded mr-2 w-24 px-1"
-          step="10"
-          value="500"
-        />
-        <label for="character-count" id="character-count-label">Characters</label>
-        
-        <div class="pt-2">
-          <input type="radio" id="short" name="paragraph-length" value="short" checked>
-          <label for="short" class="pr-2">short</label>
-          <input type="radio" id="medium" name="paragraph-length" value="medium">
-          <label for="medium" class="pr-2" >medium</label>
-          <input type="radio" id="long" name="paragraph-length" value="long">
-          <label for="long">long</label>
-        </div>
-
-        <div class="flex items-center justify-center space-x-2">
-          <input type="checkbox" id="start-with" name="start-with" value="start-with" checked />
-          <label for="start-with" class="pt-1">Start with 'Game ipsum dolor sit amet'</label>
-        </div>
-
-        <div class="flex items-center justify-center space-x-2">
-          <input type="checkbox" id="start-date" name="start-date" value="start-date" checked />
-          <label for="start-date" class="pt-1">Start with today's date</label>
-        </div>
-
-        <button id="update" type="button"
-          class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white mb-4 shadow">
-          Update Lorem Ipsum</button>
       </form>
 
       <div
@@ -116,11 +137,6 @@
       ></div>
       <p id="current-character-count" class="text-right max-w-2xl italic text-gray-500 w-full container">250</p>
       <div>
-        <button
-          type="button"
-          id="copy-button"
-          class="mt-4 rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-indigo-500 hover:bg-indigo-400 text-center md:text-lg text-white md:mb-4 shadow"
-        >Copy to Clipboard</button>
         <div>
           <textarea hidden id="copied-box" rows="2" cols="30" class="text-transparent">This will hold the copied lorem ipsum</textarea>
           <p id="message" class="pt-3 text-lg text-transparent md:pt-0 md:pb-3 font-bold">Message Goes Here</p>

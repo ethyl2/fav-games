@@ -1,6 +1,9 @@
 window.addEventListener('load', setUpGameGrid)
 const gameListEl = document.getElementById('game-list')
 
+const currentYearSpan = document.getElementById('current-year')
+currentYearSpan.textContent = new Date().getFullYear()
+
 // Game Cards based on component from tailwind ui: https://tailwindui.com/components/marketing/sections/blog-sections
 function setUpGameGrid() {
     games.filter(game=> game.mine === true).forEach(game => {
