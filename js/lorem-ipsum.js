@@ -15,6 +15,7 @@ const copiedBox = document.getElementById('copied-box')
 const messageEl = document.getElementById('message')
 const startsWithEl = document.getElementById('start-with')
 const addDateEl = document.getElementById('start-date')
+const emojiEl = document.getElementById('add-emojis')
 
 toggleCharacterCountClasses()
 
@@ -197,6 +198,10 @@ function updateLoremIpsum() {
     updatedContent += makeParagraph(paragraphLength)
   }
 
+  if (emojiEl.checked) {
+    updatedContent = addEmojis(updatedContent)
+  }
+
   if (useCharacterCountCheckbox.checked) {
     updatedContent = modifyCharacterLength(updatedContent)
   }
@@ -209,6 +214,19 @@ function updateLoremIpsum() {
 }
 
 useCharacterCountCheckbox.addEventListener('input', toggleCharacterCountClasses)
+
+
+function addEmojis(content) {
+  console.log('adding emojis')
+  const emojiCount = Math.floor(content.length / 50)
+  
+  for (let i=0; i < emojiCount; i++) {
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
+    const randomIndex = Math.floor(Math.random() * content.length)
+    content = content.substring(0, randomIndex) + randomEmoji + content.substring(randomIndex);
+  }
+  return content
+}
 
 function toggleCharacterCountClasses() {
   if (useCharacterCountCheckbox.checked) {
