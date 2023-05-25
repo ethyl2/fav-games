@@ -217,7 +217,6 @@ useCharacterCountCheckbox.addEventListener('input', toggleCharacterCountClasses)
 
 
 function addEmojis(content) {
-  console.log('adding emojis')
   const emojiCount = Math.floor(content.length / 50)
   
   for (let i=0; i < emojiCount; i++) {
