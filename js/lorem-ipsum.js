@@ -223,7 +223,7 @@ function addEmojis(content) {
   for (let i=0; i < emojiCount; i++) {
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
     const randomIndex = Math.floor(Math.random() * content.length)
-    content = content.substring(0, randomIndex) + randomEmoji + content.substring(randomIndex);
+    content = content.substring(0, randomIndex) + ' ' + randomEmoji + ' ' + content.substring(randomIndex)
   }
   return content
 }
