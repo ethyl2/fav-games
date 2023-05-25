@@ -238,7 +238,6 @@
 
         function getLyrics(name) {
             const formattedName = capitalizeFirstLetter(name)
-            console.log( name.charAt(0).toLowerCase())
             const nameSubstring = ['a', 'e', 'i', 'o', 'u'].includes(name.charAt(0).toLowerCase()) ? lowerCaseFirstLetter(name) : name.slice(1)
             const bWord = ' bo-' + (name.charAt(0).toLowerCase() === 'b' ? '' : 'b') + nameSubstring
             const fWord = 'Banana-fana fo-' + (name.charAt(0).toLowerCase() === 'f' ? '' : 'f') + nameSubstring
