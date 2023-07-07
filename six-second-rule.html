@@ -34,7 +34,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
@@ -82,7 +82,7 @@
                 <li class="pb-3">The game continues until someone gets 6 points.</li>
               </ol>
             </div>
-            <div class="w-full flex flex-col items-center justify-center md:w-1/4">
+            <div class="w-full flex flex-col items-center justify-center md:w-1/2">
               <button
                 type="button"
                 id="audio-toggle"
@@ -91,11 +91,15 @@
               <!-- POINTS TRACKER -->
               <div class="border rounded p-2 md:p-3 flex flex-col items-center justify-center mb-3 md:mb-0">
                   <h3 class="text-xl">Points Tracker</h3>
-                  <p class="text-center text-sm italic pb-2">Click each time you get a point.</p>
-                  <button type="button" id="increment-points" class="rounded-full text-sm px-2 py-1 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-400 text-center md:text-lg text-white md:mb-4 shadow">
-                    Give Me a Point!
-                  </button>
-                  <p id="points" class="text-green-500 font-bold text-4xl md:pb-3">0</p>
+                  <div class="flex items-center justify-center space-x-2 pb-2">
+                    <label for="player-count" class="text-sm text-center">How many players?</label>
+                    <input type="number" max="10" min="0" class="border pl-2 rounded shadow" name="player-count" id="player-count" value="0"/>
+                  </div>
+
+                  <p id="points-instructions" class="text-center text-xs italic invisible pb-2">Click each time someone gets a point.</p>
+
+                  <div id="points-for-players" class="grid grid-cols-2 gap-2 pb-2"></div>
+
                   <button id="points-reset" class="text-xs md:text-sm px-2 py-1 rounded-full border hover:bg-gray-100">Reset Points</button>
               </div>
             </div>
@@ -104,7 +108,10 @@
         <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Category</button>
         <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Name 3:</label>
         <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">Brands of Toilet Paper</p>
-        <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
+        <div class="flex items-center justify-center space-x-2">
+          <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
+          <button id="timer-reset" disabled type="button" class="opacity-50 cursor-not-allowed rounded-full px-4 py-2 bg-red-500 hover:bg-red-400 text-center text-lg text-white mb-4 shadow">Reset Timer</button>
+        </div>
         <label for="progress-bar" class="sr-only">Timer Progress Bar</label>
         <progress value="0" max="12" id="progress-bar"></progress>
         <div id="countdown" class="pt-2"></div>
