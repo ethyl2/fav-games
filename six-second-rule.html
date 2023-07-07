@@ -104,7 +104,10 @@
         <button id="get-category" type="button" class="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 text-center text-lg text-white shadow">Get Category</button>
         <label for="category" class="pt-2 pb-1 font-semibold text-lg italic">Name 3:</label>
         <p id="category" class="invisible text-lg rounded-lg p-2 font-bold mb-4 shadow md:text-2xl">Brands of Toilet Paper</p>
-        <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
+        <div class="flex items-center justify-center space-x-2">
+          <button id="timer-start" type="button" class="rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-center text-lg text-white mb-4 shadow">Start Timer</button>
+          <button id="timer-reset" disabled type="button" class="opacity-50 cursor-not-allowed rounded-full px-4 py-2 bg-red-500 hover:bg-red-400 text-center text-lg text-white mb-4 shadow">Reset Timer</button>
+        </div>
         <label for="progress-bar" class="sr-only">Timer Progress Bar</label>
         <progress value="0" max="12" id="progress-bar"></progress>
         <div id="countdown" class="pt-2"></div>
