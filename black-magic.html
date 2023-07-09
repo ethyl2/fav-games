@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Black Magic 🪄 | Favorite Group Games</title>
+        <meta name="description" content="how to play the game Black Magic">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/colors-room.png">
+        <meta property="og:image:alt" content="Amaze your friends by correctly guessing the selected item!">
+        <meta property="og:url" content="https://ethyl2.github.io/fav-games/black-magic.html">
+        <meta property="og:title" content="Black Magic 🪄 | Favorite Group Games">
+        <meta property="og:description" content="how to play the game Black Magic">
+        <meta property="og:type" content="website" />
+        <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  fontFamily: {
+                    kalam: '"Kalam", cursive',
+                  }
+                }
+              }
+            }
+          </script>
+        <style>
+            /* adapted from https://codepen.io/agoodwin/pen/NMJoER */
+            @keyframes move-background {
+                from {
+                        -webkit-transform: translate3d(0px, 0px, 0px);
+                    }
+                    to { 
+                        -webkit-transform: translate3d(1000px, 0px, 0px);
+                    }
+                }
+
+            @-webkit-keyframes move-background {
+                from {
+                        -webkit-transform: translate3d(0px, 0px, 0px);
+                    }
+                    to { 
+                        -webkit-transform: translate3d(1000px, 0px, 0px);
+                    }
+                }
+
+            @-moz-keyframes move-background {    
+                from {
+                    -webkit-transform: translate3d(0px, 0px, 0px);
+                }
+                to { 
+                    -webkit-transform: translate3d(1000px, 0px, 0px);
+                }
+            }
+
+                @-webkit-keyframes move-background {
+                from {
+                    -webkit-transform: translate3d(0px, 0px, 0px);
+                }
+                to { 
+                    -webkit-transform: translate3d(1000px, 0px, 0px);
+                }
+            }
+
+            .background-container {
+                position: fixed;
+                top: 0;
+                left:0;
+                bottom: 0;
+                right: 0;
+            }
+
+            .stars {
+                background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: block;
+                z-index: 0;
+                }
+
+            .twinkling {
+                width:10000px;
+                height: 100%;
+                background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+                background-size: 1000px 1000px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 2;
+                
+                -moz-animation:move-background 70s linear infinite;
+                -ms-animation:move-background 70s linear infinite;
+                -o-animation:move-background 70s linear infinite;
+                -webkit-animation:move-background 70s linear infinite;
+                animation:move-background 70s linear infinite;
+            }
+
+            .img {
+                height: 70vh;
+                width:70vh;
+                position: absolute;
+                z-index: 3;
+                right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="background-container overflow-y-auto bg-black">
+            <div class="absolute flex flex-col items-center justify-center w-full border z-40">
+            <header class="flex flex-col items-center justify-center w-full py-9 px-4">
+                <h1 class="font-kalam text-4xl text-white md:text-7xl font-bold">Black Magic</h1>
+                <p class="font-kalam text-white text-center">Amaze your friends by correctly guessing the selected item!</p>
+            </header>
+            <main class="flex flex-col items-center justify-center w-full">
+                <section class="container flex flex-col-reverse items-center justify-center mx-auto lg:flex-row pb-24 lg:space-x-2">
+                    <div class="w-full md:w-2/3 px-4">
+                        <h2 class="font-kalam text-2xl text-white font-bold md:text-4xl">How to Play</h2>
+                        <p class="font-kalam uppercase text-yellow-300">NOTE: DO NOT SHARE THESE INSTRUCTIONS BEFORE PLAYING</p>
+                        <ol class="font-kalam text-white list-decimal list-inside md:text-lg">
+                            <li>Before you play, make sure that at least one other person knows the secret. If no one knows the secret yet, tell them without anyone else hearing.</li>
+                            <li>When you are ready to play, gather everyone and tell them you will leave temporarily and they need to choose an item that is in plain sight in the room or area while you are gone.</li>
+                            <li>Leave the room.</li>
+                            <li>They will decide on one item, such as the <span class="text-red-400 font-bold">red</span> balloon in this example room.
+                                <img src="./static/images/red-balloon.png" alt="red balloon" class="w-10 inline" />
+                            </li>
+                            <li>Come back when they are ready.</li>
+                            <li class="text-yellow-300">The person who knows the secret should volunteer to be the one to ask you questions for this round.</li>
+                            <li>The questioner will ask questions, pointing to different objects in the room, such as <br />
+                                <span id="green-door" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"It is the <span class="text-green-400">green</span> door?"</span>
+                                    <img src="./static/images/green-door.png" alt="green door" class="w-8 inline" />
+                                </span>
+
+                                 or 
+                                 <span id="cat-toy" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"Is it the <span class="text-yellow-400">yellow</span> cat toy?"</span> 
+                                    <img src="./static/images/cat-toy.png" alt="cat toy" class="w-20 inline"/> 
+                                </span>
+
+                                <br /> or even leave out the color: 
+                                <span id="cereal-bowl" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"Is it the cereal bowl?"</span>
+                                    <img src="./static/images/cereal-bowl.png" alt="cereal bowl" class="w-12 inline"/>
+                                </span>
+                                 
+                            </li>
+                            <li>You will say <span id="first-no" class="relative cursor-pointer hover:underline">no</span> each time, until...</li>
+                            <li>When the questioner is ready to reveal the selected object to you, he/she will ask a question about a 
+                                <span class="bg-white text-black px-1 rounded font-bold pt-0.5">black</span> item in the room, 
+                                such as 
+                                <span id="toy-car" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"Is it the <span class="bg-white text-black px-1 rounded font-bold pt-0.5">black</span> toy car?"</span>
+                                    <img src="./static/images/black-toy-car.png" alt="black toy car" class="w-20 rounded border border-white inline"/>
+                                </span>
+                                or 
+                                <span id="black-dog" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"Is it the <span class="bg-white text-black px-1 rounded font-bold pt-0.5">black</span> dog?"</span>
+                                    <img src="./static/images/black-dog.png" alt="black dog" class="w-16 rounded border border-white inline"/>
+                                </span>
+                            </li>
+                            </li>
+
+                            <li>Say  <span id="second-no" class="relative cursor-pointer hover:underline">no</span>.</li>
+                            <li>For the next question, the questioner will ask you about the selected item, so say YES! 
+                                In this example, 
+                                <span id="red-balloon" class="relative cursor-pointer group">
+                                    <span class="group-hover:underline">"Is it the <span class="text-red-400 font-bold">red</span> balloon?"</span>
+                                    <img src="./static/images/red-balloon.png" alt="red balloon" class="w-10 inline" />
+                                    "YES!"
+                                </span>
+                            </li>
+                            <li>Everyone will be amazed!</li>
+                            <li>Do more rounds until everyone figures out the secret. If someone figures out the secret, they can be the guesser or questioner for the next round.</li>
+                        </ol>
+                    </div>
+                    <div class="w-full md:w-1/3 flex items-center justify-center px-4 pb-4 md:pb-0">
+                        <img src="./static/images/colors-room.png" alt="example room" class="rounded-lg"/>
+                    </div>
+                </section>
+            </main>
+            <div class="text-white font-kalam">Practice with me!</div>
+            </div>
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+    <script>
+        const greenDoor = document.getElementById('green-door')
+        greenDoor.addEventListener('click', () => {
+            greenDoor.classList.add('text-green-400')
+            const answerEl = document.createElement('div')
+            answerEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answerEl.innerText = 'NO'
+            greenDoor.appendChild(answerEl)
+            setTimeout(() => {
+                greenDoor.classList.remove('text-green-400')
+                greenDoor.removeChild(answerEl)
+            }, 1000)
+        })
+
+        const catToy = document.getElementById('cat-toy')
+        catToy.addEventListener('click', () => {
+            catToy.classList.add('text-yellow-400')
+            const answerCatToyEl = document.createElement('div')
+            answerCatToyEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-2', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answerCatToyEl.innerText = 'NO'
+            catToy.appendChild(answerCatToyEl)
+            setTimeout(() => {
+                catToy.classList.remove('text-yellow-400')
+                catToy.removeChild(answerCatToyEl)
+            }, 1000)
+        })
+
+        const cerealBowl = document.getElementById('cereal-bowl')
+        cerealBowl.addEventListener('click', () => {
+            cerealBowl.classList.add('text-blue-200')
+            const answercerealBowlEl = document.createElement('div')
+            answercerealBowlEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answercerealBowlEl.innerText = 'NO'
+            cerealBowl.appendChild(answercerealBowlEl)
+            setTimeout(() => {
+                cerealBowl.classList.remove('text-blue-200')
+                cerealBowl.removeChild(answercerealBowlEl)
+            }, 1000)
+        })
+
+        const noEl = document.getElementById('first-no')
+        noEl.addEventListener('click', () => {
+            noEl.classList.add('text-red-200')
+            const answernoElEl = document.createElement('div')
+            answernoElEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', '-right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answernoElEl.innerText = 'NO'
+            noEl.appendChild(answernoElEl)
+            setTimeout(() => {
+                noEl.classList.remove('text-red-200')
+                noEl.removeChild(answernoElEl)
+            }, 1000)
+        })
+
+        const secondNoEl = document.getElementById('second-no')
+        secondNoEl.addEventListener('click', () => {
+            secondNoEl.classList.add('text-red-200')
+            const answersecondNoElEl = document.createElement('div')
+            answersecondNoElEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', '-right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answersecondNoElEl.innerText = 'NO'
+            secondNoEl.appendChild(answersecondNoElEl)
+            setTimeout(() => {
+                secondNoEl.classList.remove('text-red-200')
+                secondNoEl.removeChild(answersecondNoElEl)
+            }, 1000)
+        })
+
+        const toyCar = document.getElementById('toy-car')
+        toyCar.addEventListener('click', () => {
+            const answertoyCarEl = document.createElement('div')
+            answertoyCarEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-7', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answertoyCarEl.innerText = 'NO'
+            toyCar.appendChild(answertoyCarEl)
+            setTimeout(() => {
+                toyCar.removeChild(answertoyCarEl)
+            }, 1000)
+        })
+
+        const blackDog = document.getElementById('black-dog')
+        blackDog.addEventListener('click', () => {
+            const answerblackDogEl = document.createElement('div')
+            answerblackDogEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-3', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answerblackDogEl.innerText = 'NO'
+            blackDog.appendChild(answerblackDogEl)
+            setTimeout(() => {
+                blackDog.removeChild(answerblackDogEl)
+            }, 1000)
+        })
+
+        const redBalloon = document.getElementById('red-balloon')
+        redBalloon.addEventListener('click', () => {
+            const answerredBalloonEl = document.createElement('div')
+            redBalloon.classList.add('text-red-300')
+            answerredBalloonEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-3', 'px-2', 'pt-1', 'bg-white', 'rounded')
+            answerredBalloonEl.innerText = 'YES!'
+            redBalloon.appendChild(answerredBalloonEl)
+            setTimeout(() => {
+                redBalloon.removeChild(answerredBalloonEl)
+                redBalloon.classList.remove('text-red-300')
+            }, 1000)
+        })
+
+        const nonBlackItems = [
+            {
+                name: 'green door',
+                imgUrl: './static/images/green-door.png'
+            },
+            {
+                name: 'cat toy',
+                imgUrl: './static/images/cat-toy.png'
+            },
+            {
+                name: 'cereal bowl',
+                imgUrl: './static/images/cereal-bowl.png'
+            },
+            
+            {
+                name: 'red balloon',
+                imgUrl: './static/images/red-balloon.png'
+            }
+            
+        ]
+
+        const blackItems = [
+            {
+                name: 'black dog',
+                imgUrl: './static/images/black-dog.png'
+            },
+            {
+                name: 'toy car',
+                imgUrl: './static/images/toy-car.png'
+            }
+        ]
+        
+    </script>
+    </body>
+</html>
