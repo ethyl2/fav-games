@@ -10,7 +10,7 @@
         <title>Black Magic 🪄 | Favorite Group Games</title>
         <meta name="description" content="how to play the game Black Magic">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/colors-room.png">
+        <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/black-magic.png">
         <meta property="og:image:alt" content="Amaze your friends by correctly guessing the selected item!">
         <meta property="og:url" content="https://ethyl2.github.io/fav-games/black-magic.html">
         <meta property="og:title" content="Black Magic 🪄 | Favorite Group Games">
@@ -137,9 +137,9 @@
     <body>
         <div class="background-container overflow-y-auto bg-black">
             <div class="absolute flex flex-col items-center justify-center w-full border z-40">
-            <header class="flex flex-col items-center justify-center w-full py-9 px-4">
+            <header class="flex flex-col items-center justify-center w-full py-6 px-4">
                 <h1 class="font-kalam text-4xl text-white md:text-7xl font-bold">Black Magic</h1>
-                <p class="font-kalam text-white text-center">Amaze your friends by correctly guessing the selected item!</p>
+                <p class="font-kalam text-fuchsia-300 text-center">Amaze your friends by correctly guessing the selected item!</p>
             </header>
             <main class="flex flex-col items-center justify-center w-full">
                 <section class="container flex flex-col-reverse items-center justify-center mx-auto lg:flex-row pb-24 lg:space-x-2">
@@ -147,11 +147,11 @@
                         <h2 class="font-kalam text-2xl text-white font-bold md:text-4xl">How to Play</h2>
                         <p class="font-kalam uppercase text-yellow-300">NOTE: DO NOT SHARE THESE INSTRUCTIONS BEFORE PLAYING</p>
                         <ol class="font-kalam text-white list-decimal list-inside md:text-lg">
-                            <li>Before you play, make sure that at least one other person knows the secret. If no one knows the secret yet, tell them without anyone else hearing.</li>
+                            <li>Before you play, make sure that at least one other person knows the secret. If no one knows the secret yet, tell someone without anyone else hearing.</li>
                             <li>When you are ready to play, gather everyone and tell them you will leave temporarily and they need to choose an item that is in plain sight in the room or area while you are gone.</li>
                             <li>Leave the room.</li>
                             <li>They will decide on one item, such as the <span class="text-red-400 font-bold">red</span> balloon in this example room.
-                                <img src="./static/images/red-balloon.png" alt="red balloon" class="w-10 inline" />
+                                <img src="./static/images/red-balloon.png" alt="red balloon" class="w-8 inline" />
                             </li>
                             <li>Come back when they are ready.</li>
                             <li class="text-yellow-300">The person who knows the secret should volunteer to be the one to ask you questions for this round.</li>
@@ -180,12 +180,12 @@
                                 such as 
                                 <span id="toy-car" class="relative cursor-pointer group">
                                     <span class="group-hover:underline">"Is it the <span class="bg-white text-black px-1 rounded font-bold pt-0.5">black</span> toy car?"</span>
-                                    <img src="./static/images/black-toy-car.png" alt="black toy car" class="w-20 rounded border border-white inline"/>
+                                    <img src="./static/images/black-toy-car.png" alt="black toy car" class="w-20 rounded border border-white inline my-1"/>
                                 </span>
                                 or 
                                 <span id="black-dog" class="relative cursor-pointer group">
                                     <span class="group-hover:underline">"Is it the <span class="bg-white text-black px-1 rounded font-bold pt-0.5">black</span> dog?"</span>
-                                    <img src="./static/images/black-dog.png" alt="black dog" class="w-16 rounded border border-white inline"/>
+                                    <img src="./static/images/black-dog.png" alt="black dog" class="w-16 rounded border border-white inline mt-0.5 mb-1"/>
                                 </span>
                             </li>
                             </li>
@@ -195,7 +195,7 @@
                                 In this example, 
                                 <span id="red-balloon" class="relative cursor-pointer group">
                                     <span class="group-hover:underline">"Is it the <span class="text-red-400 font-bold">red</span> balloon?"</span>
-                                    <img src="./static/images/red-balloon.png" alt="red balloon" class="w-10 inline" />
+                                    <img src="./static/images/red-balloon.png" alt="red balloon" class="w-8 inline" />
                                     "YES!"
                                 </span>
                             </li>
@@ -208,143 +208,108 @@
                     </div>
                 </section>
             </main>
-            <div class="text-white font-kalam">Practice with me!</div>
+            <div class="w-full px-4 md:w-2/3 lg:w-1/2">
+                <section class="text-white font-kalam mb-24 rounded border border-yellow-200 p-4 flex flex-col items-center justify-center overflow-hidden">
+                    <h3 class="text-xl font-bold md:text-2xl pb-2 text-fuchsia-300">Let's Practice!</h3>
+                    <p class="text-center">Click below, and I'll ask you a question. Let's see if you can guess the item!</p>
+                    <button type="button" id="get-question" class="bg-white rounded-lg px-2 pb-1 pt-2 font-bold text-black text-lg hover:bg-yellow-200 my-2">Ask Me!</button>
+                    <p id="current-question" class="text-lg py-2"></p>
+                    <div id="question-img" class="w-20 h-20 rounded bg-contain bg-no-repeat bg-center" style="background-image: url('./static/images/question-mark.png');"></div>
+                    <div id="answer-container" class="pt-2 w-full"></div>
+                    <p id="answer-comment" class="text-center"></p>
+                </section>
+            </div>
+            <footer class="text-white bg-gradient-to-b from-fuchsia-900 to-purple-900 w-full flex flex-col items-center justify-center py-4 font-kalam">
+                <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
+                    <a
+                      href="https://github.com/ethyl2/fav-games"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true"
+                        focusable="false"
+                        width="1.73em"
+                        height="1.5em"
+                        style="
+                          -ms-transform: rotate(360deg);
+                          -webkit-transform: rotate(360deg);
+                          transform: rotate(360deg);
+                        "
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 1227.825 1000"
+                      >
+                        <path
+                          d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="sr-only">GitHub</span>
+                    </a>
+                    <a
+                      href="https://twitter.com/ethyl22000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true"
+                        focusable="false"
+                        width="1.5em"
+                        height="1.5em"
+                        style="
+                          -ms-transform: rotate(360deg);
+                          -webkit-transform: rotate(360deg);
+                          transform: rotate(360deg);
+                        "
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="sr-only">Twitter</span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/heather-nuffer/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true"
+                        focusable="false"
+                        width="1.5em"
+                        height="1.5em"
+                        style="
+                          -ms-transform: rotate(360deg);
+                          -webkit-transform: rotate(360deg);
+                          transform: rotate(360deg);
+                        "
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z"
+                          fill="white"
+                        />
+                        <span class="sr-only">LinkedIn</span>
+                      </svg>
+                    </a>
+                </nav>
+                <a href="./group-games.html" class="text-white text-xl font-bold hover:text-yellow-200">Favorite Group Games</a>
+                <p>Copyright <span id="current-year">2023</span> Heather Nuffer</p>
+            </footer>
             </div>
             <div class="stars"></div>
             <div class="twinkling"></div>
-    <script>
-        const greenDoor = document.getElementById('green-door')
-        greenDoor.addEventListener('click', () => {
-            greenDoor.classList.add('text-green-400')
-            const answerEl = document.createElement('div')
-            answerEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answerEl.innerText = 'NO'
-            greenDoor.appendChild(answerEl)
-            setTimeout(() => {
-                greenDoor.classList.remove('text-green-400')
-                greenDoor.removeChild(answerEl)
-            }, 1000)
-        })
-
-        const catToy = document.getElementById('cat-toy')
-        catToy.addEventListener('click', () => {
-            catToy.classList.add('text-yellow-400')
-            const answerCatToyEl = document.createElement('div')
-            answerCatToyEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-2', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answerCatToyEl.innerText = 'NO'
-            catToy.appendChild(answerCatToyEl)
-            setTimeout(() => {
-                catToy.classList.remove('text-yellow-400')
-                catToy.removeChild(answerCatToyEl)
-            }, 1000)
-        })
-
-        const cerealBowl = document.getElementById('cereal-bowl')
-        cerealBowl.addEventListener('click', () => {
-            cerealBowl.classList.add('text-blue-200')
-            const answercerealBowlEl = document.createElement('div')
-            answercerealBowlEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answercerealBowlEl.innerText = 'NO'
-            cerealBowl.appendChild(answercerealBowlEl)
-            setTimeout(() => {
-                cerealBowl.classList.remove('text-blue-200')
-                cerealBowl.removeChild(answercerealBowlEl)
-            }, 1000)
-        })
-
-        const noEl = document.getElementById('first-no')
-        noEl.addEventListener('click', () => {
-            noEl.classList.add('text-red-200')
-            const answernoElEl = document.createElement('div')
-            answernoElEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', '-right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answernoElEl.innerText = 'NO'
-            noEl.appendChild(answernoElEl)
-            setTimeout(() => {
-                noEl.classList.remove('text-red-200')
-                noEl.removeChild(answernoElEl)
-            }, 1000)
-        })
-
-        const secondNoEl = document.getElementById('second-no')
-        secondNoEl.addEventListener('click', () => {
-            secondNoEl.classList.add('text-red-200')
-            const answersecondNoElEl = document.createElement('div')
-            answersecondNoElEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', '-right-1', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answersecondNoElEl.innerText = 'NO'
-            secondNoEl.appendChild(answersecondNoElEl)
-            setTimeout(() => {
-                secondNoEl.classList.remove('text-red-200')
-                secondNoEl.removeChild(answersecondNoElEl)
-            }, 1000)
-        })
-
-        const toyCar = document.getElementById('toy-car')
-        toyCar.addEventListener('click', () => {
-            const answertoyCarEl = document.createElement('div')
-            answertoyCarEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-7', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answertoyCarEl.innerText = 'NO'
-            toyCar.appendChild(answertoyCarEl)
-            setTimeout(() => {
-                toyCar.removeChild(answertoyCarEl)
-            }, 1000)
-        })
-
-        const blackDog = document.getElementById('black-dog')
-        blackDog.addEventListener('click', () => {
-            const answerblackDogEl = document.createElement('div')
-            answerblackDogEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-3', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answerblackDogEl.innerText = 'NO'
-            blackDog.appendChild(answerblackDogEl)
-            setTimeout(() => {
-                blackDog.removeChild(answerblackDogEl)
-            }, 1000)
-        })
-
-        const redBalloon = document.getElementById('red-balloon')
-        redBalloon.addEventListener('click', () => {
-            const answerredBalloonEl = document.createElement('div')
-            redBalloon.classList.add('text-red-300')
-            answerredBalloonEl.classList.add('text-black', 'font-bold', 'absolute', 'top-0', 'right-3', 'px-2', 'pt-1', 'bg-white', 'rounded')
-            answerredBalloonEl.innerText = 'YES!'
-            redBalloon.appendChild(answerredBalloonEl)
-            setTimeout(() => {
-                redBalloon.removeChild(answerredBalloonEl)
-                redBalloon.classList.remove('text-red-300')
-            }, 1000)
-        })
-
-        const nonBlackItems = [
-            {
-                name: 'green door',
-                imgUrl: './static/images/green-door.png'
-            },
-            {
-                name: 'cat toy',
-                imgUrl: './static/images/cat-toy.png'
-            },
-            {
-                name: 'cereal bowl',
-                imgUrl: './static/images/cereal-bowl.png'
-            },
-            
-            {
-                name: 'red balloon',
-                imgUrl: './static/images/red-balloon.png'
-            }
-            
-        ]
-
-        const blackItems = [
-            {
-                name: 'black dog',
-                imgUrl: './static/images/black-dog.png'
-            },
-            {
-                name: 'toy car',
-                imgUrl: './static/images/toy-car.png'
-            }
-        ]
-        
-    </script>
+    <script src="./js/current-year.js" async defer></script>
+    <script src="./js/black-magic.js"></script>
     </body>
 </html>
