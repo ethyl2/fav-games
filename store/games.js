@@ -499,4 +499,14 @@ const games = [
       description: 'A challenging but fun game with adjectives',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./ministers-cat.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and suggestions!</p>`
     },
+    {
+      title: 'Black Magic',
+      url: './black-magic.html',
+      mine: true,
+      dateAdded: '8 July 2023',
+      gameLogoSrc: 'static/images/black-magic.png',
+      gameLogoAlt: 'Black Magic',
+      description: 'Amaze your friends by correctly guessing the selected item!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./black-magic.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and practice!</p>`
+    },
   ]
