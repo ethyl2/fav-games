@@ -59,13 +59,76 @@
             BIRDS!
         </header>
         <main class="min-h-screen container mx-auto pt-8">
-            <div class="text-center mx-auto"> 
+            <div class="text-center mx-auto hidden md:flex"> 
                 <iframe 
                     class="mx-auto rounded-md shadow" width="560" height="315" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="text-center mx-auto md:hidden"> 
+                <iframe 
+                    class="mx-auto rounded-md shadow" width="350" height="215" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            
+            <iframe style="border-radius:12px" class="w-full max-w-xs md:max-w-xl mx-auto pt-4 md:pt-8" src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <section class="container mx-auto font-kalam -mt-16 mb-12 md:mb-24 bg-gray-100 p-4 rounded shadow">
+                <h2 class="text-2xl font-bold text-center">What kind of bird are you?</h2>
+                <p class="text-center">Take this quiz to discover your avian alter ego!</p>
                 
+                <p class="whitespace-pre-line">
+                1. Which environment do you prefer?
+                
+                a) Forests and woodlands, surrounded by trees and nature.
+                b) Vast open spaces like meadows or plains.
+                c) Coastal areas, near the water and the beach.
+                d) Urban landscapes, bustling with activity.
+                
+                2. Of the following activities, what's your favorite?
+                
+                a) Singing or playing a musical instrument.
+                b) Running, jogging, or any form of physical exercise.
+                c) Swimming or spending time in the water.
+                d) Exploring new places and trying new things.
+                
+                3. Which color combination appeals to you the most?
+                
+                a) Earthy tones like greens and browns.
+                b) Bright and bold colors like reds and yellows.
+                c) Cool shades of blues and aquamarines.
+                d) A mix of vibrant colors and patterns.
+                
+                4. Which statement most accurately describes how you handle challenges?
+                
+                a) I'm patient and persistent, I keep trying until I succeed.
+                b) I face them head-on with courage and determination.
+                c) I find a creative solution or try to adapt to the situation.
+                d) I seek advice from others and collaborate to overcome them.
+                
+                5. What's closest to your idea of a perfect day?
+                
+                a) Relaxing in a peaceful environment with soft music or bird songs.
+                b) Engaging in an exciting outdoor adventure or sport.
+                c) Spending time near water, whether it's at the beach or a lake.
+                d) Being in a lively city, exploring new attractions and meeting people.
+                </p>
+                <div class="mt-4 grid grid-cols-2 gap-4 text-sm md:text-base">
+                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-yellow-100">
+                        <p class="text-center font-bold">If you scored mostly "a," you are a wise and grounded owl.</p>
+                        <img src="./static/images/birds/owl.jpg" alt="owl" class="mx-auto rounded shadow w-36 md:w-48">
+                    </div>
+                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-lime-100">
+                        <p class="text-center font-bold">If you scored mostly "b," you are a energetic and enthusiastic falcon.</p>
+                        <img src="./static/images/birds/falcon.jpg" alt="falcon" class="mx-auto rounded shadow w-48 md:w-56">
+                    </div>
+                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-orange-100">
+                        <p class="text-center font-bold">If you scored mostly "c," you are a graceful and tranquil swan.</p>
+                        <img src="./static/images/birds/swan.jpg" alt="swan" class="mx-auto rounded shadow w-36 md:w-48">
+                    </div>
+                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-red-100">
+                        <p class="text-center font-bold">If you scored mostly "d," you are a social and adaptive parrot.</p>
+                        <img src="./static/images/birds/parrot.jpg" alt="parrot" class="mx-auto rounded shadow w-48 md:w-56">
+                    </div>
                 </div>
-                <iframe style="border-radius:12px" class="w-full max-w-xl mx-auto pt-4 md:pt-8" src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
+                
+            </section>
         </main>
         <footer class="text-white bg-gradient-to-b from-red-500 to-red-100 w-full flex flex-col items-center justify-center py-4 font-kalam">
             <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
