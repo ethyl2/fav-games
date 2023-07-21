@@ -70,45 +70,11 @@
             
             <iframe style="border-radius:12px" class="w-full max-w-xs md:max-w-xl mx-auto pt-4 md:pt-8" src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <section class="container mx-auto font-kalam -mt-16 mb-12 md:mb-24 bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-2xl font-bold text-center">What kind of bird are you?</h2>
-                <p class="text-center">Take this quiz to discover your avian alter ego!</p>
+                <h2 class="text-2xl font-bold text-center pt-4">What kind of bird are you?</h2>
+                <p class="text-center pb-4">Take this quiz to discover your avian alter ego!</p>
                 
-                <p class="whitespace-pre-line">
-                1. Which environment do you prefer?
+                <div id="question-section" class="flex flex-col items-stretch justify-center space-y-4 md:space-y-12 pb-4 md:pb-16"></div>
                 
-                a) Forests and woodlands, surrounded by trees and nature.
-                b) Vast open spaces like meadows or plains.
-                c) Coastal areas, near the water and the beach.
-                d) Urban landscapes, bustling with activity.
-                
-                2. Of the following activities, what's your favorite?
-                
-                a) Singing or playing a musical instrument.
-                b) Running, jogging, or any form of physical exercise.
-                c) Swimming or spending time in the water.
-                d) Exploring new places and trying new things.
-                
-                3. Which color combination appeals to you the most?
-                
-                a) Earthy tones like greens and browns.
-                b) Bright and bold colors like reds and yellows.
-                c) Cool shades of blues and aquamarines.
-                d) A mix of vibrant colors and patterns.
-                
-                4. Which statement most accurately describes how you handle challenges?
-                
-                a) I'm patient and persistent, I keep trying until I succeed.
-                b) I face them head-on with courage and determination.
-                c) I find a creative solution or try to adapt to the situation.
-                d) I seek advice from others and collaborate to overcome them.
-                
-                5. What's closest to your idea of a perfect day?
-                
-                a) Relaxing in a peaceful environment with soft music or bird songs.
-                b) Engaging in an exciting outdoor adventure or sport.
-                c) Spending time near water, whether it's at the beach or a lake.
-                d) Being in a lively city, exploring new attractions and meeting people.
-                </p>
                 <div class="mt-4 grid grid-cols-2 gap-4 text-sm md:text-base">
                     <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-yellow-100">
                         <p class="text-center font-bold">If you scored mostly "a," you are a wise and grounded owl.</p>
@@ -127,7 +93,6 @@
                         <img src="./static/images/birds/parrot.jpg" alt="parrot" class="mx-auto rounded shadow w-48 md:w-56">
                     </div>
                 </div>
-                
             </section>
         </main>
         <footer class="text-white bg-gradient-to-b from-red-500 to-red-100 w-full flex flex-col items-center justify-center py-4 font-kalam">
@@ -218,5 +183,174 @@
             <p>Copyright <span id="current-year">2023</span> Heather Nuffer</p>
         </footer>
         <script src="./js/current-year.js" async defer></script>
+        <script>
+            const questions = [
+                {
+                    'question': 'Which environment do you prefer?',
+                    'options': [
+                        {
+                        'answer': 'Forests and woodlands, surrounded by trees and nature.',
+                        'birdType': 'owl'
+                        },
+                        {
+                        'answer': 'Vast open spaces like meadows or plains.',
+                        'birdType': 'falcon'
+                        },
+                        {
+                        'answer': 'Coastal areas, near the water and the beach.',
+                        'birdType': 'swan'
+                        },
+                        {
+                        'answer': 'Urban landscapes, bustling with activity.',
+                        'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
+                    'question': 'Of the following activities, what\'s your favorite?',
+                    'options': [
+                        {
+                        'answer': 'Singing or playing a musical instrument.',
+                        'birdType': 'owl'
+                        },
+                        {
+                        'answer': 'Running, jogging, or any form of physical exercise.',
+                        'birdType': 'falcon'
+                        },
+                        {
+                        'answer': 'Swimming or spending time in the water.',
+                        'birdType': 'swan'
+                        },
+                        {
+                        'answer': 'Exploring new places and trying new things.',
+                        'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
+                    'question': 'Which color combination appeals to you the most?',
+                    'options': [
+                        {
+                        'answer': 'Earthy tones like greens and browns.',
+                        'birdType': 'owl'
+                        },
+                        {
+                        'answer': 'Bright and bold colors like reds and yellows.',
+                        'birdType': 'falcon'
+                        },
+                        {
+                        'answer': 'Cool shades of blues and aquamarines.',
+                        'birdType': 'swan'
+                        },
+                        {
+                        'answer': 'A mix of vibrant colors and patterns.',
+                        'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
+                    'question': 'Which statement most accurately describes how you handle challenges?',
+                    'options': [
+                        {
+                            'answer': 'I\'m patient and persistent, I keep trying until I succeed.',
+                            'birdType': 'owl'
+                        },
+                        {
+                            'answer': 'I face them head-on with courage and determination.',
+                            'birdType': 'falcon'
+                        },
+                        {
+                            'answer': 'I find a creative solution or try to adapt to the situation.',
+                            'birdType': 'swan'
+                        },
+                        {
+                            'answer': 'I seek advice from others and collaborate to overcome them.',
+                            'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
+                    'question': 'What\'s closest to your idea of a perfect day?',
+                    'options': [
+                        {
+                            'answer': 'Relaxing in a peaceful environment with soft music or bird songs.',
+                            'birdType': 'owl'
+                        },
+                        {
+                            'answer': 'Engaging in an exciting outdoor adventure or sport.',
+                            'birdType': 'falcon'
+                        },
+                        {
+                            'answer': 'Spending time near water, whether it\'s at the beach or a lake.',
+                            'birdType': 'swan'
+                        },
+                        {
+                            'answer': 'Being in a lively city, exploring new attractions and meeting people.',
+                            'birdType': 'parrot'
+                        }
+                    ]
+                }
+            ]
+                
+            const questionSection = document.getElementById('question-section')
+            const birdTypes = ['owl', 'falcon', 'swan', 'parrot']
+            const birdTypeNames = {
+                'owl': 'Owl',
+                'falcon': 'Falcon',
+                'swan': 'Swan',
+                'parrot': 'Parrot'
+            }
+            const birdTypeImages = {
+                'owl': './static/images/birds/owl.jpg',
+                'falcon': './static/images/birds/falcon.jpg',
+                'swan': './static/images/birds/swan.jpg',
+                'parrot': './static/images/birds/parrot.jpg'
+            }
+            const birdTypeDescriptions = {
+                'owl': 'You are a wise and grounded owl.',
+                'falcon': 'You are an energetic and enthusiastic falcon.',
+                'swan': 'You are a graceful and tranquil swan.',
+                'parrot': 'You are a social and adaptive parrot.'
+            }
+            const birdTypeColors = {
+                'owl': 'bg-yellow-100',
+                'falcon': 'bg-lime-100',
+                'swan': 'bg-orange-100',
+                'parrot': 'bg-red-100'
+            }
+
+            let currentQuestion = 0
+            let score = {
+                'owl': 0,
+                'falcon': 0,
+                'swan': 0,
+                'parrot': 0
+            }
+
+            const letters = ['a)', 'b)', 'c)', 'd)']
+
+            questions.forEach(question => {
+                const questionCard = document.createElement('div')
+                questionCard.classList.add('bg-black', 'text-white', 'p-4', 'rounded', 'shadow', 'md:p-6', 'md:w-2/3', 'mx-auto')
+                const questionText = document.createElement('p')
+                questionText.classList.add('text-center', 'font-bold', 'pb-4', 'text-xl')
+                questionText.textContent = question.question
+                questionCard.appendChild(questionText)
+                
+                const optionsContainer = document.createElement('div')
+                optionsContainer.classList.add('grid', 'grid-cols-2', 'gap-4', 'text-sm', 'md:text-base')
+                question.options.forEach((option, index )=> {
+                    const optionCard = document.createElement('div')
+                    optionCard.classList.add('shadow', 'p-2', 'rounded', 'flex', 'text-center', 'items-center', 'justify-center', 'border', 'bg-yellow-100', 'text-black', 'w-full', 'max-w-xs', 'mx-auto', 'md:text-lg', 'font-sans')
+                    const optionText = document.createElement('p')
+                    optionText.classList.add('text-center', 'font-bold')
+                    optionText.textContent = letters[index] + ' ' + option.answer
+                    optionCard.appendChild(optionText)
+                    optionsContainer.appendChild(optionCard)
+                    questionCard.appendChild(optionsContainer)
+                })
+                questionSection.appendChild(questionCard)
+            })
+        </script>
     </body>
 </html>
