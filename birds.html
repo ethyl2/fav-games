@@ -329,7 +329,9 @@
 
             const letters = ['a)', 'b)', 'c)', 'd)']
 
-            questions.forEach(question => {
+            questions.forEach(question => createCard(question))
+
+            function createCard(question) {
                 const questionCard = document.createElement('div')
                 questionCard.classList.add('bg-black', 'text-white', 'p-4', 'rounded', 'shadow', 'md:p-6', 'md:w-2/3', 'mx-auto')
                 const questionText = document.createElement('p')
@@ -350,7 +352,7 @@
                     questionCard.appendChild(optionsContainer)
                 })
                 questionSection.appendChild(questionCard)
-            })
+            }
         </script>
     </body>
 </html>
