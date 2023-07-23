@@ -70,28 +70,12 @@
             
             <iframe style="border-radius:12px" class="w-full max-w-xs md:max-w-xl mx-auto pt-4 md:pt-8" src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <section class="container mx-auto font-kalam -mt-16 mb-12 md:mb-24 bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-2xl font-bold text-center pt-4">What kind of bird are you?</h2>
-                <p class="text-center pb-4">Take this quiz to discover your avian alter ego!</p>
+                <h2 class="text-2xl font-bold text-center pt-4 md:text-5xl pb-4">What kind of bird are you?</h2>
+                <p class="text-center pb-4" id="quiz-subtitle">Take this quiz to discover your avian alter ego!</p>
                 
                 <div id="question-section" class="flex flex-col items-stretch justify-center space-y-4 md:space-y-12 pb-4 md:pb-16"></div>
                 
-                <div class="mt-4 grid grid-cols-2 gap-4 text-sm md:text-base">
-                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-yellow-100">
-                        <p class="text-center font-bold">If you scored mostly "a," you are a wise and grounded owl.</p>
-                        <img src="./static/images/birds/owl.jpg" alt="owl" class="mx-auto rounded shadow w-36 md:w-48">
-                    </div>
-                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-lime-100">
-                        <p class="text-center font-bold">If you scored mostly "b," you are a energetic and enthusiastic falcon.</p>
-                        <img src="./static/images/birds/falcon.jpg" alt="falcon" class="mx-auto rounded shadow w-48 md:w-56">
-                    </div>
-                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-orange-100">
-                        <p class="text-center font-bold">If you scored mostly "c," you are a graceful and tranquil swan.</p>
-                        <img src="./static/images/birds/swan.jpg" alt="swan" class="mx-auto rounded shadow w-36 md:w-48">
-                    </div>
-                    <div class="shadow p-2 rounded flex flex-col items-center justify-center space-y-3 bg-red-100">
-                        <p class="text-center font-bold">If you scored mostly "d," you are a social and adaptive parrot.</p>
-                        <img src="./static/images/birds/parrot.jpg" alt="parrot" class="mx-auto rounded shadow w-48 md:w-56">
-                    </div>
+                <div id="bird-type-section" class="mt-4 flex items-center justify-center hidden">
                 </div>
             </section>
         </main>
@@ -249,6 +233,27 @@
                     ]
                 },
                 {
+                    'question': 'What\'s your preferred weather?',
+                    'options': [
+                        {
+                        'answer': 'A cool and misty day with a gentle breeze.',
+                        'birdType': 'owl'
+                        },
+                        {
+                        'answer': 'A sunny and warm day with clear skies.',
+                        'birdType': 'falcon'
+                        },
+                        {
+                        'answer': 'A calm and serene day with a light drizzle.',
+                        'birdType': 'swan'
+                        },
+                        {
+                        'answer': 'A day with changing weather, a mix of sun and clouds.',
+                        'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
                     'question': 'Which statement most accurately describes how you handle challenges?',
                     'options': [
                         {
@@ -265,6 +270,27 @@
                         },
                         {
                             'answer': 'I seek advice from others and collaborate to overcome them.',
+                            'birdType': 'parrot'
+                        }
+                    ]
+                },
+                {
+                    'question': 'How do you express affection most often, among these choices?',
+                    'options': [
+                        {
+                            'answer': 'Through meaningful gestures and acts of kindness.',
+                            'birdType': 'owl'
+                        },
+                        {
+                            'answer': 'Verbally, by expressing love and admiration openly.',
+                            'birdType': 'falcon'
+                        },
+                        {
+                            'answer': 'With gentle touches and physical closeness.',
+                            'birdType': 'swan'
+                        },
+                        {
+                            'answer': 'Through playful banter and light teasing.',
                             'birdType': 'parrot'
                         }
                     ]
@@ -293,6 +319,9 @@
             ]
                 
             const questionSection = document.getElementById('question-section')
+            const birdTypeSection = document.getElementById('bird-type-section')
+            const quizSubtitle = document.getElementById('quiz-subtitle')
+
             const birdTypes = ['owl', 'falcon', 'swan', 'parrot']
             const birdTypeNames = {
                 'owl': 'Owl',
@@ -329,28 +358,77 @@
 
             const letters = ['a)', 'b)', 'c)', 'd)']
 
-            questions.forEach(question => {
+            createCard(questions[currentQuestion])
+
+            // questions.forEach(question => createCard(question))
+
+            function createCard(question) {
                 const questionCard = document.createElement('div')
                 questionCard.classList.add('bg-black', 'text-white', 'p-4', 'rounded', 'shadow', 'md:p-6', 'md:w-2/3', 'mx-auto')
                 const questionText = document.createElement('p')
                 questionText.classList.add('text-center', 'font-bold', 'pb-4', 'text-xl')
-                questionText.textContent = question.question
+                questionText.textContent = `${questions.indexOf(question) + 1}) ${question.question}`
                 questionCard.appendChild(questionText)
                 
                 const optionsContainer = document.createElement('div')
                 optionsContainer.classList.add('grid', 'grid-cols-2', 'gap-4', 'text-sm', 'md:text-base')
-                question.options.forEach((option, index )=> {
+                const shuffledOptions = shuffleArray(question.options)
+                
+                shuffledOptions.forEach((option, index )=> {
                     const optionCard = document.createElement('div')
-                    optionCard.classList.add('shadow', 'p-2', 'rounded', 'flex', 'text-center', 'items-center', 'justify-center', 'border', 'bg-yellow-100', 'text-black', 'w-full', 'max-w-xs', 'mx-auto', 'md:text-lg', 'font-sans')
+                    optionCard.classList.add('shadow', 'p-2', 'rounded', 'flex', 'text-center', 'items-center', 'justify-center', 'border', 'bg-yellow-100', 'text-black', 'w-full', 'max-w-xs', 'mx-auto', 'md:text-lg', 'font-sans', 'hover:bg-yellow-200', 'cursor-pointer')
                     const optionText = document.createElement('p')
                     optionText.classList.add('text-center', 'font-bold')
                     optionText.textContent = letters[index] + ' ' + option.answer
                     optionCard.appendChild(optionText)
+                    optionCard.addEventListener('click', () => {
+                        optionCard.classList.remove('bg-yellow-100', 'hover:bg-yellow-200')
+                        optionCard.classList.add('bg-lime-300')
+                        score[option.birdType]++
+                        currentQuestion++
+                        if (currentQuestion < questions.length) {
+                            createCard(questions[currentQuestion])
+                            questionCard.remove()
+                        } else {
+                            questionCard.remove()
+                            questionSection.classList.add('hidden')
+                            quizSubtitle.classList.add('invisible')
+                            birdTypeSection.classList.remove('hidden')
+                            const winningBird = Object.keys(score).reduce((a, b) => score[a] > score[b] ? a : b)
+                            createBirdCard(winningBird)
+                        }
+                    })
                     optionsContainer.appendChild(optionCard)
-                    questionCard.appendChild(optionsContainer)
                 })
+                questionCard.appendChild(optionsContainer)
                 questionSection.appendChild(questionCard)
-            })
+            }
+
+            function createBirdCard(birdType) {
+                const birdTypeCard = document.createElement('div')
+                birdTypeCard.classList.add('shadow', 'p-2', 'md:p-6', 'rounded', 'flex', 'flex-col', 'items-center', 'justify-center', 'space-y-3', birdTypeColors[birdType])
+                const birdTypeDescription = document.createElement('p')
+                birdTypeDescription.classList.add('text-center', 'font-bold', 'md:text-3xl')
+                birdTypeDescription.textContent = birdTypeDescriptions[birdType]
+                birdTypeCard.appendChild(birdTypeDescription)
+                const birdTypeImage = document.createElement('img')
+                birdTypeImage.classList.add('mx-auto', 'rounded', 'shadow', 'w-36', 'md:w-96')
+                birdTypeImage.src = birdTypeImages[birdType]
+                birdTypeImage.alt = birdType
+                birdTypeCard.appendChild(birdTypeImage)
+                birdTypeSection.appendChild(birdTypeCard)
+            }
+
+            function shuffleArray(array) {
+                // Custom comparison function to generate a random order
+                function compareRandom(a, b) {
+                    return Math.random() - 0.5
+                }
+
+                // Use the custom comparison function with the sort method
+                return array.sort(compareRandom)
+            }
+
         </script>
     </body>
 </html>
