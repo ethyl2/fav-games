@@ -258,18 +258,16 @@
             'Your Majesty']
        
         const catNameButton = document.getElementById('cat-name-button')
-        console.log(catNameButton)
+        
         const catName = document.getElementById('cat-name')
 
         catNameButton.addEventListener('click', () => {
-            console.log('clicked')
             const randomIndex = Math.floor(Math.random() * nameChoices.length)
             catName.textContent = nameChoices[randomIndex]
 
             const response = fetch('https://api.thecatapi.com/v1/images/search')
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 const catImage = document.getElementById('cat-image')
                 catImage.src = data[0].url
             })
