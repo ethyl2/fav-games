@@ -58,18 +58,8 @@
         <header class="uppercase w-full py-4 md:py-8 text-3xl md:text-6xl font-bold font-kalam text-center bg-yellow-50 mx-auto">
             BIRDS!
         </header>
-        <main class="min-h-screen container mx-auto pt-8">
-            <div class="text-center mx-auto hidden md:flex"> 
-                <iframe 
-                    class="mx-auto rounded-md shadow" width="560" height="315" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="text-center mx-auto md:hidden"> 
-                <iframe 
-                    class="mx-auto rounded-md shadow" width="350" height="215" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            
-            <iframe style="border-radius:12px" class="w-full max-w-xs md:max-w-xl mx-auto pt-4 md:pt-8" src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <section class="container mx-auto font-kalam -mt-16 mb-12 md:mb-24 bg-gray-100 p-4 rounded shadow">
+        <main class="min-h-screen container mx-auto py-8 flex flex-col items-center justify-center space-y-4">
+            <section class="container mx-auto font-kalam mb-12 bg-gray-100 p-4 rounded shadow">
                 <h2 class="text-2xl font-bold text-center pt-4 md:text-5xl pb-4">What kind of bird are you?</h2>
                 <p class="text-center pb-4" id="quiz-subtitle">Take this quiz to discover your avian alter ego!</p>
                 
@@ -78,6 +68,19 @@
                 <div id="bird-type-section" class="mt-4 flex items-center justify-center hidden">
                 </div>
             </section>
+
+            <iframe style="border-radius:12px" class="w-full max-w-xs md:max-w-xl mx-auto pt-4 md:pt-8" 
+                src="https://open.spotify.com/embed/playlist/6c8uzDbE3uSQLpj78Zc8T5?utm_source=generator" 
+                width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+            <div class="text-center mx-auto hidden md:flex"> 
+                <iframe 
+                    class="mx-auto rounded-md shadow" width="560" height="315" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="text-center mx-auto md:hidden"> 
+                <iframe 
+                    class="mx-auto rounded-md shadow" width="350" height="215" src="https://www.youtube.com/embed/RteTL8HtEwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </main>
         <footer class="text-white bg-gradient-to-b from-red-500 to-red-100 w-full flex flex-col items-center justify-center py-4 font-kalam">
             <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
@@ -359,8 +362,6 @@
             const letters = ['a)', 'b)', 'c)', 'd)']
 
             createCard(questions[currentQuestion])
-
-            // questions.forEach(question => createCard(question))
 
             function createCard(question) {
                 const questionCard = document.createElement('div')

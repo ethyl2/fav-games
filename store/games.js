@@ -509,4 +509,24 @@ const games = [
       description: 'Amaze your friends by correctly guessing the selected item!',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See the <a href="./black-magic.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> for instructions and practice!</p>`
     },
+    {
+      title: 'Get a Cat Name',
+      url: './cat-names.html',
+      mine: true,
+      dateAdded: '1 Nov 2024',
+      gameLogoSrc: 'static/images/cats.png',
+      gameLogoAlt: 'Cat Names',
+      description: 'Laugh at the funny cat names you get!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./cat-names.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to get a cat name!</p>`
+    },
+    {
+      title: 'What Type of Bird Are You?',
+      url: './birds.html',
+      mine: true,
+      dateAdded: '1 Jan 2024',
+      gameLogoSrc: 'static/images/birds.png',
+      gameLogoAlt: 'What kind of bird are you?',
+      description: 'Take this quiz to find out your spirit bird!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./birds.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to take the quiz!</p>`
+    },
   ]
