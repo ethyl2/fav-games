@@ -529,4 +529,14 @@ const games = [
       description: 'Take this quiz to find out your spirit bird!',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./birds.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to take the quiz!</p>`
     },
+    {
+      title: 'Animal Signs',
+      url: './animal-signs.html',
+      mine: true,
+      dateAdded: '5 Jan 2025',
+      gameLogoSrc: 'static/images/animal-background-dark.png',
+      gameLogoAlt: 'animal signs',
+      description: 'Create animal signs and pass them around, but be sneaky!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./animal-signs.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
+    },
   ]
