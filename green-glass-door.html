@@ -11,7 +11,7 @@
     <title>The Green Glass Door | Favorite Online Games</title>
     <meta name="description" content="Figure out what can go through the Green Glass Door and what cannot.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/animal-background-dark.png">
+    <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/green-glass-door.png">
     <meta property="og:image:alt" content="The Green Glass Door">
     <meta property="og:url" content="https://ethyl2.github.io/fav-games/green-glass-door.html">
     <meta property="og:title" content="The Green Glass Door">
@@ -66,13 +66,25 @@
 
     <main class="container mx-auto px-4 min-h-screen md:px-0 flex flex-col items-center justify-start space-y-4 pt-4">
         <p>See if you can figure out the rule that determines whether an item can make it through the Green Glass Door.</p>
-        <img src="./static/images/green-glass-door.png" alt="green glass door" class="mx-auto border-b-8  border-green-800" />
+        <div class="grid grid-cols-3 gap-2">
+            <img id="fail1-image" />
+            <img src="./static/images/green-glass-door.png" alt="green glass door" class="mx-auto border-b-8  border-green-800" />
+            <img id="pass1-image" />
+        </div>
+        <section class="md:text-lg flex flex-col items-start justify-start space-y-4">
+            <div>
+                <p><span id="article-pass1"></span> <span id="pass1"></span> can make it through,</p>
+                <p>but <span id="article-fail1"></span> <span id="fail1"></span> cannot.</p>
+            </div>
+            <button id="another-example" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 self-center">Get Another Example</button> 
+        </section>
+        <button id="solution-button" class="bg-green-200 text-black font-bold py-2 px-4 rounded hover:bg-green-300 self-center">Show Solution</button>
+        <p id="solution" class="opacity-0 transition duration-800">To pass through the Green Glass Door, the word must have at least one set of double letters.</p>
     </main>
 
     <footer class="bg-black py-10 text-center text-white font-semibold mt-8 md:mt-12">
-      <a href="/fav-games/index.html" target="_blank"
-        class="text-comb-yellow rounded px-1 py-px hover:text-yellow-200">Favorite Group
-        Online Games</a>
+      <a href="/group-games.html" target="_blank"
+        class="text-comb-yellow rounded px-1 py-px hover:text-yellow-200">Favorite Group Games</a>
       <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
         <a href="https://github.com/ethyl2/fav-games" target="_blank" rel="noopener noreferrer"
           class="p-1 hover:bg-shirt-yellow rounded">
@@ -125,6 +137,133 @@
   <script>
     const currentYearSpan = document.getElementById('current-year')
     currentYearSpan.textContent = new Date().getFullYear()
+
+    const examples = [
+        {
+            pass: "apple",
+            fail: "orange",
+        },
+        {
+            pass: "tree",
+            fail: "bush",
+        },
+        {
+            pass: "grass",
+            fail: "dirt",
+        },
+        {
+            pass: "moon",
+            fail: "sun",
+        },
+        {
+            pass: "book",
+            fail: "card",
+        },
+        {
+            pass: "balloon",
+            fail: "kite",
+        },
+        {
+            pass: "puppy",
+            fail: "dog",
+        },
+        {
+            pass: "butter",
+            fail: "jam",
+        },
+        {   
+            pass: "cheese",
+            fail: "milk",
+        }, 
+        {
+            pass: "zoo",
+            fail: "farm",
+        },
+        {
+            pass: "dollar",
+            fail: "nickel",
+        },
+        {
+            pass: "doll",
+            fail: "robot",
+        },
+        {
+            pass: "bell",
+            fail: "windchime",
+        },
+        {
+            pass: "pool",
+            fail: "beach",
+        }, 
+        {
+            pass: "spaghetti",
+            fail: "salad",
+        },
+        { 
+            pass: "raccoon",
+            fail: "panda",
+        }, 
+        {
+            pass: "beetle",
+            fail: "ladybug",
+        },
+        {
+            pass: "caterpillar",
+            fail: "worm",
+        },
+        {
+            pass: "pizza",
+            fail: "pie",
+        },
+        {
+            pass: "needle",
+            fail: "haystack",
+        }
+    ]
+
+    getExample()
+
+    const anotherExampleButton = document.getElementById('another-example')
+    anotherExampleButton.addEventListener('click', getExample)
+
+    function getExample() {
+        const randomExample = examples[Math.floor(Math.random() * examples.length)]
+        const span1 = document.getElementById('pass1')
+        const span2 = document.getElementById('fail1')
+        span1.textContent = randomExample.pass
+        span2.textContent = randomExample.fail
+        const articlePass = document.getElementById('article-pass1')
+        const articleFail = document.getElementById('article-fail1')
+        if (randomExample.pass[0].match(/[aeiou]/i)) {
+            articlePass.textContent = "An"
+        } else {
+            articlePass.textContent = "A"
+        }
+
+        if (randomExample.fail[0].match(/[aeiou]/i)) {
+            articleFail.textContent = "an"
+        } else {
+            articleFail.textContent = "a"
+        }
+
+        const passImage = document.getElementById('pass1-image')
+        const failImage = document.getElementById('fail1-image')
+        passImage.src = `./static/images/door/${randomExample.pass}.png`
+        passImage.alt = randomExample.pass
+        failImage.src = `./static/images/door/${randomExample.fail}.png`
+        failImage.alt = randomExample.fail
+        
+        const solutionButton = document.getElementById('solution-button')
+        const solution = document.getElementById('solution')
+        solutionButton.addEventListener('click', () => {
+            solution.classList.toggle('opacity-0')
+            if (solution.classList.contains('opacity-0')) {
+                solutionButton.textContent = "Show Solution"
+            } else {
+                solutionButton.textContent = "Hide Solution"
+            }
+        })
+    }
   </script>
 
 </html>

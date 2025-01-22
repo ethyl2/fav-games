@@ -539,4 +539,14 @@ const games = [
       description: 'Create animal signs and pass them around, but be sneaky!',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./animal-signs.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
     },
+    {
+      title: 'Green Glass Door',
+      url: './green-glass-door.html',
+      mine: true,
+      dateAdded: '21 Jan 2025',
+      gameLogoSrc: 'static/images/green-glass-door.png',
+      gameLogoAlt: 'green glass door',
+      description: 'Can you figure out what can go through the Green Glass Door and what cannot?',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./animal-signs.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
+    },
   ]

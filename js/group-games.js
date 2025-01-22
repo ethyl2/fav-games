@@ -6,7 +6,9 @@ currentYearSpan.textContent = new Date().getFullYear()
 
 // Game Cards based on component from tailwind ui: https://tailwindui.com/components/marketing/sections/blog-sections
 function setUpGameGrid() {
-    games.filter(game=> game.mine === true).forEach(game => {
+    games.filter(game => game.mine === true)
+        .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+        .forEach(game => {
         const gameCardEl = document.createElement('article')
         gameCardEl.classList.add('relative','isolate', 'flex', 'mx-4', 'md:mx-0', 'flex-col', 'justify-end', 'overflow-hidden', 'rounded-2xl', 'bg-gray-900', 'px-8', 'pb-8', 'pt-80', 'sm:pt-48','lg:pt-80')
         const imageEl = document.createElement('img')
