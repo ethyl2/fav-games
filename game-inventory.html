@@ -7,14 +7,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Favorite Group Games</title>
-        <meta name="description" content="a collection of favorite group games">
+        <title>My Game Inventory</title>
+        <meta name="description" content="a list of the physical games I own">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:image" content="https://ethyl2.github.io/fav-games/images/fav-free-online-games.png">
         <meta property="og:image:alt" content="Favorite Free Online Games logo">
-        <meta property="og:url" content="https://ethyl2.github.io/fav-games/index.html">
-        <meta property="og:title" content="Favorite Group Games">
-        <meta property="og:description" content="a collection of favorite group games">
+        <meta property="og:url" content="https://ethyl2.github.io/fav-games/game-inventory.html">
+        <meta property="og:title" content="My Game Inventory">
+        <meta property="og:description" content="a list of the physical games I own">
         <meta property="og:type" content="website" />
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -38,30 +38,20 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            header h1 {
-                background-image: url('./images/paint.jpg');
-                background-size: 250px;
-                background-repeat: repeat;
-                color: transparent;
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header class="flex items-center justify-center py-6 md:py-12 bg-gradient-to-b from-gray-700 to-black">
-            <h1 class="text-3xl sm:text-5xl md:text-6xl text-center lg:text-7xl xl:text-9xl tracking-wide" style="font-family: 'Sigmar', cursive;">
-                Favorite Group Games</h1>
+            <h1 class="text-white text-3xl sm:text-5xl md:text-6xl text-center lg:text-7xl xl:text-9xl tracking-wide" style="font-family: 'Sigmar', cursive;">
+                My Game Inventory</h1>
            </header>
-       <main class="container mx-auto pb-16">
+       <main class="container mx-auto pb-16 min-h-screen">
 
-        <p class="text-center pt-12 text-2xl text-gray-900" style="font-family: 'Sigmar', cursive;">Easy-to-learn games to play with people, whether you are together in-person or virtually</p>
+        <p class="text-center pt-12 text-2xl text-gray-900" style="font-family: 'Sigmar', cursive;">Here's some the physical games I own! Let's play them!</p>
        
-        <div id="game-list" class="bg-white mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"></div>
+        <div id="game-list" class="bg-white mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"></div>
         
        </main> 
     
@@ -149,10 +139,24 @@
               </svg>
             </a>
         </nav>
-        <a href="./game-inventory.html" class="text-white text-base font-bold hover:text-gray-200 underline underline-offset-2">See my game inventory</a>
-        <p class="pt-2">Copyright <span id="current-year">2023</span> Heather Nuffer</p>
+        <p>Copyright <span id="current-year">2023</span> Heather Nuffer</p>
       </footer>
-    <script src="store/games.js" async defer></script>
-    <script src="js/group-games.js" async defer></script>
+    <script src="store/myPhysicalGames.js"></script>
+    <script>
+        const gameList = document.getElementById('game-list');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderedGames = games.sort((a, b) => a.localeCompare(b));
+            const gameListHTML = orderedGames.map(game => `
+            <div class="bg-blue-100 shadow-md rounded-lg p-4 flex items-center justify-center">
+                <h2 class="text-xl font-bold text-center">${game}</h2>
+            </div>
+        `).join('')
+        gameList.innerHTML = gameListHTML
+        });
+       
+
+        
+    </script>
     </body>
 </html>

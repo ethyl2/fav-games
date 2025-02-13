@@ -1,4 +1,4 @@
-const physicalGames = [
+const games = [
     'Dixit',
     'Codenames',
     'Bananagrams',
@@ -35,4 +35,13 @@ const physicalGames = [
     'Mille Borne',
     'Coup',
     'Hungry Hungry Hippos',
+    'Risk',
+    'Bears vs Babies',
+    'Word on the Street',
+    'Kids Against Maturity',
+    'DiagnosThis',
+    'Cover Your A$$ets',
+    'We Didn\'t Playtest This At All',
+    'Kids Against Maturity',
+    'Tenzi',
 ]
