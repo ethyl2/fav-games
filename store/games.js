@@ -549,4 +549,14 @@ const games = [
       description: 'Can you figure out what can go through the Green Glass Door and what cannot?',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./animal-signs.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
     },
+    {
+      title: 'Would You Rather?',
+      url: './would-you-rather.html',
+      mine: true,
+      dateAdded: '15 Feb 2025',
+      gameLogoSrc: 'static/images/would-you-rather-og.png',
+      gameLogoAlt: 'Would you rather...',
+      description: 'Decide between interesting choices and discuss with your friends!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./would-you-rather.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
+    },
   ]
