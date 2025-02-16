@@ -7,14 +7,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Game Inventory</title>
-        <meta name="description" content="a list of the physical games I own">
+        <title>Would You Rather | Fav Group Games</title>
+        <meta name="description" content="how to play Would You Rather">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="https://ethyl2.github.io/fav-games/images/fav-free-online-games.png">
+        <meta property="og:image" content="https://ethyl2.github.io/fav-games/static/images/would-you-rather-og.png">
         <meta property="og:image:alt" content="Favorite Free Online Games logo">
-        <meta property="og:url" content="https://ethyl2.github.io/fav-games/game-inventory.html">
-        <meta property="og:title" content="My Game Inventory">
-        <meta property="og:description" content="a list of the physical games I own">
+        <meta property="og:url" content="https://ethyl2.github.io/fav-games/would-you-rather.html">
+        <meta property="og:title" content="Would You Rather | Fav Group Games">
+        <meta property="og:description" content="how to play Would You Rather">">
         <meta property="og:type" content="website" />
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -44,14 +44,23 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header class="flex items-center justify-center py-6 md:py-12 bg-gradient-to-b from-gray-700 to-black">
-            <h1 class="text-white text-3xl sm:text-5xl md:text-6xl text-center lg:text-7xl xl:text-9xl tracking-wide" style="font-family: 'Sigmar', cursive;">
-                My Game Inventory</h1>
+            <h1 class="text-white text-3xl sm:text-5xl md:text-6xl text-center tracking-wide" style="font-family: 'Sigmar', cursive;">
+                Would You Rather...</h1>
            </header>
-       <main class="container mx-auto pb-16 min-h-screen">
+       <main class="container mx-auto pb-16 min-h-screen flex flex-col items-center justify-start px-4 space-y-6">
 
-        <p class="text-center pt-12 text-2xl text-gray-900" style="font-family: 'Sigmar', cursive;">Here's some the physical games I own! Let's play them!</p>
+        <p class="text-center pt-12 text-xl text-pink-600" style="font-family: 'Sigmar', cursive;">...have an elephant-sized cat, or a cat-sized elephant?</p>
+        <p class="text-center text-xl text-blue-600" style="font-family: 'Sigmar', cursive;">...only have spoons, or only have forks?</p>
+        <p class="text-center text-2xl text-gray-900" style="font-family: 'Sigmar', cursive;">Pass out copies, have everyone mark their choices, and then take turns picking one and telling your group about it!</p>
        
-        <div id="game-list" class="bg-white mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"></div>
+        <a href="./documents/would-you-rather.pdf" 
+            download
+            class="mx-auto px-4 py-2 rounded bg-gradient-to-r from-blue-600 to-pink-600 text-white font-bold text-lg mt-8 hover:from-blue-700 hover:to-pink-700 transition duration-300 ease-in-out">
+        Download Game Sheet</a>
+        <a href="./documents/would-you-rather.pdf" class="hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
+            download>
+            <img src="./static/images/would-you-rather.png" alt="Would You Rather" class="mx-auto my-8 w-full md:w-3/4 lg:w-1/2 border-pink-600 border-4 shadow">
+        </a>
         
        </main> 
     
@@ -139,22 +148,11 @@
               </svg>
             </a>
         </nav>
+        <a href="./group-games.html" class="text-white text-xl font-bold hover:text-yellow-200">Favorite Group Games</a>
         <p>Copyright <span id="current-year">2023</span> Heather Nuffer</p>
       </footer>
-    <script src="store/myPhysicalGames.js"></script>
-    <script>
-        const gameList = document.getElementById('game-list');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const orderedGames = gamesWithUrls.sort((a, b) => a.name.localeCompare(b.name));
-            const gameListHTML = orderedGames.map(game => `
-            <div class="bg-cyan-100 shadow-md rounded-lg p-4 flex items-center justify-center hover:bg-cyan-200">
-                <a href="${game.url}" target="_blank" class="text-xl font-bold text-center">${game.name}</a>
-            </div>
-        `).join('')
-        gameList.innerHTML = gameListHTML
-        });
-       
+    <script>
         const currentYear = new Date().getFullYear()
         document.getElementById("current-year").textContent = currentYear
     </script>
