@@ -47,11 +47,11 @@
             <h1 class="text-white text-3xl sm:text-5xl md:text-6xl text-center lg:text-7xl xl:text-9xl tracking-wide" style="font-family: 'Sigmar', cursive;">
                 My Game Inventory</h1>
            </header>
-       <main class="container mx-auto pb-16 min-h-screen">
+       <main class="container mx-auto pb-16 min-h-screen px-4">
 
         <p class="text-center pt-12 text-2xl text-gray-900" style="font-family: 'Sigmar', cursive;">Here's some the physical games I own! Let's play them!</p>
        
-        <div id="game-list" class="bg-white mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"></div>
+        <div id="game-list" class="bg-white mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-2 gap-4 md:gap-6 lg:gap-8 sm:mt-20 sm:grid-cols-3 lg:mx-0 lg:max-w-none md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"></div>
         
        </main> 
     
@@ -144,12 +144,14 @@
     <script src="store/myPhysicalGames.js"></script>
     <script>
         const gameList = document.getElementById('game-list');
+        const colorOptions = ['bg-red-600 hover:bg-red-500', 'bg-blue-600 hover:bg-blue-500', 'bg-green-600 hover:bg-green-500', 'bg-yellow-600 hover:bg-yellow-500', 'bg-purple-600 hover:bg-purple-500', 'bg-pink-600 hover:bg-pink-500', 'bg-cyan-600 haover:bg-cyan-500']
+        const classNames = 'shadow-md rounded-lg p-2 md:p-4 flex items-center justify-center text-center text-white font-bold text-lg text-sm md:text-base lg:text-xl font-bold text-center transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ';
 
         document.addEventListener('DOMContentLoaded', () => {
             const orderedGames = gamesWithUrls.sort((a, b) => a.name.localeCompare(b.name));
             const gameListHTML = orderedGames.map(game => `
-            <div class="bg-cyan-100 shadow-md rounded-lg p-4 flex items-center justify-center hover:bg-cyan-200">
-                <a href="${game.url}" target="_blank" class="text-xl font-bold text-center">${game.name}</a>
+            <div class="${classNames  + colorOptions[Math.floor(Math.random() * colorOptions.length)]}">
+                <a href="${game.url ?? ''}" target="_blank">${game.name}</a>
             </div>
         `).join('')
         gameList.innerHTML = gameListHTML
