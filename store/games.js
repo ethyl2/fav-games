@@ -559,4 +559,14 @@ const games = [
       description: 'Decide between interesting choices and discuss with your friends!',
       howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./would-you-rather.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
     },
+    {
+      title: 'Stand-Off',
+      url: './stand-off.html',
+      mine: true,
+      dateAdded: '16 July 2025',
+      gameLogoSrc: 'static/images/stand-off.png',
+      gameLogoAlt: 'Stand-Off',
+      description: 'Face off in the ultimate duel where quick thinking beats quick draws! Players circle up for a battle of wits, strategy, and lightning-fast reflexes. 💀 Only the smartest gunslinger survives!',
+      howTo: `<p class="text-xs mt-6 md:text-sm text-left">See <a href="./stand-off.html" target="_blank" class="underline text-blue-500 hover:text-blue-600">page</a> to learn how to play this game!</p>`
+    },
   ]

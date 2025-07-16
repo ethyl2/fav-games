@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>🤠 Stand-Off Game 🔫</title>
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Creepster&family=Metal+Mania&display=swap" rel="stylesheet">
+    <style>
+        @keyframes dustCloud {
+            0%, 100% { opacity: 0.3; transform: translateX(0) scale(1); }
+            50% { opacity: 0.1; transform: translateX(20px) scale(1.2); }
+        }
+        
+        @keyframes gunSmoke {
+            0% { opacity: 1; transform: translateY(0) scale(0.5); }
+            100% { opacity: 0; transform: translateY(-30px) scale(1.5); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .western-title {
+            font-family: 'Rye', cursive;
+            text-shadow: 4px 4px 0 #8B4513, 8px 8px 0 #654321;
+        }
+        
+        .dust-cloud {
+            animation: dustCloud 3s ease-in-out infinite;
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+        }
+        
+        .gun-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .gun-icon:hover {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        .bullet-point::before {
+            content: "💥";
+            margin-right: 8px;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #D2691E 0%, #8B4513 50%, #654321 100%);
+            min-height: 100vh;
+        }
+        
+        .desert-bg {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255,223,186,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,218,185,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(210,180,140,0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="desert-bg min-h-screen bg-black">
+    <!-- Animated dust clouds -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="dust-cloud absolute top-10 left-10 w-16 h-16 bg-yellow-200 rounded-full opacity-20"></div>
+        <div class="dust-cloud absolute top-32 right-20 w-12 h-12 bg-yellow-100 rounded-full opacity-15" style="animation-delay: 1s;"></div>
+        <div class="dust-cloud absolute bottom-20 left-1/3 w-20 h-20 bg-yellow-300 rounded-full opacity-10" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="container mx-auto p-8 relative z-10">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="western-title text-6xl md:text-8xl font-bold mb-6 text-yellow-100 transform hover:scale-105 transition-transform duration-300">
+                ⚡ STAND-OFF ⚡
+            </h1>
+            <div class="text-2xl text-yellow-200 font-bold mb-4">🤠 HIGH NOON SHOWDOWN 🤠</div>
+            <div class="bg-black bg-opacity-50 rounded-lg p-6 max-w-4xl mx-auto border-4 border-yellow-600">
+                <p class="text-xl text-yellow-100 leading-relaxed">
+                    <span class="text-2xl">🔫</span> Face off in the ultimate duel where quick thinking beats quick draws! 
+                    Players circle up for a battle of wits, strategy, and lightning-fast reflexes. 
+                    <span class="text-2xl">💀</span> Only the smartest gunslinger survives!
+                </p>
+            </div>
+        </div>
+
+        <!-- Game Setup -->
+        <div class="bg-gradient-to-r from-yellow-800 to-orange-800 rounded-xl p-8 mb-8 border-4 border-yellow-600 shadow-2xl md:w-1/2 lg:w-1/3 mx-auto">
+            <h2 class="text-3xl font-bold text-yellow-100 mb-4 flex items-center">
+                🎯 How to Play
+            </h2>
+           
+            <div class="space-y-4 text-yellow-100">
+                <div class="bullet-point text-lg">Players stand in a circle</div>
+                <div class="bullet-point text-lg">Each player has two imaginary guns</div>
+                <div class="bullet-point text-lg">One action per round</div>
+                <div class="bullet-point text-lg">Each gun holds only one bullet</div>
+            </div>
+            
+        </div>
+
+        <!-- Actions Section -->
+        <div class="mb-12">
+            <h2 class="text-4xl font-bold text-center text-yellow-100 mb-8 western-title">
+                ⚔️ CHOOSE YOUR ACTION ⚔️
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Shoot Action -->
+                <div class="action-card bg-gradient-to-br from-red-600 to-red-800 rounded-xl p-8 border-4 border-red-400 shadow-2xl transform transition-all duration-300 hover:scale-105">
+                    <div class="text-center">
+                        <div class="gun-icon text-7xl mb-4">🔫</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">SHOOT</h3>
+                        <p class="text-red-100 text-lg leading-relaxed">
+                            Point both guns at your target! Make your shot count - you only get one bullet per gun!
+                        </p>
+                        <div class="mt-4 text-4xl">💥</div>
+                    </div>
+                </div>
+
+                <!-- Reload Action -->
+                <div class="action-card bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-8 border-4 border-blue-400 shadow-2xl transform transition-all duration-300 hover:scale-105">
+                    <div class="text-center">
+                        <div class="gun-icon text-7xl mb-4">⬆️</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">RELOAD</h3>
+                        <p class="text-blue-100 text-lg leading-relaxed">
+                            Point guns skyward to reload! Essential for survival - can't shoot without bullets!
+                        </p>
+                        <div class="mt-4 text-4xl">🔄</div>
+                    </div>
+                </div>
+
+                <!-- Block Action -->
+                <div class="action-card bg-gradient-to-br from-green-600 to-green-800 rounded-xl p-8 border-4 border-green-400 shadow-2xl transform transition-all duration-300 hover:scale-105">
+                    <div class="text-center">
+                        <div class="gun-icon text-7xl mb-4">🛡️</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">BLOCK</h3>
+                        <p class="text-green-100 text-lg leading-relaxed">
+                            Cross arms in X-shape! Your shield against incoming fire - timing is everything!
+                        </p>
+                        <div class="mt-4 text-4xl">✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Flow -->
+        <div class="bg-gradient-to-r from-purple-800 to-indigo-800 rounded-xl p-8 mb-8 border-4 border-purple-400 shadow-2xl">
+            <h2 class="text-3xl font-bold text-yellow-100 mb-6 flex items-center justify-center">
+                🎲 Round Sequence 🎲
+            </h2>
+            
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-black bg-opacity-30 rounded-lg p-4 border-2 border-purple-300">
+                    <div class="text-4xl mb-2">1️⃣</div>
+                    <div class="text-purple-100 font-bold">Count Together</div>
+                    <div class="text-purple-200 text-sm mt-2">"One, Two..."</div>
+                </div>
+                <div class="bg-black bg-opacity-30 rounded-lg p-4 border-2 border-purple-300">
+                    <div class="text-4xl mb-2">🎭</div>
+                    <div class="text-purple-100 font-bold">Declare & Act</div>
+                    <div class="text-purple-200 text-sm mt-2">Say action + gesture</div>
+                </div>
+                <div class="bg-black bg-opacity-30 rounded-lg p-4 border-2 border-purple-300">
+                    <div class="text-4xl mb-2">⚖️</div>
+                    <div class="text-purple-100 font-bold">Resolve</div>
+                    <div class="text-purple-200 text-sm mt-2">Who got shot?</div>
+                </div>
+                <div class="bg-black bg-opacity-30 rounded-lg p-4 border-2 border-purple-300">
+                    <div class="text-4xl mb-2">🔄</div>
+                    <div class="text-purple-100 font-bold">Repeat</div>
+                    <div class="text-purple-200 text-sm mt-2">Until one remains</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy Tips -->
+        <div class="bg-gradient-to-r from-yellow-700 to-orange-700 rounded-xl p-8 border-4 border-yellow-500 shadow-2xl">
+            <h2 class="text-3xl font-bold text-yellow-100 mb-6 flex items-center justify-center">
+                🧠 Strategic Tips 🧠
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl">🎯</span>
+                        <div>
+                            <div class="text-yellow-100 font-bold">Track the Ammo</div>
+                            <div class="text-yellow-200">Remember who's loaded and who needs to reload!</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl">🤔</span>
+                        <div>
+                            <div class="text-yellow-100 font-bold">Bluff & Misdirect</div>
+                            <div class="text-yellow-200">Make opponents think you're targeting them!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl">⏰</span>
+                        <div>
+                            <div class="text-yellow-100 font-bold">Perfect Timing</div>
+                            <div class="text-yellow-200">Know when to block and when to strike!</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl">👥</span>
+                        <div>
+                            <div class="text-yellow-100 font-bold">Alliance & Betrayal</div>
+                            <div class="text-yellow-200">Temporary truces can lead to victory!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Victory Condition -->
+        <div class="text-center mt-12 bg-black bg-opacity-50 rounded-xl p-8 border-4 border-gold-400" style="border-color: #FFD700;">
+            <div class="text-6xl mb-4">👑</div>
+            <h2 class="text-4xl font-bold text-yellow-100 mb-4 western-title">LAST GUNSLINGER STANDING WINS!</h2>
+            <p class="text-2xl text-yellow-200">The sole survivor claims the title of fastest mind in the west! 🏆</p>
+        </div>
+    </div>
+     <footer class="bg-black py-10 text-center text-white font-semibold">
+        <a href="./group-games.html" class="text-yellow-300 hover:text-yellow-100 mb-4 block">
+            Back to Group Games
+        </a>
+      <nav class="pt-2 flex items-center justify-center space-x-2 mb-4">
+          <a
+            href="https://github.com/ethyl2/fav-games"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-1 hover:bg-motel-red rounded"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.73em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 1227.825 1000"
+            >
+              <path
+                d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                fill="white"
+              />
+            </svg>
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://twitter.com/ethyl22000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-1 hover:bg-sign-green rounded"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.5em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                fill="white"
+              />
+            </svg>
+            <span class="sr-only">Twitter</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/heather-nuffer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-1 hover:bg-lamp-orange rounded"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              width="1.5em"
+              height="1.5em"
+              style="
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+              "
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z"
+                fill="white"
+              />
+              <span class="sr-only">LinkedIn</span>
+            </svg>
+          </a>
+      </nav>
+      <p class="text-sm">Copyright <span id="current-year">2022</span> <a href="/fav-games/index.html" target="_blank" class="hover:bg-lamp-orange rounded px-1 py-px hover:text-black">Favorite Group Online Games</a></p>
+    </footer>
+    <script>
+        const currentYearSpan = document.getElementById('current-year')
+        currentYearSpan.textContent = new Date().getFullYear()
+    </script>
+</body>
+</html>
